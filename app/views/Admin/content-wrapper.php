@@ -1,3 +1,5 @@
  <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper"></div>
+ <div style="height: 840px;" class="content-wrapper">
+ 
+</div>
  <!-- /.content-wrapper -->
