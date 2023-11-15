@@ -1,4 +1,5 @@
-
+<!-- điều hướng luồng hoạt động của trang admin -->
+<!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php 
     include "../views/Admin/header.php";
     include "../views/Admin/sidebar.php";
