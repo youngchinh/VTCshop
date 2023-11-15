@@ -50,7 +50,7 @@
                  </li>
                  <!-- sản phẩm -->
                  <li class="nav-item has-treeview">
-                     <a href="#" class="nav-link">
+                     <a href="#"  class="nav-link">
                          <i class="nav-icon fas fa-solid fa-mobile"></i>
                          <p>
                              Quản trị sản phẩm
@@ -60,13 +60,13 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="AdminController.php?act=listsp" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=addsp" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Thêm Mới</p>
                              </a>
@@ -74,7 +74,7 @@
                      </ul>
                  </li>
                  <!-- biến thể -->
-                 <li class="nav-item has-treeview">
+                 <!-- <li class="nav-item has-treeview">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-solid fa-swatchbook"></i>
                          <p>
@@ -97,7 +97,8 @@
                              </a>
                          </li>
                      </ul>
-                 </li>
+                 </li> -->
+                 
                  <!-- bình luận -->
                  <li class="nav-item has-treeview">
                      <a href="#" class="nav-link">
@@ -110,7 +111,7 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=listbl" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách</p>
                              </a>
@@ -129,13 +130,13 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=listbv" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=addbv" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Thêm Mới</p>
                              </a>
