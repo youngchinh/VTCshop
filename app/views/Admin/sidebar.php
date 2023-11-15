@@ -204,12 +204,6 @@
                                  <p>Logo</p>
                              </a>
                          </li>
-                         <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>footer</p>
-                             </a>
-                         </li>
                      </ul>
                  </li>
                  <!-- <li class="nav-header">EXAMPLES</li> -->
