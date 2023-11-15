@@ -154,15 +154,15 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=listtk" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Danh sách</p>
+                                 <p>Danh sách tài khoản </p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=addtk" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Thêm Mới</p>
+                                 <p>Thêm Mới Tài Khoản</p>
                              </a>
                          </li>
                      </ul>
@@ -179,7 +179,7 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=listdh" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Danh sách</p>
                              </a>
@@ -198,7 +198,7 @@
 
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../views/Admin/assets/pages/tables/simple.html" class="nav-link">
+                             <a href="AdminController.php?act=listlogo" class="nav-link">
                                  <i class="far fa-image nav-icon"></i>
                                  <p>Logo</p>
                              </a>
