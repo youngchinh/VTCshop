@@ -14,47 +14,49 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "../views/Admin/danhmuc/add.php";
             break;
 
-            case "listtk";
+        case "listtk";
             include "../views/Admin/taikhoan/list.php";
             break;
 
-            case "addtk";
+        case "addtk";
             include "../views/Admin/taikhoan/addtk.php";
             break;
 
-            case "listdh";
+        case "listdh";
             include "../views/Admin/donhang/listdh.php";
             break;
 
-            case "listlogo";
+        case "listlogo";
             include "../views/Admin/hethong/logo.php";
             break;
 
-            case "listsp";
-                include "../views/Admin/sanpham/list.php";
-                break;
-    
-            case "addsp";
-                include "../views/Admin/sanpham/add.php";
-                break;
-    
-            case "listbl";
-                include "../views/Admin/binhluan/list.php";
-                break;
-    
-            case "listbv";
-                include "../views/Admin/baiviet/list.php";
-                break;
-    
-            case "addbv";
-                include "../views/Admin/baiviet/add.php";
-                break;
-        }
+        case "listsp";
+            include "../views/Admin/sanpham/list.php";
+            break;
 
+        case "addsp";
+            include "../views/Admin/sanpham/add.php";
+            break;
 
+        case "listbl";
+            include "../views/Admin/binhluan/list.php";
+            break;
+
+        case "listbv";
+            include "../views/Admin/baiviet/list.php";
+            break;
+
+        case "addbv";
+            include "../views/Admin/baiviet/add.php";
+            break;
+        
+        case "listlh";
+            include "../views/Admin/phanhoi/list.php";
+            break;
     }
+}
 
-    
+
 
 
 include "../views/Admin/footer.php";
