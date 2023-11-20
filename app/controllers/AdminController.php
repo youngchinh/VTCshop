@@ -1,6 +1,7 @@
 <!-- điều hướng luồng hoạt động của trang admin -->
 <!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php
+
 include "../models/AdminModel.php";
 include "../views/Admin/header.php";
 include "../views/Admin/sidebar.php";
@@ -22,6 +23,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "../views/Admin/danhmuc/add.php";
             break;
 
+
         case "deletedm":
             if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
                 $iddm = ($_GET['iddm']);
@@ -30,7 +32,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             $listdanhmuc = load_listdanhmuc();
             include "../views/Admin/danhmuc/list.php";
-            break;
+
 
         case "suadm";
             if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
@@ -142,6 +144,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         break;
 
         case "listbl";
+            //Kiem tra xem nguoi dung co click vao ko
+
             include "../views/Admin/binhluan/list.php";
             break;
 
