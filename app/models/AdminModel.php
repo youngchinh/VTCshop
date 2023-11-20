@@ -67,4 +67,4 @@ function delete_sanpham($idsp)
 {
     $sql = "DELETE FROM tb_sanpham WHERE id_sanpham=" . $idsp;
     pdo_execute($sql);
-
+}
