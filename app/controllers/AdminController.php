@@ -107,41 +107,41 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case "suasp";
-        if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
-            $sanpham=loadone_sanpham($_GET['idsp']);
-        }
-            $listdanhmuc=loadall_danhmuc();
+            if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+                $sanpham = loadone_sanpham($_GET['idsp']);
+            }
+            $listdanhmuc = loadall_danhmuc();
             include "../views/Admin/sanpham/update.php";
             break;
 
         case "updatesp";
-        if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
-            $id = $_POST['id_sanpham'];
-            $ten_sanpham = $_POST['ten_sanpham'];
-            $mota_sanpham = $_POST['mota_sanpham'];
-            $mau_sanpham = $_POST['mau_sanpham'];
-            $gia_ban_dau = $_POST['gia_ban_dau'];
-            $gia_khuyen_mai = $_POST['gia_khuyen_mai'];
-            $dung_luong = $_POST['dung_luong'];
-            $so_luong = $_POST['so_luong'];
-            $trang_thai = $_POST['trang_thai'];
-            $id_danhmuc = $_POST['id_danhmuc'];
+            if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                $id = $_POST['id_sanpham'];
+                $ten_sanpham = $_POST['ten_sanpham'];
+                $mota_sanpham = $_POST['mota_sanpham'];
+                $mau_sanpham = $_POST['mau_sanpham'];
+                $gia_ban_dau = $_POST['gia_ban_dau'];
+                $gia_khuyen_mai = $_POST['gia_khuyen_mai'];
+                $dung_luong = $_POST['dung_luong'];
+                $so_luong = $_POST['so_luong'];
+                $trang_thai = $_POST['trang_thai'];
+                $id_danhmuc = $_POST['id_danhmuc'];
 
-            $img_sanpham = $_FILES['img_sanpham']['name'];
-            $target_dir = "../upload/";
-            $target_file = $target_dir . basename($_FILES["img_sanpham"]["name"]);
-            if (move_uploaded_file($_FILES["img_sanpham"]["tmp_name"], $target_file)) {
-                // echo "The file ". htmlspecialchars( basename( $_FILES["img_sanpham"]["name"])). " has been uploaded.";
-            } else {
-                // echo "Sorry, there was an error uploading your file.";
+                $img_sanpham = $_FILES['img_sanpham']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["img_sanpham"]["name"]);
+                if (move_uploaded_file($_FILES["img_sanpham"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["img_sanpham"]["name"])). " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                update_sanpham($id, $ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc);
+                $thongbao = "cập nhật thành công!";
             }
-            update_sanpham($id, $ten_sanpham, $img_sanpham ,$mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc);
-            $thongbao="cập nhật thành công!";
-        }
-        $listdanhmuc= loadall_danhmuc();
-        $listsanpham = loadall_sanpham();
-        include "../views/Admin/sanpham/list.php";
-        break;
+            $listdanhmuc = loadall_danhmuc();
+            $listsanpham = loadall_sanpham();
+            include "../views/Admin/sanpham/list.php";
+            break;
 
         case "listbl";
             //Kiem tra xem nguoi dung co click vao ko
@@ -174,7 +174,45 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case "listlh";
+            if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
+                $keyword = $_POST['keyword'];
+                $id_trangthai = $_POST['id_trangthai'];
+            } else {
+                $keyword = "";
+                $id_trangthai = 0;
+            }
+            $listtrangthai = loadall_trangthai();
+            $listlienhe = loadall_lienhe($keyword, $id_trangthai);
             include "../views/Admin/phanhoi/list.php";
+            break;
+
+        case "sualh";
+            if (isset($_GET['idlh']) && ($_GET['idlh'] > 0)) {
+                $idlh = ($_GET['idlh']);
+                $lienhe = loadone_lienhe($idlh);
+            }
+            $listtrangthai = loadall_trangthai();
+            include "../views/Admin/phanhoi/update.php";
+            break;
+
+        case "updatelh";
+            if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                $id_trangthai = $_POST['id_trangthai'];
+                $id = $_POST['id_lienhe'];
+                // $hovaten = $_POST['hovaten'];
+                // $sdt = $_POST['sdt'];
+                // $email = $_POST['email'];
+                // $dia_chi_lienhe = $_POST['dia_chi_lienhe'];
+                // $ngay_gui = $_POST['ngay_gui'];
+                // $noi_dung_lienhe = $_POST['noi_dung_lienhe'];
+                // update_trangthai_lienhe($id, $id_trangthai, $hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_dung_lienhe);
+                update_trangthai_lienhe($id, $id_trangthai);
+                $lienhe = loadone_lienhe($id);
+                $thongbao = "cập nhật thành công!";
+            }
+            $listtrangthai = loadall_trangthai();
+            $listlienhe = loadall_lienhe();
+            include "../views/Admin/phanhoi/update.php";
             break;
     }
 }
