@@ -27,11 +27,12 @@ if (is_file($imgpath)) {
                     <label for="">Ảnh sản phẩm</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input class="custom-file-label" type="file" name="img_sanpham">
+                            <input class="custom-file-label" type="file" name="img_sanpham" value="<?=$img_sanpham?>">
                             <label>Chọn file</label>
-                            <?php echo $imgpath ?>
+                            
                         </div>
                     </div>
+                    <?php echo $imgpath ?>
                 </div>
                 <div class="form-group">
                     <label for="">Mô tả sản phẩm</label>
@@ -78,7 +79,6 @@ if (is_file($imgpath)) {
                         }else{
                             echo '<option value="'.$value['id_danhmuc'].'">'.$value['ten_danhmuc'].'</option>' ;
                         }
-
                     }
                     ?>
                     </select>
