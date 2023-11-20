@@ -68,3 +68,43 @@ function delete_sanpham($idsp)
     $sql = "DELETE FROM tb_sanpham WHERE id_sanpham=" . $idsp;
     pdo_execute($sql);
 }
+
+// phản hồi
+function loadall_lienhe($keyword = "", $id_trangthai = 0)
+{
+    $sql = "SELECT * from tb_lienhe where trangthai = 0";
+    // where 1 tức là nó đúng
+    if ($keyword != "") {
+        $sql .= " AND hovaten LIKE '%" . $keyword . "%'";
+    }
+    if ($id_trangthai > 0) {
+        $sql .= " AND id_trangthai ='" . $id_trangthai . "'";
+    }
+    $sql .= " ORDER BY id_trangthai DESC";
+    $listlienhe = pdo_query($sql);
+    return  $listlienhe;
+}
+
+function loadall_trangthai()
+{
+    $sql = "SELECT * FROM tb_trangthai_lienhe order by id_trangthai DESC";
+    $listtrangthai = pdo_query($sql);
+    return $listtrangthai;
+}
+
+function loadone_lienhe($idlh)
+{
+    $sql = "SELECT * FROM tb_lienhe WHERE id_lienhe = " . $idlh;
+    $result = pdo_query_one($sql);
+    return $result;
+}
+
+// function update_trangthai_lienhe($id, $id_trangthai, $hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_dung_lienhe) {
+//     $sql =  $sql = "UPDATE `tb_lienhe` SET `id_trangthai` = '$id_trangthai', `hovaten` = '$hovaten', `sdt` = '$sdt', `email` = '$email', `dia_chi_lienhe` = '$dia_chi_lienhe', `ngay_gui` = '$ngay_gui', `noi_dung_lienhe` = '$noi_dung_lienhe',  WHERE `tb_lienhe`.`id_lienhe` = $id;";
+//     pdo_execute($sql);
+// }
+
+function update_trangthai_lienhe($id, $id_trangthai) {
+    $sql =  $sql = "UPDATE `tb_lienhe` SET `id_trangthai` = '$id_trangthai'  WHERE `tb_lienhe`.`id_lienhe` = $id;";
+    pdo_execute($sql);
+}

@@ -5,6 +5,21 @@
                 <h2>Phản hồi của khách hàng</h2>
             </div>
             <div class="card-body">
+            <form action="#" method="POST">
+                    <div class="row2 mb10 formds_loai">
+                        <form action="AdminController.php?act=listlh" method="POST">
+                            <input type="text" name="keyword">
+                            <select name="id_trangthai" id="">
+                                <option value="0" selected>Tất cả</option>
+                                <?php
+                                foreach ($listtrangthai as $trangthai) {
+                                    extract($trangthai);
+                                    echo '<option value="' . $id_trangthai . '">' . $ten_trangthai . '</option>';
+                                }
+                                ?>
+                            </select>
+                            <input class="btn btn-primary" type="submit" name="clickgo" value="GO">
+                        </form>
                 <table class="table">
                     <tdead class="thead-drank">
                         <tr>
@@ -19,21 +34,28 @@
                         </tr>
                     </tdead>
                     <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Họ và tên</td>
-                            <td>Số điện tdoại</td>
-                            <td>Email</td>
-                            <td>Địa chỉ</td>
-                            <td>Nội dung</td>
-                            <td>11/16/2023</td>
-                            <td>
-                                <select name="id_lienhe" id="">
-                                    <option value="trangthai">Chưa phản hồi</option>
-                                    <option value="trangthai">Đã phản hồi</option>
-                                </select>
-                            </td>
-                        </tr>
+                        <?php
+                        foreach ($listlienhe as $lienhe) {
+                            
+                            extract($lienhe);
+                            $suatrangthai = "AdminController.php?act=sualh&idlh=" . $id_lienhe;
+                            echo
+                            '
+                                    <tr>
+                                        <td>' . $id_lienhe . '</td>
+                                        <td>' . $hovaten . '</td>
+                                        <td>' . $sdt . '</td>
+                                        <td>' . $email . '</td>
+                                        <td>' . $dia_chi_lienhe . '</td>
+                                        <td>' . $noi_dung_lienhe . '</td>
+                                        <td>' . $ngay_gui . '</td>
+                                        <td>
+                                        <a href="' . $suatrangthai . '"><input type="button" value="Sửa"> </a>
+                                        </td>
+                                    </tr>
+                                    ';
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
