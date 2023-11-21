@@ -1,38 +1,42 @@
 <div style="height: 840px;" class="content-wrapper">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Thêm mới tài khoản </h3>
+            <h3 class="card-title">Sửa tài khoản </h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
         <form method="POST" role="form" enctype="multipart/form-data" >
             <div class="card-body">
+               
+                <div class="form-group">
+                    <label for="">ID Tài Khoản  :<?php echo ' '.$idtk ?> </label>
+                </div>
                 <div class="form-group">
                     <label for="">Họ và tên </label>
-                    <input type="text" class="form-control" name="hovaten" placeholder="Nhập họ và tên " required>
+                    <input type="text" class="form-control" name="hovaten" value="<?php echo $list['hovaten']?>" placeholder="Nhập họ và tên " required>
                 </div>
                 <div class="form-group">
                     <label for="">Tài khoản  </label>
-                    <input type="text" class="form-control" name="tai_khoan" placeholder="Nhập tài khoản" required>
+                    <input type="text" class="form-control" name="tai_khoan" value="<?php echo $list['tai_khoan']?>" placeholder="Nhập tài khoản" required>
                 </div>
                 <div class="form-group">
                     <label for="">Mật khẩu</label>
-                    <input type="text" class="form-control" name="mat_khau" placeholder="Nhập mật khẩu" required>
+                    <input type="text" class="form-control" name="mat_khau" value="<?php echo $list['mat_khau']?>" placeholder="Nhập mật khẩu" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Nhập email" required>
+                    <input type="text" class="form-control" name="email" value="<?php echo $list['email']?>" placeholder="Nhập email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Sdt</label>
-                    <input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại" required>
+                    <input type="text" class="form-control" name="sdt" value="<?php echo $list['sdt']?>" placeholder="Nhập số điện thoại" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Địa chỉ </label>
-                    <input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ" required>
+                    <input type="text" class="form-control" name="dia_chi" value="<?php echo $list['dia_chi']?>" placeholder="Nhập địa chỉ" required>
                 </div>
 
 
@@ -47,7 +51,7 @@
                                 extract($role);
                                 echo
                                 '
-                                <option value="'.$id_vaitro.'">'.$ten_vaitro.'</option>
+                                <option >'.$ten_vaitro.'</option>
                                 ';
                             }
                         ?>
@@ -58,8 +62,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                <input class="btn btn-primary" name="themmoi" type="submit" value="Thêm mới">
-                <a href="AdminController.php?act=listtk"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
+                <input class="btn btn-primary" name="capnhat" type="submit" value="Cập Nhập">
                 </div>
 
         </form>

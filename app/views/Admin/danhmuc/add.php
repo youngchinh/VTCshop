@@ -5,20 +5,20 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form">
+        <form role="form" action="" method="POST">
             <div class="card-body">
                 <div class="form-group">
                     <label for="">Tên danh mục</label>
-                    <input type="text" class="form-control" id="tendanhmuc" placeholder="nhập tên">
+                    <input type="text" class="form-control" name="tendanhmuc" placeholder="nhập tên">
                 </div>
                 <div class="form-group">
                     <label for="">Mô tả danh mục</label>
-                    <input type="text" class="form-control" id="motadanhmuc" placeholder="nhập mô tả">
+                    <input type="text" class="form-control" name="motadanhmuc" placeholder="nhập mô tả">
             </div>
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Thêm Mới</button>
+                <button type="submit" name="themmoi" class="btn btn-primary">Thêm Mới</button>
             </div>
         </form>
     </div>

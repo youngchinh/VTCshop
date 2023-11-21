@@ -204,6 +204,13 @@
                                  <p>Logo</p>
                              </a>
                          </li>
+
+                         <li class="nav-item">
+                             <a href="AdminController.php?act=addlogo" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                                 <p>Thêm Mới</p>
+                             </a>
+                         </li>
                      </ul>
                  </li>
                  <!-- liên hệ -->
