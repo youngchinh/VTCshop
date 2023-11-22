@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" name="them">Thêm Mới</button>
+                   <input class="btn btn-primary" name="them" type="submit" value="Thêm mới">
                     <a href="AdminController.php?act=listlogo"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
         </form>

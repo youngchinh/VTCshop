@@ -25,7 +25,7 @@
                             <tbody>
                                 <tr>
                                     <td>'.$id_logo.'</td>
-                                    <td> <img width="100px" height="100px" src="'.$img_logo.'" alt=""></td>
+                                    <td> <img width="100px" height="100px" src="../upload/'.$img_logo.'" alt=""></td>
                                     <td>'.$ten_logo.'</td>
                                     <td>
                                         <a href="' . $suaht . '"><input type="button" value="Sửa"> </a>

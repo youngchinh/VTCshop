@@ -23,7 +23,10 @@
     }
 
     function update_taikhoan($idtk, $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro){
-        $sql = "UPDATE tb_taikhoan SET hovaten='$hovaten', tai_khoan='$tai_khoan', mat_khau='$mat_khau', email='$email', sdt='$sdt', dia_chi='$dia_chi', id_vaitro='$id_vaitro' WHERE id_taikhoan=".$idtk;
+        // $sql = "UPDATE tb_taikhoan SET hovaten='$hovaten', tai_khoan='$tai_khoan', mat_khau='$mat_khau', email='$email', sdt='$sdt', dia_chi='$dia_chi, id_vaitro='$id_vaitro'
+        //  WHERE id_taikhoan=".$idtk;
+
+        $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten', `tai_khoan` = '$tai_khoan',  `mat_khau` = '$mat_khau', `email` = '$email', `sdt` = '$sdt', `dia_chi` = '$dia_chi', `id_vaitro` = '$id_vaitro' WHERE `tb_taikhoan`.`id_taikhoan` = $idtk;";
         pdo_execute($sql);
     }
 
@@ -52,8 +55,19 @@
     }
 
 
+    function update_hethong($idht, $img_logo, $ten_logo){
+        if($img_logo != ''){
+            $sql = "UPDATE tb_hethong SET img_logo='$img_logo', ten_logo='$ten_logo' WHERE id_logo=".$idht;
+            pdo_execute($sql);
+        }else{
+            $sql = "UPDATE tb_hethong SET  ten_logo='$ten_logo' WHERE id_logo=".$idht;
+            pdo_execute($sql);
+        }
+    }
+
+
     function insert_hethong($img_logo, $ten_logo){
-        $sql = "INSERT INTO `tb_hethong`(`img_logo`, `ten_logo`) VALUES ('$img_logo', '$ten_logo');";
+        $sql = "INSERT INTO tb_hethong(img_logo, ten_logo) VALUES ('$img_logo', '$ten_logo');";
         pdo_execute($sql);
     }
 ?>

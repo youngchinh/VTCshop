@@ -22,7 +22,6 @@
                     </tdead>
 
                     <?php
-
                     foreach ($listtaikhoan as $taikhoan) {
                         extract($taikhoan);
                         $suatk = "AdminController.php?act=suatk&idtk=" . $id_taikhoan;

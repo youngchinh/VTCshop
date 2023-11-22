@@ -95,20 +95,29 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $idtk = $_GET['idtk'];
                 $sql = "SELECT * FROM tb_taikhoan WHERE id_taikhoan=".$idtk;
                 $list = pdo_query_one($sql);
-                if (isset($_POST['capnhat']) && $_POST['capnhat']){
-                    $hovaten = $_POST['hovaten'];
-                    $tai_khoan = $_POST['tai_khoan'];
-                    $mat_khau = $_POST['mat_khau'];
-                    $email = $_POST['email'];
-                    $sdt = $_POST['sdt'];
-                    $dia_chi = $_POST['dia_chi'];
-                    $id_vaitro = $_POST['id_vaitro'];
-                    update_taikhoan($idtk,$hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro);
-                }
+            }
+            $listrole = loadall_role();
+            include "../views/Admin/taikhoan/update.php";
+            break;
+
+        case "updatetk";
+            if (isset($_POST['capnhat']) && $_POST['capnhat']){
+                $idtk = $_POST['idtk'];
+                $hovaten = $_POST['hovaten'];
+                $tai_khoan = $_POST['tai_khoan'];
+                $mat_khau = $_POST['mat_khau'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $dia_chi = $_POST['dia_chi'];
+                $id_vaitro = $_POST['id_vaitro'];
+                update_taikhoan($idtk,$hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro);
+                $sql = "SELECT * FROM tb_taikhoan WHERE id_taikhoan=".$idtk;
+                $list = pdo_query_one($sql);
+                $thongbao = "Cập nhật thành công";
             }
             $listrole = loadall_role();
             $listtaikhoan = loadall_taikhoan();
-            include "../views/Admin/taikhoan/sua.php";
+            include "../views/Admin/taikhoan/update.php";
             break;
 
 
@@ -116,23 +125,23 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "listdh";
             include "../views/Admin/donhang/listdh.php";
             break;
+    
 
 
         // Hệ Thống
         case "listlogo";
             $listhethong = loadall_hethong();
-            include "../views/Admin/hethong/logo.php";
+            include "../views/Admin/hethong/listlogo.php";
             break;
 
 
         case "addlogo";
             if (isset($_POST['them']) && ($_POST['them'])) {
-                $ten_logo = $_POST['ten_logo'];
                 $img_logo = $_FILES['img_logo']['name'];
-                // $tmp_img = $_FILES['img_logo']['tmp_name'];
-                $target_dir ="../upload/";
-                $target_file = $target_dir . basename( $_FILES['img_logo']['name']);
-                move_uploaded_file( $_FILES['img_logo']['tmp_name'], $target_file );
+                $ten_logo = $_POST['ten_logo'];
+                $tmp_img = $_FILES['img_logo']['tmp_name'];
+                $target_dir = "../upload/";
+                move_uploaded_file($tmp_img,$target_dir.$img_logo);
                 insert_hethong($img_logo, $ten_logo);
             }
             include "../views/Admin/hethong/add.php";
@@ -153,14 +162,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $idht = $_GET['idht'];
                 $sql = "SELECT * FROM tb_hethong WHERE id_logo=".$idht;
                 $list = pdo_query_one($sql);
-                if (isset($_POST['capnhat']) && $_POST['capnhat']){
-                    $img_logo = $_POST['anh'];
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                    $img_logo = $_FILES['img_logo']['name'];
                     $ten_logo = $_POST['ten_logo'];
-                    insert_hethong($img_logo, $ten_logo);
+                  
+                    update_hethong($idht, $img_logo, $ten_logo);
                 }
             }
             $listhethong = loadall_hethong();
-            include "../views/Admin/hethong/sua.php";
+            include "../views/Admin/hethong/update.php";
             break;
 
         // Liên Hệ
