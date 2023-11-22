@@ -29,4 +29,15 @@ function uploadall_donhang(){
     return $listdonhang;
 }
 
+function update_donhang($id_donhang,$don_gia,$trang_thai,$ten_sanpham){
+    if($id_donhang != ""){
+
+        $sql = "UPDATE `tb_donhang` SET `don_gia` = '$don_gia', `trang_thai` = '$trang_thai',  `ten_sanpham` = '$ten_sanpham' WHERE `tb_donhang`.`id_donhang` = $id_donhang;";
+    } else{
+        $sql = "UPDATE `tb_donhang` SET `don_gia` = '$don_gia', `trang_thai` = '$trang_thai',  `ten_sanpham` = '$ten_sanpham' WHERE `tb_donhang`.`id_donhang` = $id_donhang;";
+    }
+    pdo_execute($sql);
+}
+
+
 ?>

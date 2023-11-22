@@ -21,12 +21,11 @@
                             $suadh = "AdminController.php?act=suadh&iddh=" . $id_donhang;
                             $xoadh = "AdminController.php?act=xoadh&iddh=" . $id_donhang;
                             echo ' <tr>
-                                <td>' . $id_donhang . '</td>
-                                <td>' . $don_gia . '</td>
-                                <td>' . $trang_thai . '</td>
-                                <td>' . $ten_sanpham . '</td>
+                                <td>'. $id_donhang .'</td>
+                                <td>'. $don_gia .'</td>
+                                <td>'. $trang_thai .'</td>
+                                <td>'. $ten_sanpham .'</td>
                                 <td>
-                                    <a href="' . $suadh . '"><input type="button" value="Sửa"> </a>
                                     <a href="' . $xoadh . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                 </td>
                             </tr>';
