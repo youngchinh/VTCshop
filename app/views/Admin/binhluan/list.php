@@ -11,25 +11,37 @@
                             <th>id</th>
                             <th>Nội dung</th>
                             <th>Ngày bình luận</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Tên tài khoản</th>
-                            <th>Thêm</th>
-                            <th>Sửa </th>
-                            <th>Sóa</th>
+                            <th>ID sản phẩm</th>
+                            <th>ID tài khoản</th>
+                            <th>Thao Tác</th>
                         </tr>
                     </tdead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Nội dung</td>
-                            <td>Ngày bình luận</td>
-                            <td>Tên sản phẩm</td>
-                            <td>Tên tài khoản</td>
-                            <td>Thêm</td>
-                            <td>Sửa </td>
-                            <td>Sóa</td>
-                        </tr>
-                    </tbody>
+                    <?php
+                    foreach ($listbinhluan as $binhluan) {
+                        extract($binhluan);
+                        $xoabl = "AdminController.php?act=xoabl&idbl=".$id_binhluan;
+                        echo
+                        '
+                            <tdead class="thead-drank">
+                                <tr>
+                                    <td>' . $id_binhluan . '</td>
+                                    <td>' . $noi_dung_binhluan . '</td>
+                                    <td>' . $ngay_binh_luan . '</td>
+                                    <td>' . $id_sanpham . '</td>
+                                    <td>' . $id_taikhoan . '</td>
+                                    <td>
+                                        <a href=" '.$xoabl.' "><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                    </td>
+                                </tr>
+                              </tdead>
+                            ';
+                    }
+                    ?>
+
+
+                        
+                       
+                    
                 </table>
             </div>
             <div class="card-footer text-muted">

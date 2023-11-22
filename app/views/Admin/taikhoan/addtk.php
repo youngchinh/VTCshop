@@ -5,46 +5,52 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form method="POST" role="form" enctype="multipart/form-data">
+        <form method="POST" role="form" enctype="multipart/form-data" >
             <div class="card-body">
                 <div class="form-group">
                     <label for="">Họ và tên </label>
-                    <input type="text" class="form-control" name="hovaten" placeholder="Nhập họ và tên ">
+                    <input type="text" class="form-control" name="hovaten" placeholder="Nhập họ và tên " required>
                 </div>
                 <div class="form-group">
                     <label for="">Tài khoản  </label>
-                    <input type="text" class="form-control" name="tai_khoan" placeholder="Nhập tài khoản ">
+                    <input type="text" class="form-control" name="tai_khoan" placeholder="Nhập tài khoản" required>
                 </div>
                 <div class="form-group">
                     <label for="">Mật khẩu</label>
-                    <input type="text" class="form-control" name="mat_khau" placeholder="Nhập mật khẩu">
+                    <input type="text" class="form-control" name="mat_khau" placeholder="Nhập mật khẩu" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Nhập email">
+                    <input type="text" class="form-control" name="email" placeholder="Nhập email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Sdt</label>
-                    <input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại">
+                    <input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Địa chỉ </label>
-                    <input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ">
+                    <input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ" required>
                 </div>
+
+
 
                 <div class="form-group">
                     <label for="">Tên vai trò </label>
-                    <input type="text" class="form-control" name="ten_vaitro" placeholder="Nhập tên vai trò">
-                </div>
-
-                <div class="form-group">
-                    <label for="">name vai trò </label>
-                    <select id ="id_vaitro" class="form-group" id="">
-                        <!-- <option value="">Khách hàng </option> -->
-                      
+                    <select name="id_vaitro" class="form-group" id="">
+                        <!-- <option value="1">Khách hàng </option>
+                        <option value="2">Admin </option> -->
+                        <?php 
+                            foreach ($listrole as $role){
+                                extract($role);
+                                echo
+                                '
+                                <option value="'.$id_vaitro.'">'.$ten_vaitro.'</option>
+                                ';
+                            }
+                        ?>
                     </select>
                    
                 </div>
@@ -52,14 +58,10 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" name="themmoi" class="btn btn-primary">Thêm Mới</button>
+                <input class="btn btn-primary" name="themmoi" type="submit" value="Thêm mới">
+                <a href="AdminController.php?act=listtk"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
 
-                <?php 
-                    if( isset($thongbao) && ($thongbao) != '' ){
-                        echo $thongbao;
-                    }
-                ?>
         </form>
     </div>
 </div>
