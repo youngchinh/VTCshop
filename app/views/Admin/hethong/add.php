@@ -28,6 +28,12 @@
                    <input class="btn btn-primary" name="them" type="submit" value="Thêm mới">
                     <a href="AdminController.php?act=listlogo"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
+                <?php
+                if (isset($thongbao) && ($thongbao != "")) {
+                    echo $thongbao;
+                }
+                ?>
+
         </form>
     </div>
 </div>

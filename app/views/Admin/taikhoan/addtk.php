@@ -61,7 +61,11 @@
                 <input class="btn btn-primary" name="themmoi" type="submit" value="Thêm mới">
                 <a href="AdminController.php?act=listtk"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
-
+                <?php
+              if(isset($thongbao)&& ($thongbao!="")){
+                  echo $thongbao;
+              }
+              ?> 
         </form>
     </div>
 </div>

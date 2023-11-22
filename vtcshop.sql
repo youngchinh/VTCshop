@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2023 lúc 10:00 AM
+-- Thời gian đã tạo: Th10 22, 2023 lúc 02:20 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -94,6 +94,16 @@ CREATE TABLE `tb_danhmuc` (
   `mota_danhmuc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `tb_danhmuc`
+--
+
+INSERT INTO `tb_danhmuc` (`id_danhmuc`, `ten_danhmuc`, `mota_danhmuc`) VALUES
+(1, 'Iphone', 'các sản phẩm về iphone'),
+(2, 'SamSung', 'các loại điện thoại SamSung'),
+(10, 'OPPO', 'Các loại sản phẩm về OPPO'),
+(11, 'NOKIA', 'Các loại sản phẩm về NOKIA');
+
 -- --------------------------------------------------------
 
 --
@@ -133,8 +143,16 @@ CREATE TABLE `tb_lienhe` (
   `dia_chi_lienhe` text NOT NULL,
   `ngay_gui` date NOT NULL,
   `noi_dung_lienhe` text NOT NULL,
-  `trang_thai` varchar(255) NOT NULL
+  `trang_thai` varchar(255) NOT NULL,
+  `id_trangthai` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_lienhe`
+--
+
+INSERT INTO `tb_lienhe` (`id_lienhe`, `hovaten`, `sdt`, `email`, `dia_chi_lienhe`, `ngay_gui`, `noi_dung_lienhe`, `trang_thai`, `id_trangthai`) VALUES
+(1, 'chinh', 12331231, 'chinh@gmail.com', 'hanoi', '2023-11-09', 'dadadada', '', 1);
 
 -- --------------------------------------------------------
 
@@ -162,10 +180,18 @@ CREATE TABLE `tb_sanpham` (
   `mau_sanpham` varchar(255) NOT NULL,
   `gia_ban_dau` int(10) NOT NULL,
   `gia_khuyen_mai` int(10) NOT NULL,
-  `dung_luong` int(10) NOT NULL,
+  `dung_luong` varchar(255) NOT NULL,
   `so_luong` int(10) NOT NULL,
+  `trang_thai` varchar(255) NOT NULL,
   `id_danhmuc` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_sanpham`
+--
+
+INSERT INTO `tb_sanpham` (`id_sanpham`, `ten_sanpham`, `img_sanpham`, `mota_sanpham`, `mau_sanpham`, `gia_ban_dau`, `gia_khuyen_mai`, `dung_luong`, `so_luong`, `trang_thai`, `id_danhmuc`) VALUES
+(3, 'iphone1', 'iphone15.jpg', 'da1', 'da1', 122, 213, '213', 21, 'com1', 1);
 
 -- --------------------------------------------------------
 
@@ -184,6 +210,25 @@ CREATE TABLE `tb_taikhoan` (
   `ten_vaitro` varchar(255) NOT NULL,
   `id_vaitro` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tb_trangthai_lienhe`
+--
+
+CREATE TABLE `tb_trangthai_lienhe` (
+  `id_trangthai` int(10) NOT NULL,
+  `ten_trangthai` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_trangthai_lienhe`
+--
+
+INSERT INTO `tb_trangthai_lienhe` (`id_trangthai`, `ten_trangthai`) VALUES
+(1, 'Đã phản hồi'),
+(2, 'Chưa phản hồi');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -240,7 +285,8 @@ ALTER TABLE `tb_hethong`
 -- Chỉ mục cho bảng `tb_lienhe`
 --
 ALTER TABLE `tb_lienhe`
-  ADD PRIMARY KEY (`id_lienhe`);
+  ADD PRIMARY KEY (`id_lienhe`),
+  ADD KEY `lk_lienhe_trangthai` (`id_trangthai`);
 
 --
 -- Chỉ mục cho bảng `tb_role`
@@ -261,6 +307,12 @@ ALTER TABLE `tb_sanpham`
 ALTER TABLE `tb_taikhoan`
   ADD PRIMARY KEY (`id_taikhoan`),
   ADD KEY `lk_taikhoan_role` (`id_vaitro`);
+
+--
+-- Chỉ mục cho bảng `tb_trangthai_lienhe`
+--
+ALTER TABLE `tb_trangthai_lienhe`
+  ADD PRIMARY KEY (`id_trangthai`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -294,7 +346,7 @@ ALTER TABLE `tb_chitietdonhang`
 -- AUTO_INCREMENT cho bảng `tb_danhmuc`
 --
 ALTER TABLE `tb_danhmuc`
-  MODIFY `id_danhmuc` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_danhmuc` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_donhang`
@@ -312,7 +364,7 @@ ALTER TABLE `tb_hethong`
 -- AUTO_INCREMENT cho bảng `tb_lienhe`
 --
 ALTER TABLE `tb_lienhe`
-  MODIFY `id_lienhe` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lienhe` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_role`
@@ -324,13 +376,19 @@ ALTER TABLE `tb_role`
 -- AUTO_INCREMENT cho bảng `tb_sanpham`
 --
 ALTER TABLE `tb_sanpham`
-  MODIFY `id_sanpham` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sanpham` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_taikhoan`
 --
 ALTER TABLE `tb_taikhoan`
   MODIFY `id_taikhoan` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `tb_trangthai_lienhe`
+--
+ALTER TABLE `tb_trangthai_lienhe`
+  MODIFY `id_trangthai` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -350,6 +408,12 @@ ALTER TABLE `tb_chitietdonhang`
   ADD CONSTRAINT `lk_chitietdonhang_donhang` FOREIGN KEY (`id_donhang`) REFERENCES `tb_donhang` (`id_donhang`),
   ADD CONSTRAINT `lk_chitietdonhang_sanpham` FOREIGN KEY (`id_sanpham`) REFERENCES `tb_sanpham` (`id_sanpham`),
   ADD CONSTRAINT `lk_chitietdonhang_taikhoan` FOREIGN KEY (`id_taikhoan`) REFERENCES `tb_taikhoan` (`id_taikhoan`);
+
+--
+-- Các ràng buộc cho bảng `tb_lienhe`
+--
+ALTER TABLE `tb_lienhe`
+  ADD CONSTRAINT `lk_lienhe_trangthai` FOREIGN KEY (`id_trangthai`) REFERENCES `tb_trangthai_lienhe` (`id_trangthai`);
 
 --
 -- Các ràng buộc cho bảng `tb_sanpham`

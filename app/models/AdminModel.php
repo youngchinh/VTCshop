@@ -1,77 +1,4 @@
 
-<?php 
-
-    function loadall_taikhoan(){
-        $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
-        $listtaikhoan = pdo_query($sql);
-        return $listtaikhoan;
-    }
-
-    function loadall_role (){
-        $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
-        $listrole = pdo_query($sql);
-        return $listrole;
-    }
-
-
-
-
-    function insert_taikhoan( $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro){
-        $sql = "INSERT INTO tb_taikhoan(hovaten, tai_khoan, mat_khau, email, sdt, dia_chi, id_vaitro) VALUES ('$hovaten', '$tai_khoan', '$mat_khau', '$email', '$sdt', '$dia_chi', '$id_vaitro')";
-        pdo_execute($sql);
-    }
-
-    function update_taikhoan($idtk, $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro){
-        // $sql = "UPDATE tb_taikhoan SET hovaten='$hovaten', tai_khoan='$tai_khoan', mat_khau='$mat_khau', email='$email', sdt='$sdt', dia_chi='$dia_chi, id_vaitro='$id_vaitro'
-        //  WHERE id_taikhoan=".$idtk;
-
-        $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten', `tai_khoan` = '$tai_khoan',  `mat_khau` = '$mat_khau', `email` = '$email', `sdt` = '$sdt', `dia_chi` = '$dia_chi', `id_vaitro` = '$id_vaitro' WHERE `tb_taikhoan`.`id_taikhoan` = $idtk;";
-        pdo_execute($sql);
-    }
-
-
-    //Bình Luận
-    function loadall_binhluan(){
-        $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan";
-        $listbinhluan = pdo_query($sql);
-        return $listbinhluan;
-    }
-
-    //Sản Phẩm
-    function loadall_sanpham(){
-        $sql = "SELECT * FROM tb_sanpham ORDER BY id_sanpham";
-        $listsanpham = pdo_query($sql);
-        return $listsanpham;
-    } 
-   
-
-
-    //Hệ Thống
-    function loadall_hethong(){
-        $sql = "SELECT * FROM tb_hethong ORDER BY id_logo";
-        $listhethong = pdo_query($sql);
-        return $listhethong;
-    }
-
-
-    function update_hethong($idht, $img_logo, $ten_logo){
-        if($img_logo != ''){
-            $sql = "UPDATE tb_hethong SET img_logo='$img_logo', ten_logo='$ten_logo' WHERE id_logo=".$idht;
-            pdo_execute($sql);
-        }else{
-            $sql = "UPDATE tb_hethong SET  ten_logo='$ten_logo' WHERE id_logo=".$idht;
-            pdo_execute($sql);
-        }
-    }
-
-
-    function insert_hethong($img_logo, $ten_logo){
-        $sql = "INSERT INTO tb_hethong(img_logo, ten_logo) VALUES ('$img_logo', '$ten_logo');";
-        pdo_execute($sql);
-    }
-?>
-=======
-
 <?php
 include "/xampp/htdocs/VTCshop/config.php";
 // Danh Mục
@@ -145,7 +72,7 @@ function delete_sanpham($idsp)
 // phản hồi
 function loadall_lienhe($keyword = "", $id_trangthai = 0)
 {
-    $sql = "SELECT * from tb_lienhe where trangthai = 0";
+    $sql = "SELECT * from tb_lienhe where trang_thai = 0";
     // where 1 tức là nó đúng
     if ($keyword != "") {
         $sql .= " AND hovaten LIKE '%" . $keyword . "%'";
@@ -174,6 +101,68 @@ function loadone_lienhe($idlh)
 
 function update_trangthai_lienhe($id, $id_trangthai) {
     $sql =  $sql = "UPDATE `tb_lienhe` SET `id_trangthai` = '$id_trangthai'  WHERE `tb_lienhe`.`id_lienhe` = $id;";
+    pdo_execute($sql);
+}
+
+
+function loadall_taikhoan(){
+    $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}
+
+function loadall_role (){
+    $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
+    $listrole = pdo_query($sql);
+    return $listrole;
+}
+
+
+
+
+function insert_taikhoan( $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro){
+    $sql = "INSERT INTO tb_taikhoan(hovaten, tai_khoan, mat_khau, email, sdt, dia_chi, id_vaitro) VALUES ('$hovaten', '$tai_khoan', '$mat_khau', '$email', '$sdt', '$dia_chi', '$id_vaitro')";
+    pdo_execute($sql);
+}
+
+function update_taikhoan($idtk, $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_vaitro){
+    // $sql = "UPDATE tb_taikhoan SET hovaten='$hovaten', tai_khoan='$tai_khoan', mat_khau='$mat_khau', email='$email', sdt='$sdt', dia_chi='$dia_chi, id_vaitro='$id_vaitro'
+    //  WHERE id_taikhoan=".$idtk;
+
+    $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten', `tai_khoan` = '$tai_khoan',  `mat_khau` = '$mat_khau', `email` = '$email', `sdt` = '$sdt', `dia_chi` = '$dia_chi', `id_vaitro` = '$id_vaitro' WHERE `tb_taikhoan`.`id_taikhoan` = $idtk;";
+    pdo_execute($sql);
+}
+
+
+//Bình Luận
+function loadall_binhluan(){
+    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan";
+    $listbinhluan = pdo_query($sql);
+    return $listbinhluan;
+}
+
+
+//Hệ Thống
+function loadall_hethong(){
+    $sql = "SELECT * FROM tb_hethong ORDER BY id_logo";
+    $listhethong = pdo_query($sql);
+    return $listhethong;
+}
+
+
+function update_hethong($idht, $img_logo, $ten_logo){
+    if($img_logo != ''){
+        $sql = "UPDATE tb_hethong SET img_logo='$img_logo', ten_logo='$ten_logo' WHERE id_logo=".$idht;
+        pdo_execute($sql);
+    }else{
+        $sql = "UPDATE tb_hethong SET  ten_logo='$ten_logo' WHERE id_logo=".$idht;
+        pdo_execute($sql);
+    }
+}
+
+
+function insert_hethong($img_logo, $ten_logo){
+    $sql = "INSERT INTO tb_hethong(img_logo, ten_logo) VALUES ('$img_logo', '$ten_logo');";
     pdo_execute($sql);
 }
 

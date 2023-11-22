@@ -1,4 +1,4 @@
-
+<div style="height: 840px;" class="content-wrapper">
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
@@ -43,3 +43,4 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </div>
+ </div>

@@ -33,9 +33,13 @@
                     <th><a href="AdminController.php?act=addlogo"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                     <a href="AdminController.php?act=listlogo"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
-        </form>
-        <?php
+                <?php
+                if (isset($thongbao) && ($thongbao != "")) {
+                    echo $thongbao;
+                }
+                ?>
 
-        ?>
+        </form>
+       
     </div>
 </div>

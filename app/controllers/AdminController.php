@@ -253,6 +253,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $target_dir = "../upload/";
                 move_uploaded_file($tmp_img,$target_dir.$img_logo);
                 insert_hethong($img_logo, $ten_logo);
+                $thongbao = "Cập nhật thành công";
             }
             include "../views/Admin/hethong/add.php";
             break;
@@ -286,22 +287,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         // Liên Hệ
 
-        case "listtk";
-            include "../views/Admin/taikhoan/list.php";
-            break;
-
-        case "addtk";
-            include "../views/Admin/taikhoan/addtk.php";
-            break;
-
-        case "listdh";
-            include "../views/Admin/donhang/listdh.php";
-            break;
-
-        case "listlogo";
-            include "../views/Admin/hethong/logo.php";
-            break;
-
+       
         case "listlh";
             if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
                 $keyword = $_POST['keyword'];

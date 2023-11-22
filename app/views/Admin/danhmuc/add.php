@@ -3,17 +3,6 @@
         <div class="card-header">
             <h3 class="card-title">Thêm mới danh mục</h3>
         </div>
-        <!-- /.card-header -->
-        <!-- form start -->
-        <form role="form" action="" method="POST">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="">Tên danh mục</label>
-                    <input type="text" class="form-control" name="tendanhmuc" placeholder="nhập tên">
-                </div>
-                <div class="form-group">
-                    <label for="">Mô tả danh mục</label>
-                    <input type="text" class="form-control" name="motadanhmuc" placeholder="nhập mô tả">
         <form action="AdminController.php?act=adddm" method="POST" role="form">
             <div class="card-body">
                 <div class="form-group">
