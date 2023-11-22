@@ -6,27 +6,39 @@
             </div>
             <div class="card-body">
                 <table class="table">
-                    <tdead class="thead-drank">
+                    <thead class="thead-drank">
                         <tr>
                             <th>id</th>
                             <th>Tiêu đề</th>
                             <th>Ảnh</th>
                             <th>Nội dung</th>
-                            <th>Thêm</th>
-                            <th>Sửa</th>
-                            <th>Xóa</th>
                         </tr>
-                    </tdead>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Tiêu đề</td>
-                            <td>Ảnh</td>
-                            <td>Nội dung</td>
-                            <td>tdêm</td>
-                            <td>Sửa</td>
-                            <td>Xóa</td>
-                        </tr>
+                        <?php
+                        foreach ($listbaiviet as $baiviet) {
+                            extract($baiviet);
+                            $suabv="AdminController.php?act=suabv&id_baiviet=".$id_baiviet;
+                            $xoabv="AdminController.php?act=xoabv&id_baiviet=".$id_baiviet;
+                            $imgpath = "../upload/" . $img_baiviet;
+                            if (is_file($imgpath)) {
+                                $imgpath = "<img src= '" . $imgpath . "' width='100px' height='100px'>";
+                            } else {
+                                $imgpath = "No file img!";
+                            }
+                            echo ' <tr>
+                                <td> '.$id_baiviet.' </td>
+                                <td> '.$tieu_de.' </td>
+                                <td><img height=100px with=100px src="../upload/'.$img_baiviet.'" alt=""></td>
+                                <td> '.$noi_dung.' </td>
+                                <td>
+                                    <a href="' . $suabv . '"><input type="button" value="Sửa"> </a>
+                                    <a href="' . $xoabv . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                </td>
+                                <th><a href="AdminController.php?act=addbv"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
+                            </tr>';
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
