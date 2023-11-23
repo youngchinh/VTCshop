@@ -30,17 +30,19 @@
                                     <th>Địa chỉ</th>
                                     <th>Nội dung</th>
                                     <th>Ngày gửi</th>
+                                    <th>Trạng Thái</th>
                                 </tr>
                             </tdead>
-                            <tbody>
-                                <?php
-                                foreach ($listlienhe as $lienhe) {
-                                    is_array($listtrangthai);
-                                    extract($listtrangthai);
-                                    extract($lienhe);
-                                    $suatrangthai = "AdminController.php?act=sualh&idlh=" . $id_lienhe;
-                                    echo
-                                    '
+
+                            <?php
+                            foreach ($listlienhe as $lienhe) {
+                                is_array($listtrangthai);
+                                extract($listtrangthai);
+                                extract($lienhe);
+                                $suatrangthai = "AdminController.php?act=sualh&idlh=" . $id_lienhe;
+                                echo
+                                '
+                                    <tbody>
                                     <tr>
                                         <td>' . $id_lienhe . '</td>
                                         <td>' . $hovaten . '</td>
@@ -48,16 +50,24 @@
                                         <td>' . $email . '</td>
                                         <td>' . $dia_chi_lienhe . '</td>
                                         <td>' . $noi_dung_lienhe . '</td>
-                                        <td>' . $ngay_gui . '</td>
+                                        <td>' . $ngay_gui . '</td>';
+                                $sql = "SELECT * FROM tb_trangthai_lienhe WHERE id_trangthai=" . $id_trangthai;
+                                $trangthai = pdo_query($sql);
+                                foreach ($trangthai as $value) {
+                                    extract($value);
+                                    echo
+                                    '
+                                        <td>' . $ten_trangthai . '</td>
                                         <td>
                                         <a href="' . $suatrangthai . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
                                         </td>
                                     </tr>
+                                    </tbody>
                                     ';
                                 }
-                                ?>
-                            <tbody>
-                            </table>
+                            }
+                            ?>
+                        </table>
                     </div>
             </div>
 

@@ -7,8 +7,6 @@ if ((isset($_POST['dangnhap']))) {
     // $thongbao = "Đăng nhập thành công";
 
     $taikhoan = get_taikhoan_tk_mk($tai_khoan, $mat_khau);
-
-
         extract($taikhoan);
         if($id_vaitro == 1) {
             $_SESSION['admin'] = 1;

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header('location: ../views/Admin/login.php');
+} else {
+    $tai_khoan = $_SESSION['tai_khoan'];
+    $mat_khau = $_SESSION['mat_khau'];
+}
+?>
+
 <!-- điều hướng luồng hoạt động của trang admin -->
 <!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php
