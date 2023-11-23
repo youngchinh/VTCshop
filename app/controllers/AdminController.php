@@ -1,12 +1,3 @@
-<?php 
-    session_start();
-    if (!isset($_SESSION['admin'])) {
-        header('location: ../views/Admin/login.php');
-    } else {
-        $tai_khoan =$_SESSION['tai_khoan'];
-        $mat_khau = $_SESSION['mat_khau'];
-    }
-?>
 <!-- điều hướng luồng hoạt động của trang admin -->
 <!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php
@@ -205,6 +196,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case "updatebv";
+
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id_baiviet = $_POST['id_baiviet'];
                 $tenbaiviet = $_POST['tenbaiviet'];
@@ -216,7 +208,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                 }
                 update_baiviet($id_baiviet, $tenbaiviet, $filename, $noidungbaiviet);
-                $thongbao = "Thêm Thành Công";
             }
             $sql = "SELECT * FROM tb_baiviet WHERE id_baiviet=" . $id_baiviet;
             $bv = pdo_query_one($sql);
@@ -238,7 +229,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         // Tài Khoản
         case "listtk";
-            $listtaikhoan = loadall_taikhoan();
+            if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
+                $keyword = $_POST['keyword'];
+                $id_vaitro = $_POST['id_vaitro'];
+            } else {
+                $keyword = "";
+                $id_vaitro = 0;
+            }
+            $listtaikhoan = loadall_taikhoan_list($keyword, $id_vaitro);
             $listrole = loadall_role();
             include "../views/Admin/taikhoan/list.php";
             break;
@@ -408,10 +406,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listlienhe = loadall_lienhe();
             include "../views/Admin/phanhoi/update.php";
             break;
-
     }
-   
-
 }
 
 

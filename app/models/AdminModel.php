@@ -111,11 +111,26 @@ function loadall_taikhoan(){
     return $listtaikhoan;
 }
 
+function loadall_taikhoan_list($keyword= "" , $id_vaitro = 0){
+    $sql = "SELECT * from tb_taikhoan WHERE trangthai = 0 ";
+    // where 1 tức là nó đúng
+    if ($keyword != "") {
+        $sql .= " AND hovaten LIKE '%" . $keyword . "%'";
+    }
+    if ($id_vaitro > 0) {
+        $sql .= " AND id_vaitro ='" . $id_vaitro . "'";
+    }
+    $sql .= " ORDER BY id_vaitro DESC";
+    //$sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}
+
 function loadall_role (){
     $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
     $listrole = pdo_query($sql);
     return $listrole;
-    
+
 }
 
 
