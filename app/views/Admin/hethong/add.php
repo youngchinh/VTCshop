@@ -11,7 +11,7 @@
                     <label for="">Ảnh Logo</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="img_logo" id="exampleInputFile">
+                            <input type="file" class="custom-file-input" name="img_logo" id="exampleInputFile"  required>
                             <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="">Tên Logo</label>
-                    <input type="text" class="form-control" name="ten_logo" placeholder="Nhập tên logo">
+                    <input type="text" class="form-control" name="ten_logo" placeholder="Nhập tên logo" required>
                 </div>
                
                 <!-- /.card-body -->

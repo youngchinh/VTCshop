@@ -30,7 +30,7 @@
                                     <td>' . $id_sanpham . '</td>
                                     <td>' . $id_taikhoan . '</td>
                                     <td>
-                                        <a href=" '.$xoabl.' "><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                        <a href=" '.$xoabl.' "><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                     </td>
                                 </tr>
                               </tdead>
