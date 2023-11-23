@@ -3,7 +3,7 @@
      <!-- Brand Logo -->
      <a href="AdminController.php" class="brand-link">
          <img src="../views/Admin/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-         <span class="brand-text font-weight-light">ADMIN</span>
+         <span class="brand-text font-weight-light"><?=$tai_khoan?></span>
      </a>
 
      <!-- Sidebar -->
@@ -14,7 +14,10 @@
                  <img src="../views/Admin/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
              </div>
              <div class="info">
-                 <a href="#" class="d-block">Admin</a>
+                 <a href=".././views/Admin/logout.php" class="d-block">
+                    Đăng Xuất
+                    <i class="far fa-sign-out-alt"></i>
+                </a>
              </div> 
          </div>
 

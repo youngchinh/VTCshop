@@ -26,8 +26,8 @@
                                         <td>'   .$ten_danhmuc .    '</td>
                                         <td>'   .$mota_danhmuc.    '</td>
                                         <td>
-                                            <a href="'.$suadm.'"><input type="button" value="Sửa"> </a>
-                                            <a href="'.$xoadm.'"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                            <a href="'.$suadm.'"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
+                                            <a href="'.$xoadm.'"><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                         </td>
                             
                                     </tr>   

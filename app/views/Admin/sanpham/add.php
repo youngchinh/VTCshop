@@ -9,50 +9,50 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="ten_sanpham" placeholder="nhập tên">
+                    <input type="text" class="form-control" name="ten_sanpham" placeholder="nhập tên" required>
                 </div>
                 <div class="form-group">
                     <label for="">Ảnh sản phẩm</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input class="custom-file-label" type="file" name="img_sanpham">
+                            <input class="custom-file-label" type="file" name="img_sanpham" required>
                             <label  for="exampleInputFile">Chọn file</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Mô tả sản phẩm</label>
-                    <input type="text" class="form-control" name="mota_sanpham" placeholder="nhập mô tả">
+                    <input type="text" class="form-control" name="mota_sanpham" placeholder="nhập mô tả" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Màu sản phẩm</label>
-                    <input type="text" class="form-control" name="mau_sanpham" placeholder="Nhập màu sản phẩm">
+                    <input type="text" class="form-control" name="mau_sanpham" placeholder="Nhập màu sản phẩm" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Giá ban đầu</label>
-                    <input type="text" class="form-control" name="gia_ban_dau" placeholder="Nhập giá sản phẩm">
+                    <input type="text" class="form-control" name="gia_ban_dau" placeholder="Nhập giá sản phẩm" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Giá Khuyến mãi</label>
-                    <input type="text" class="form-control" name="gia_khuyen_mai" placeholder="Nhập giá sản phẩm">
+                    <input type="text" class="form-control" name="gia_khuyen_mai" placeholder="Nhập giá sản phẩm" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Dung Lượng</label>
-                    <input type="text" class="form-control" name="dung_luong" placeholder="Nhập giá dung lượng">
+                    <input type="text" class="form-control" name="dung_luong" placeholder="Nhập giá dung lượng" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Số lượng</label>
-                    <input type="number" min="0" max="100" class="form-control" name="so_luong" placeholder="Nhập số lượng">
+                    <input type="number" min="0" max="100" class="form-control" name="so_luong" placeholder="Nhập số lượng" required>
                 </div>
 
                 <div class="form-group">
                     <label for="">Trạng thái</label>
-                    <input type="text" class="form-control" name="trang_thai" placeholder="Nhập giá trạng thái">
+                    <input type="text" class="form-control" name="trang_thai" placeholder="Nhập giá trạng thái" required>
                 </div>
 
                 <div class="form-group">

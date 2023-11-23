@@ -28,7 +28,6 @@
                             <th>Email</th>
                             <th>Sdt</th>
                             <th>Địa chỉ</th>
-                            <th>id vai trò </th>
                             <th>Tên vai trò </th>
                             <th><a href="AdminController.php?act=addtk"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                         </tr>
@@ -51,7 +50,6 @@
                                 <td>' . $email . '</td>
                                 <td>' . $sdt . '</td>
                                 <td>' . $dia_chi . '</td>
-                                <td>' . $id_vaitro . '</td>
                        ';
 
                         $sql = "SELECT * FROM tb_role WHERE id_vaitro=" . $id_vaitro;
@@ -59,11 +57,11 @@
                         foreach ($vaitro as $value) {
                             extract($value);
                             echo '
-                                   <td>' . $ten_vaitro . '</td>
-                                   <td>
-                                       <a href="' . $suatk . '"><input type="button" value="Sửa"> </a>
-                                       <a href="' . $xoatk . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
-                                   </td>
+                                <td>' . $ten_vaitro . '</td>
+                                <td>
+                                   <a href="' . $suatk . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
+                                   <a href="' . $xoatk . '"><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                               </td>
                                </tr>
                              </tbody>
                            ';

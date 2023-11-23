@@ -63,8 +63,8 @@
                                 <td>' . $so_luong . '</td>
                                 <td>' . $trang_thai . '</td>
                                 <td>
-                                    <a href="' . $suasp . '"><input type="button" value="Sửa"> </a>
-                                    <a href="' . $xoasp . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                    <a href="' . $suasp . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
+                                    <a href="' . $xoasp . '"><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                 </td>
                             </tr>
                             ';

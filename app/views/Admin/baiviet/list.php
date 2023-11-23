@@ -1,3 +1,8 @@
+<style>
+    td input {
+        border-radius: 5px;
+    }
+</style>
 <div style="height: 840px;" class="content-wrapper">
     <div class="container-fluid">
         <div class="card">
@@ -12,6 +17,7 @@
                             <th>Tiêu đề</th>
                             <th>Ảnh</th>
                             <th>Nội dung</th>
+                            <th><a href="AdminController.php?act=addbv"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,10 +38,9 @@
                                 <td><img height=100px with=100px src="../upload/'.$img_baiviet.'" alt=""></td>
                                 <td> '.$noi_dung.' </td>
                                 <td>
-                                    <a href="' . $suabv . '"><input type="button" value="Sửa"> </a>
-                                    <a href="' . $xoabv . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                    <a href="' . $suabv . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
+                                    <a href="' . $xoabv . '"><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                 </td>
-                                <th><a href="AdminController.php?act=addbv"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                             </tr>';
                         }
                         ?>
@@ -49,3 +54,5 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </div>
+style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;"
+style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;"
