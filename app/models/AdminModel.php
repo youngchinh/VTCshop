@@ -115,6 +115,7 @@ function loadall_role (){
     $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
     $listrole = pdo_query($sql);
     return $listrole;
+    
 }
 
 
@@ -192,4 +193,5 @@ function update_baiviet($id_baiviet,$tenbaiviet,$filename,$noidungbaiviet){
     } else{
         $sql = "UPDATE `tb_baiviet` SET `tieu_de` = '$tenbaiviet', `noi_dung` = '$noidungbaiviet' WHERE `tb_baiviet`.`id_baiviet` = $id_baiviet;";
     }
+    pdo_execute($sql);
 }

@@ -5,6 +5,19 @@
                 <h2>Danh sách tài khoản </h2>
             </div>
             <div class="card-body">
+                <form action="AdminController.php?act=listtk" method="POST">
+                    <input type="text" name="keyword">
+                    <select name="id_vaitro" id="">
+                        <option value="0" selected>Tất cả</option>
+                        <?php
+                        foreach ($listrole as $vaitro) {
+                            extract($vaitro);
+                            echo '<option value="' . $id_vaitro . '">' . $ten_vaitro . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <input class="btn btn-primary" type="submit" name="clickgo" value="GO">
+                </form>
                 <table class="table">
                     <tdead class="thead-drank">
                         <tr>
@@ -26,6 +39,8 @@
                         extract($taikhoan);
                         $suatk = "AdminController.php?act=suatk&idtk=" . $id_taikhoan;
                         $xoatk = "AdminController.php?act=xoatk&idtk=" . $id_taikhoan;
+
+
                         echo '
                             <tbody>
                             <tr>
@@ -37,17 +52,27 @@
                                 <td>' . $sdt . '</td>
                                 <td>' . $dia_chi . '</td>
                                 <td>' . $id_vaitro . '</td>
-                                '.'
-                                <td>
-                                    <a href="' . $suatk . '"><input type="button" value="Sửa"> </a>
-                                    <a href="' . $xoatk . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
-                                </td>
-                            </tr>
-                        </tbody>
                        ';
+
+                        $sql = "SELECT * FROM tb_role WHERE id_vaitro=" . $id_vaitro;
+                        $vaitro = pdo_query($sql);
+                        foreach ($vaitro as $value) {
+                            extract($value);
+                            echo '
+                                   <td>' . $ten_vaitro . '</td>
+                                   <td>
+                                       <a href="' . $suatk . '"><input type="button" value="Sửa"> </a>
+                                       <a href="' . $xoatk . '"><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
+                                   </td>
+                               </tr>
+                             </tbody>
+                           ';
+                        }
                     }
+
+
                     ?>
-                    
+
                 </table>
             </div>
             <div class="card-footer text-muted">

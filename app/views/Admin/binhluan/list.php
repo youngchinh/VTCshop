@@ -13,6 +13,7 @@
                             <th>Ngày bình luận</th>
                             <th>ID sản phẩm</th>
                             <th>ID tài khoản</th>
+                            <th>Tên tài khoản</th>
                             <th>Thao Tác</th>
                         </tr>
                     </tdead>
@@ -29,12 +30,22 @@
                                     <td>' . $ngay_binh_luan . '</td>
                                     <td>' . $id_sanpham . '</td>
                                     <td>' . $id_taikhoan . '</td>
+                            ';
+
+                            $sql = "SELECT * FROM tb_taikhoan WHERE id_taikhoan=".$id_taikhoan;
+                            $taikhoan = pdo_query($sql);
+                            foreach($taikhoan as $value){
+                                extract($value);
+                                echo '
+                                    <td>' . $hovaten . '</td>
                                     <td>
                                         <a href=" '.$xoabl.' "><input type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
                                     </td>
                                 </tr>
                               </tdead>
-                            ';
+                                ';
+                            }
+                            
                     }
                     ?>
 
