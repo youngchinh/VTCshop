@@ -7,7 +7,6 @@ if (!isset($_SESSION['admin'])) {
     $mat_khau = $_SESSION['mat_khau'];
 }
 ?>
-
 <!-- điều hướng luồng hoạt động của trang admin -->
 <!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php
