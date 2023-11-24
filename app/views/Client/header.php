@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="vn">
 
 
 <!-- Mirrored from htmldemo.net/junko/junko/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Nov 2023 16:31:00 GMT -->
@@ -7,20 +7,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Junko - Electronics eCommerce HTML Template</title>
+    <title>VTC Shop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../views/Client/assets/img/favicon.ico">
 
     <!-- CSS 
     ========================= -->
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="../views/Client/assets/css/plugins.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../views/Client/assets/css/style.css">
 
 </head>
 
@@ -33,7 +33,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="index.php"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.php"><img src="../views/Client/assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
@@ -42,7 +42,7 @@
                                     <form action="#">
                                         <div class="search_box">
                                             <input placeholder="Search product..." type="text">
-                                            <button type="submit">Search</button>
+                                            <button type="submit">Tìm Kiếm</button>
                                         </div>
                                     </form>
                                 </div>
@@ -56,7 +56,7 @@
                                         <div class="mini_cart">
                                             <div class="cart_item">
                                                 <div class="cart_img">
-                                                    <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                    <a href="#"><img src="../views/Client/assets/img/s-product/product.jpg" alt=""></a>
                                                 </div>
                                                 <div class="cart_info">
                                                     <a href="#">Sit voluptatem rhoncus sem lectus</a>
@@ -68,7 +68,7 @@
                                             </div>
                                             <div class="cart_item">
                                                 <div class="cart_img">
-                                                    <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                                    <a href="#"><img src="../views/Client/assets/img/s-product/product2.jpg" alt=""></a>
                                                 </div>
                                                 <div class="cart_info">
                                                     <a href="#">Natus erro at congue massa commodo</a>

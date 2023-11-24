@@ -65,6 +65,11 @@ if (is_file($imgpath)) {
                 </div>
 
                 <div class="form-group">
+                    <label for="">Chiến dịch</label>
+                    <input type="text" class="form-control" name="chien_dich" value="<?=$chien_dich?>">
+                </div>
+
+                <div class="form-group">
                     <label for="">Trạng thái</label>
                     <input type="text" class="form-control" name="trang_thai" value="<?=$trang_thai?>">
                 </div>

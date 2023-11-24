@@ -1,4 +1,4 @@
-<div style="height: 840px;" class="content-wrapper">
+<div style="height: auto;" class="content-wrapper">
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
@@ -32,6 +32,7 @@
                                     <th>Giá Khuyến mãi</th>
                                     <th>Dung Lượng</th>
                                     <th>Số lượng</th>
+                                    <th>Chiến dịch</th>
                                     <th>trạng Thái</th>
                                     <th><a href="AdminController.php?act=addsp"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                                 </tr>
@@ -61,6 +62,7 @@
                                 <td>' . $gia_khuyen_mai . '</td>
                                 <td>' . $dung_luong . '</td>
                                 <td>' . $so_luong . '</td>
+                                <td>' . $chien_dich . '</td>
                                 <td>' . $trang_thai . '</td>
                                 <td>
                                     <a href="' . $suasp . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>

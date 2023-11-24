@@ -1,6 +1,6 @@
-<?php
-include "header.php";
-include "menu.php";
+<?php 
+    include "../views/Client/header.php";
+    include "../views/Client/menu.php";
 ?>
 
 <!--breadcrumbs area start-->
@@ -88,5 +88,5 @@ include "menu.php";
 <!-- my account end   -->
 
 <?php
-include "footer.php";
+include "../views/Client/footer.php";
 ?>

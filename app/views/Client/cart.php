@@ -1,6 +1,6 @@
 <?php 
-include "header.php";
-include "menu.php";
+    include "../views/Client/header.php";
+    include "../views/Client/menu.php";
 ?>
 <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
@@ -43,7 +43,7 @@ include "menu.php";
                                             <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                             <td class="product_thumb"><a href="#"><img
-                                                        src="assets/img/s-product/product.jpg" alt=""></a></td>
+                                                        src="../views/Client/assets/img/s-product/product.jpg" alt=""></a></td>
                                             <td class="product_name"><a href="#">Handbag fringilla</a></td>
                                             <td class="product-price">£65.00</td>
                                             <td class="product_quantity"><label>Số Lượng</label> <input min="1"
@@ -57,7 +57,7 @@ include "menu.php";
                                             <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                             <td class="product_thumb"><a href="#"><img
-                                                        src="assets/img/s-product/product2.jpg" alt=""></a></td>
+                                                        src="../views/Client/assets/img/s-product/product2.jpg" alt=""></a></td>
                                             <td class="product_name"><a href="#">Handbags justo</a></td>
                                             <td class="product-price">£90.00</td>
                                             <td class="product_quantity"><label>Số Lượng</label> <input min="1"
@@ -70,7 +70,7 @@ include "menu.php";
                                             <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                             <td class="product_thumb"><a href="#"><img
-                                                        src="assets/img/s-product/product3.jpg" alt=""></a></td>
+                                                        src="../views/Client/assets/img/s-product/product3.jpg" alt=""></a></td>
                                             <td class="product_name"><a href="#">Handbag elit</a></td>
                                             <td class="product-price">£80.00</td>
                                             <td class="product_quantity"><label>Số Lượng</label> <input min="1"
@@ -133,5 +133,5 @@ include "menu.php";
     <!--shopping cart area end -->
 
    <?php 
-    include "footer.php";
+    include "../views/Clientfooter.php";
    ?>

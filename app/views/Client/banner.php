@@ -1,7 +1,7 @@
   <!--slider area start   //Slideshow-->
   <section class="slider_section mb-70">
     <div class="slider_area owl-carousel">
-        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider1.jpg">
+        <div class="single_slider d-flex align-items-center" data-bgimg="../views/Client/assets/img/slider/slider1.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -16,7 +16,7 @@
             </div>
 
         </div>
-        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider2.jpg">
+        <div class="single_slider d-flex align-items-center" data-bgimg="../views/Client/assets/img/slider/slider2.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider3.jpg">
+        <div class="single_slider d-flex align-items-center" data-bgimg="../views/Client/assets/img/slider/slider3.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

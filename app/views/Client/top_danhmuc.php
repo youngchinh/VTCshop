@@ -16,10 +16,10 @@
                             <article class="single_category">
                                 <figure>
                                     <div class="category_thumb">
-                                        <a href="iphone.php"><img src="assets/img/s-product/category1.jpg" alt=""></a>
+                                        <a href="../views/Client/iphone.php"><img src="../views/Client/assets/img/s-product/category1.jpg" alt=""></a>
                                     </div>
                                     <figcaption class="category_name">
-                                        <h3><a href="iphone.php">Iphone </a></h3>
+                                        <h3><a href="../views/Client/iphone.php">Iphone </a></h3>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -30,10 +30,10 @@
                             <article class="single_category">
                                 <figure>
                                     <div class="category_thumb">
-                                        <a href="samsung.php"><img src="assets/img/s-product/category3.jpg" alt=""></a>
+                                        <a href="../views/Client/samsung.php"><img src="../views/Client/assets/img/s-product/category3.jpg" alt=""></a>
                                     </div>
                                     <figcaption class="category_name">
-                                        <h3><a href="samsung.php">SamSung</a></h3>
+                                        <h3><a href="../views/Client/samsung.php">SamSung</a></h3>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -43,10 +43,10 @@
                             <article class="single_category">
                                 <figure>
                                     <div class="category_thumb">
-                                        <a href="oppo.php"><img src="assets/img/s-product/category4.jpg" alt=""></a>
+                                        <a href="../views/Client/oppo.php"><img src="../views/Client/assets/img/s-product/category4.jpg" alt=""></a>
                                     </div>
                                     <figcaption class="category_name">
-                                        <h3><a href="oppo.php">Oppo</a></h3>
+                                        <h3><a href="../views/Client/oppo.php">Oppo</a></h3>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -56,10 +56,10 @@
                             <article class="single_category">
                                 <figure>
                                     <div class="category_thumb">
-                                        <a href="nokia.php"><img src="assets/img/s-product/category5.jpg" alt=""></a>
+                                        <a href="../views/Client/nokia.php"><img src="../views/Client/assets/img/s-product/category5.jpg" alt=""></a>
                                     </div>
                                     <figcaption class="category_name">
-                                        <h3><a href="nokia.php">Nokia</a></h3>
+                                        <h3><a href="../views/Client/nokia.php">Nokia</a></h3>
                                     </figcaption>
                                 </figure>
                             </article>

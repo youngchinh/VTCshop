@@ -1,6 +1,6 @@
 <?php 
-    include "header.php";
-    include "menu.php";
+    include "../views/Client/header.php";
+    include "../views/Client/menu.php";
 ?>
 
     <!--breadcrumbs area start-->
@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index.php">home</a></li>
+                            <li><a href="../views/Client/index.php">home</a></li>
                             <li>Chi tiết bài viết</li>
                         </ul>
                     </div>
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="blog_thumb">
-                                    <a href="#"><img src="assets/img/blog/blog-big1.jpg" alt=""></a>
+                                    <a href="#"><img src="../views/Client/../views/Client/assets/img/blog/blog-big1.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <div class="post_content">
@@ -133,7 +133,7 @@
                             <h3>Recent Comments</h3>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/comment2.png.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/comment2.png.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <span> <a href="#">demo</a> says:</span>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/comment2.png.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/comment2.png.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <span><a href="#">admin</a> says:</span>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/comment2.png.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/comment2.png.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <span><a href="#">demo</a> says:</span>
@@ -160,7 +160,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/comment2.png.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/comment2.png.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <span><a href="#">admin</a> says:</span>
@@ -172,7 +172,7 @@
                             <h3>Recent Posts</h3>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/blog12.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/blog12.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <h3><a href="chitiet_baiviet.php">Blog image post</a></h3>
@@ -181,7 +181,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/blog13.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/blog13.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <h3><a href="chitiet_baiviet.php">Post with Gallery</a></h3>
@@ -190,7 +190,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/blog14.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/blog14.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <h3><a href="chitiet_baiviet.php">Post with Audio</a></h3>
@@ -199,7 +199,7 @@
                             </div>
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="assets/img/blog/blog15.jpg" alt=""></a>
+                                    <a href="chitiet_baiviet.php"><img src="../views/Client/assets/img/blog/blog15.jpg" alt=""></a>
                                 </div>
                                 <div class="post_info">
                                     <h3><a href="chitiet_baiviet.php">Post with Video</a></h3>
@@ -217,5 +217,5 @@
     <!--blog section area end-->
 
 <?php 
-    include "footer.php";
+    include "../views/Clientfooter.php";
 ?>

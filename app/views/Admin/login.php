@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "/xampp/htdocs/VTCshop/app/models/AdminLoginModel.php";
+include "/xampp/htdocs/VTCshop/app/models/AdminModel/AdminLoginModel.php";
 if ((isset($_POST['dangnhap']))) {
     $tai_khoan = $_POST['tai_khoan'];
     $mat_khau = $_POST['mat_khau'];

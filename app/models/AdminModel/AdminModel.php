@@ -45,21 +45,21 @@ function loadone_sanpham($id)
     return $result;
 }
 
-function update_sanpham($id, $ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc)
+function update_sanpham($id, $ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $chien_dich, $trang_thai, $id_danhmuc)
 {
     if ($img_sanpham != "") {
         // UPDATE `tb_sanpham` SET `ten_sanpham` = 'iphone1', `mota_sanpham` = 'da1', `mau_sanpham` = 'da1', `gia_ban_dau` = '122', `gia_khuyen_mai` = '213', `dung_luong` = '213', `so_luong` = '214', `trang_thai` = 'com1', `id_danhmuc` = '11' WHERE `tb_sanpham`.`id_sanpham` = 3;
-        $sql = "UPDATE `tb_sanpham` SET `ten_sanpham` = '$ten_sanpham', `img_sanpham` = '$img_sanpham',  `mota_sanpham` = '$mota_sanpham', `mau_sanpham` = '$mau_sanpham', `gia_ban_dau` = '$gia_ban_dau', `gia_khuyen_mai` = '$gia_khuyen_mai', `dung_luong` = '$dung_luong', `so_luong` = '$so_luong', `trang_thai` = '$trang_thai', `id_danhmuc` = '$id_danhmuc' WHERE `tb_sanpham`.`id_sanpham` = $id;";
+        $sql = "UPDATE `tb_sanpham` SET `ten_sanpham` = '$ten_sanpham', `img_sanpham` = '$img_sanpham',  `mota_sanpham` = '$mota_sanpham', `mau_sanpham` = '$mau_sanpham', `gia_ban_dau` = '$gia_ban_dau', `gia_khuyen_mai` = '$gia_khuyen_mai', `dung_luong` = '$dung_luong', `so_luong` = '$so_luong', `chien_dich` = '$chien_dich', `trang_thai` = '$trang_thai', `id_danhmuc` = '$id_danhmuc' WHERE `tb_sanpham`.`id_sanpham` = $id;";
     } else {
-        $sql = "UPDATE `tb_sanpham` SET `ten_sanpham` = '$ten_sanpham', `mota_sanpham` = '$mota_sanpham', `mau_sanpham` = '$mau_sanpham', `gia_ban_dau` = '$gia_ban_dau', `gia_khuyen_mai` = '$gia_khuyen_mai', `dung_luong` = '$dung_luong', `so_luong` = '$so_luong', `trang_thai` = '$trang_thai', `id_danhmuc` = '$id_danhmuc' WHERE `tb_sanpham`.`id_sanpham` = $id;";
+        $sql = "UPDATE `tb_sanpham` SET `ten_sanpham` = '$ten_sanpham', `mota_sanpham` = '$mota_sanpham', `mau_sanpham` = '$mau_sanpham', `gia_ban_dau` = '$gia_ban_dau', `gia_khuyen_mai` = '$gia_khuyen_mai', `dung_luong` = '$dung_luong', `so_luong` = '$so_luong', `chien_dich` = '$chien_dich', `trang_thai` = '$trang_thai', `id_danhmuc` = '$id_danhmuc' WHERE `tb_sanpham`.`id_sanpham` = $id;";
     }
     pdo_execute($sql);
 }
 
-function insert_sanpham($ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc)
+function insert_sanpham($ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $chien_dich, $trang_thai, $id_danhmuc)
 {
-    $sql = "INSERT INTO `tb_sanpham`(`ten_sanpham`, `img_sanpham`, `mota_sanpham`, `mau_sanpham`, `gia_ban_dau`, `gia_khuyen_mai`, `dung_luong`, `so_luong` , `trang_thai`, `id_danhmuc`) 
-                VALUES ('$ten_sanpham', '$img_sanpham', '$mota_sanpham', '$mau_sanpham', '$gia_ban_dau', '$gia_khuyen_mai', '$dung_luong', '$so_luong', '$trang_thai', '$id_danhmuc');";
+    $sql = "INSERT INTO `tb_sanpham`(`ten_sanpham`, `img_sanpham`, `mota_sanpham`, `mau_sanpham`, `gia_ban_dau`, `gia_khuyen_mai`, `dung_luong`, `so_luong`, `chien_dich`, `trang_thai`, `id_danhmuc`) 
+                VALUES ('$ten_sanpham', '$img_sanpham', '$mota_sanpham', '$mau_sanpham', '$gia_ban_dau', '$gia_khuyen_mai', '$dung_luong', '$so_luong', '$chien_dich', '$trang_thai', '$id_danhmuc');";
     pdo_execute($sql);
 }
 

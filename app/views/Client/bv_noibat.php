@@ -14,7 +14,7 @@
                         <article class="single_blog">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog1.jpg" alt=""></a>
+                                    <a href="blog-details.html"><img src="../views/Client/assets/img/blog/blog1.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <p class="post_author">By <a href="#">admin</a> July 04, 2022</p>
@@ -27,7 +27,7 @@
                         <article class="single_blog">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog2.jpg" alt=""></a>
+                                    <a href="blog-details.html"><img src="../views/Client/assets/img/blog/blog2.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <p class="post_author">By <a href="#">admin</a> July 04, 2022</p>
@@ -40,7 +40,7 @@
                         <article class="single_blog">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog3.jpg" alt=""></a>
+                                    <a href="blog-details.html"><img src="../views/Client/assets/img/blog/blog3.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <p class="post_author">By <a href="#">admin</a> July 04, 2022</p>
@@ -53,7 +53,7 @@
                         <article class="single_blog">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog4.jpg" alt=""></a>
+                                    <a href="blog-details.html"><img src="../views/Client/assets/img/blog/blog4.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <p class="post_author">By <a href="#">admin</a> July 04, 2022</p>
@@ -66,7 +66,7 @@
                         <article class="single_blog">
                             <figure>
                                 <div class="blog_thumb">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog5.jpg" alt=""></a>
+                                    <a href="blog-details.html"><img src="../views/Client/assets/img/blog/blog5.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="blog_content">
                                     <p class="post_author">By <a href="#">admin</a> July 04, 2022</p>

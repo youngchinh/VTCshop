@@ -1,6 +1,6 @@
 <?php 
-    include "header.php";
-    include "menu.php";
+    include "../views/Client/header.php";
+    include "../views/Client/menu.php";
 ?>
 
     <!--breadcrumbs area start-->
@@ -77,5 +77,5 @@
     <!-- customer login end -->
 
   <?php 
-    include "footer.php";
+    include "../views/Client/footer.php";
   ?>

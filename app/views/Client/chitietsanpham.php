@@ -1,6 +1,6 @@
 <?php
-include "header.php";
-include "menu.php";
+include "../views/Clientheader.php";
+include "../views/Clientmenu.php";
 ?>
 
 
@@ -29,33 +29,33 @@ include "menu.php";
                 <div class="product-details-tab">
                     <div id="img-1" class="zoomWrapper single-zoom">
                         <a href="#">
-                            <img id="zoom1" src="assets/img/product/productbig5.jpg" data-zoom-image="assets/img/product/productbig5.jpg" alt="big-1">
+                            <img id="zoom1" src="../views/Client/assets/img/product/productbig5.jpg" data-zoom-image="../views/Client/assets/img/product/productbig5.jpg" alt="big-1">
                         </a>
                     </div>
                     <div class="single-zoom-thumb">
                         <!-- ảnh chi tiết sp -->
                         <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig.jpg" data-zoom-image="assets/img/product/productbig.jpg">
-                                    <img src="assets/img/product/productbig.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig.jpg" data-zoom-image="../views/Client/assets/img/product/productbig.jpg">
+                                    <img src="../views/Client/assets/img/product/productbig.jpg" alt="zo-th-1" />
                                 </a>
 
                             </li>
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig1.jpg" data-zoom-image="assets/img/product/productbig1.jpg">
-                                    <img src="assets/img/product/productbig1.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig1.jpg" data-zoom-image="../views/Client/assets/img/product/productbig1.jpg">
+                                    <img src="../views/Client/assets/img/product/productbig1.jpg" alt="zo-th-1" />
                                 </a>
 
                             </li>
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig2.jpg" data-zoom-image="assets/img/product/productbig2.jpg">
-                                    <img src="assets/img/product/productbig2.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig2.jpg" data-zoom-image="../views/Client/assets/img/product/productbig2.jpg">
+                                    <img src="../views/Client/assets/img/product/productbig2.jpg" alt="zo-th-1" />
                                 </a>
 
                             </li>
                             <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig3.jpg" data-zoom-image="assets/img/product/productbig3.jpg">
-                                    <img src="assets/img/product/productbig3.jpg" alt="zo-th-1" />
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig3.jpg" data-zoom-image="../views/Client/assets/img/product/productbig3.jpg">
+                                    <img src="../views/Client/assets/img/product/productbig3.jpg" alt="zo-th-1" />
                                 </a>
 
                             </li>
@@ -198,7 +198,7 @@ include "menu.php";
                                 <h2>1 review for Donec eu furniture</h2>
                                 <div class="reviews_comment_box">
                                     <div class="comment_thmb">
-                                        <img src="assets/img/blog/comment2.jpg" alt="">
+                                        <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
                                     </div>
                                     <div class="comment_text">
                                         <div class="reviews_meta">
@@ -275,8 +275,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product1.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product2.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product1.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product2.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -305,8 +305,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product4.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product3.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product4.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -335,8 +335,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product5.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product6.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product5.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product6.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -365,8 +365,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product7.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product8.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product7.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product8.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -395,8 +395,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product9.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product10.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product9.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product10.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -425,8 +425,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product11.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product12.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product11.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product12.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -455,8 +455,8 @@ include "menu.php";
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product4.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="assets/img/product/product5.jpg" alt=""></a>
+                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product4.jpg" alt=""></a>
+                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product5.jpg" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
                         </div>
@@ -488,5 +488,5 @@ include "menu.php";
 <!--product area end-->
 
 <?php
-include "footer.php";
+include "../views/Clientfooter.php";
 ?>

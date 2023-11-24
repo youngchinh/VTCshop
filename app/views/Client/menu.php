@@ -11,14 +11,17 @@
                         </div>
                         <div class="categories_menu_toggle">
                             <ul>
-                                <li class="menu_item_children"><a href="iphone.php">IPHONE<i class="fa fa-angle-right"></i></a>
+                            <?php 
+                                foreach($loaddanhmuc as $danhmuc) {
+                                    extract($danhmuc);
+                                    $linkdm = "ClientController.php?act=sanpham&iddm=" .$id_danhmuc;
+                                echo 
+                                '
+                                <li class="menu_item_children"><a href="'.$linkdm.'">'.$ten_danhmuc.'<i class="fa fa-angle-right"></i></a>
                                 </li>
-                                <li class="menu_item_children"><a href="samsung.php"> SAM SUNG <i class="fa fa-angle-right"></i></a>
-                                </li>
-                                <li class="menu_item_children"><a href="oppo.php">OPPO<i class="fa fa-angle-right"></i></a>
-                                </li>
-                                <li class="menu_item_children"><a href="nokia.php">NOKIA<i class="fa fa-angle-right"></i></a>
-                                </li>
+                                ';
+                                }
+                            ?>
                             </ul>
                         </div>
                     </div>
@@ -27,7 +30,7 @@
                     <div class="main_menu menu_position">
                         <nav>
                             <ul>
-                                <li><a href="index.php">home</a>
+                                <li><a href="ClientController.php">Trang Chủ</a>
 
                                 </li>
                                 <li class="mega_items"><a href="#">shop<i class="fa fa-angle-down"></i></a>
@@ -40,11 +43,11 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="baiviet.php">BÀI VIẾT</a></li>
+                                <li><a href="ClientController.php?act=baiviet">BÀI VIẾT</a></li>
                                 <li><a href="#">SẢN PHẨM </a></li>
 
-                                <li><a href="about.html">THÔNG TIN</a></li>
-                                <li><a href="contact.html">LIÊN HỆ</a></li>
+                                <li><a href="ClientController.php?act=thongtin">THÔNG TIN</a></li>
+                                <li><a href="ClientController.php?act=lienhe">LIÊN HỆ</a></li>
                             </ul>
                         </nav>
                     </div>

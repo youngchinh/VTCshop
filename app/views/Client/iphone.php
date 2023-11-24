@@ -1,6 +1,6 @@
-<?php
-    include "header.php";
-    include "menu.php";
+<?php 
+    include "../views/Client/header.php";
+    include "../views/Client/menu.php";
 ?>
 
     <!--breadcrumbs area start-->
@@ -61,9 +61,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product7.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product7.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product8.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product8.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -150,9 +150,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product9.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product9.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product10.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product10.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -239,9 +239,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product11.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product11.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product12.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product12.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -328,9 +328,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product13.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product13.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product14.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product14.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -417,9 +417,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product15.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product15.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product16.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product16.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -506,9 +506,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product17.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product17.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product18.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product18.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -595,9 +595,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product19.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product19.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product20.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product20.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -684,9 +684,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product21.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product21.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product22.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product22.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -773,9 +773,9 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img
-                                                src="assets/img/product/product23.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product23.jpg" alt=""></a>
                                         <a class="secondary_img" href="product-details.html"><img
-                                                src="assets/img/product/product24.jpg" alt=""></a>
+                                                src="../views/Client/assets/img/product/product24.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -879,5 +879,5 @@
     <!--shop  area end-->
 
     <?php
-        include "footer.php";
+        include "../views/Client/footer.php";
     ?>

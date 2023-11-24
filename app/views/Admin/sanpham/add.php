@@ -56,6 +56,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="">Chiến dịch</label>
+                    <input type="text" class="form-control" name="chien_dich" placeholder="Nhập giá chiến dịch" required>
+                </div>
+
+                <div class="form-group">
                     <label for="">Danh mục</label>
                     <select name="id_danhmuc" class="form-group">
                         <?php

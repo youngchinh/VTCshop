@@ -8,7 +8,7 @@
                         <div class="brand_items">
                         <div class="brand_items">
                             <div class="single_brand">
-                                <a href="#"><img src="assets/img/brand/brand2.jpg" alt=""></a>
+                                <a href="#"><img src="../views/Client/assets/img/brand/brand2.jpg" alt=""></a>
                             </div>
                         </div>
                     </div>

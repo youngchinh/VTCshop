@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin'])) {
 <!-- điều hướng luồng hoạt động của trang admin -->
 <!-- nhận request từ phía client -> tương tác model và views -> output thích hợp -->
 <?php
-include "../models/AdminModel.php";
+include "../models/AdminModel/AdminModel.php";
 include "../views/Admin/header.php";
 include "../views/Admin/sidebar.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
@@ -89,6 +89,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $so_luong = $_POST['so_luong'];
                 $trang_thai = $_POST['trang_thai'];
                 $id_danhmuc = $_POST['id_danhmuc'];
+                $chien_dich = $_POST['chien_dich'];
 
                 $img_sanpham = $_FILES['img_sanpham']['name'];
                 $target_dir = "../upload/";
@@ -99,7 +100,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     //                        echo "Upload ảnh không thành công";
                 }
-                insert_sanpham($ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc);
+                insert_sanpham($ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $chien_dich, $trang_thai, $id_danhmuc);
                 $thongbao = "Thêm thành công";
             }
             $listdanhmuc = loadall_danhmuc();
@@ -134,6 +135,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $gia_khuyen_mai = $_POST['gia_khuyen_mai'];
                 $dung_luong = $_POST['dung_luong'];
                 $so_luong = $_POST['so_luong'];
+                $chien_dich = $_POST['chien_dich'];
                 $trang_thai = $_POST['trang_thai'];
                 $id_danhmuc = $_POST['id_danhmuc'];
 
@@ -145,7 +147,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_sanpham($id, $ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $trang_thai, $id_danhmuc);
+                update_sanpham($id, $ten_sanpham, $img_sanpham, $mota_sanpham, $mau_sanpham, $gia_ban_dau, $gia_khuyen_mai, $dung_luong, $so_luong, $chien_dich, $trang_thai, $id_danhmuc);
                 $thongbao = "cập nhật thành công!";
             }
             $listdanhmuc = loadall_danhmuc();

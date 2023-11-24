@@ -12,9 +12,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product1.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product2.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -39,7 +39,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Natus erro at congue massa commodo
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Natus erro at congue massa commodo
                                     sit</a></h3>
                         </figcaption>
                     </figure>
@@ -47,9 +47,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product3.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product4.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -74,7 +74,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Itaque earum velit elementum</a>
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Itaque earum velit elementum</a>
                             </h3>
                         </figcaption>
                     </figure>
@@ -82,9 +82,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product5.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product6.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -109,7 +109,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Mauris tincidunt eros posuere
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Mauris tincidunt eros posuere
                                     placerat</a></h3>
                         </figcaption>
                     </figure>
@@ -117,9 +117,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product7.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product8.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -144,7 +144,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Morbi ornare vestibulum massa</a>
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Morbi ornare vestibulum massa</a>
                             </h3>
                         </figcaption>
                     </figure>
@@ -152,9 +152,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product9.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product10.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -179,7 +179,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Porro quisquam eget feugiat
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Porro quisquam eget feugiat
                                     pretium</a></h3>
                         </figcaption>
                     </figure>
@@ -187,9 +187,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product11.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product12.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -214,7 +214,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Laudantium enim fringilla dignissim
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Laudantium enim fringilla dignissim
                                     ipsum primis</a></h3>
                         </figcaption>
                     </figure>
@@ -222,9 +222,9 @@
                 <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product4.jpg" alt=""></a>
-                            <a class="secondary_img" href="chitietsanpham.php"><img
+                            <a class="secondary_img" href="../views/Client/chitietsanpham.php"><img
                                     src="assets/img/product/product5.jpg" alt=""></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -249,7 +249,7 @@
                                 <span class="old_price">$86.00</span>
                                 <span class="current_price">$79.00</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">Natus erro at congue massa commodo
+                            <h3 class="product_name"><a href="../views/Client/chitietsanpham.php">Natus erro at congue massa commodo
                                     sit</a></h3>
                         </figcaption>
                     </figure>
