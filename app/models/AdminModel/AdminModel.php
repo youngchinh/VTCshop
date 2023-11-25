@@ -29,6 +29,7 @@ function loadall_sanpham($keyword = "", $id_danhmuc = 0)
     // where 1 tức là nó đúng
     if ($keyword != "") {
         $sql .= " AND ten_sanpham LIKE '%" . $keyword . "%'";
+        // $sql .= " AND chien_dich LIKE '%" . $keyword . "%'";
     }
     if ($id_danhmuc > 0) {
         $sql .= " AND id_danhmuc ='" . $id_danhmuc . "'";
