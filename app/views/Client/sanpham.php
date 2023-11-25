@@ -6,8 +6,8 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
-                        <li>Danh mục</li>
-                        <li>Iphone</li>
+                        <li>Sản phẩm</li>
+                        <li>Trang 1</li>
                     </ul>
                 </div>
             </div>
@@ -34,7 +34,8 @@
                                     $linkdm = "ClientController.php?act=danhmuc&iddm=" . $id_danhmuc;
                                     echo
                                     '
-                                <li class="menu_item_children"><a href="' . $linkdm . '">' . $ten_danhmuc . '</a>
+                                <li class="menu_item_children">
+                                <a href="' . $linkdm . '">' . $ten_danhmuc . '</a>
                                 </li>
                                 ';
                                 }
@@ -104,6 +105,7 @@
                                         <div class="product_thumb">
                                             <a class="primary_img" href="product-details.html"><img src="' . $imgpath . '"></a>
                                             <div class="label_product">
+                                                <span class="label_sale">sale</span>
                                             </div>
                                             <div class="add_to_cart">
                                                 <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
@@ -136,9 +138,9 @@
                 <div class="shop_toolbar t_bottom">
                     <div class="pagination">
                         <ul>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
+                            <li><a href="ClientController.php?act=sanpham">1</a></li>
+                            <li><a href="ClientController.php?act=sanpham_2">2</a></li>
+                            <li><a href="ClientController.php?act=sanpham_3">3</a></li>
                         </ul>
                     </div>
                 </div>
