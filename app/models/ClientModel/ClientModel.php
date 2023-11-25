@@ -48,8 +48,21 @@ function loadsanpham_sale()
     WHERE chien_dich = 'sale'
     ORDER BY chien_dich DESC
     LIMIT 10;";
-    $listsptop5 = pdo_query($sql);
-    return $listsptop5;
+    $result = pdo_query($sql);
+    return $result;
+}
+
+//sanpham nổi bật
+function loadsanpham_noibat()
+{
+    // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
+    $sql = "SELECT * 
+    FROM tb_sanpham 
+    WHERE chien_dich = 'noi_bat'
+    ORDER BY chien_dich DESC
+    LIMIT 10;";
+    $result = pdo_query($sql);
+    return $result;
 }
 
 // liên hệ

@@ -14,9 +14,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "baiviet";
             include "../views/Client/baiviet.php";
             break;
+
         case "thongtin";
             include "../views/Client/thongtin.php";
             break;
+
         case "lienhe";
             if (isset($_POST['send']) && ($_POST['send'])) {
                 $hovaten = $_POST['hovaten'];
@@ -31,17 +33,24 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "../views/Client/lienhe.php";
             break;
+
         case "sp_hotdeal";
             $count_hotdeal = count_hotdeal();
             $sp_hotdeal = sanpham_hotdeal();
             $loaddanhmuc = loadall_danhmuc();
             include "../views/Client/sanpham_hotdeal.php";
             break;
+
         case "sp_sale";
             $sp_sale = loadsanpham_sale();
             $loaddanhmuc = loadall_danhmuc();
-            
             include "../views/Client/sanpham_sale.php";
+            break;
+
+        case "sp_noibat";
+            $sp_noibat = loadsanpham_noibat();
+            $loaddanhmuc = loadall_danhmuc();
+            include "../views/Client/sanpham_noibat.php";
             break;
     }
 } else {

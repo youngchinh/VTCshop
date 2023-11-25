@@ -42,7 +42,7 @@
                                 <?php
                                 foreach ($listsanpham as $sanpham) {
                                     extract($sanpham);
-                                    $imgpath = "../upload/" . $img_sanpham;
+                                    $imgpath = "../upload/all_sp/" . $img_sanpham;
                                     if (is_file($imgpath)) {
                                         $imgpath = "<img src= '" . $imgpath . "' width='100px' height='100px'>";
                                     } else {
