@@ -7,7 +7,7 @@
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
                         <li>Danh mục</li>
-                        <li>Iphone</li>
+                        <li>Xiaomi</li>
                     </ul>
                 </div>
             </div>
