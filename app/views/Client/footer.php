@@ -6,7 +6,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="widgets_container contact_us">
                             <div class="footer_logo">
-                                <a href="#"><img src="../views/Client/assets/img/logo/logo.png" alt=""></a>
+                                <a href="#"><img src="../views/Client/assets/img/logo/logovtc.png" alt=""></a>
                             </div>
                             <div class="footer_contact">
                                 <p><span>Địa Chỉ :</span>  Trịnh Văn Bô - Phương Canh <br> Nam Từ Liêm - Hà Nội</p>

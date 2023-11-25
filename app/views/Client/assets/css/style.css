@@ -6960,8 +6960,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .footer_widgets.sidebar_widgets .footer_top_inner {
   padding: 56px 0 52px;
-  border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer_widgets.sidebar_widgets .footer_top_inner {

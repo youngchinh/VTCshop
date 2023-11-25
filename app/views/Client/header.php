@@ -33,7 +33,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="index.php"><img src="../views/Client/assets/img/logo/logo.png" alt=""></a>
+                                <a href="ClientController.php"><img src="../views/Client/assets/img/logo/logovtc.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
