@@ -9,7 +9,12 @@ function loadall_danhmuc()
 }
 
 function loadsanphamsale_top5(){
-    $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
+    // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
+    $sql = "SELECT * 
+    FROM tb_sanpham 
+    WHERE chien_dich = 'sale'
+    ORDER BY chien_dich DESC
+    LIMIT 5;";
     $listsptop5 = pdo_query($sql);
     return $listsptop5;
 }

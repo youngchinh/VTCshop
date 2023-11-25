@@ -16,13 +16,13 @@
                     <div class="input-group">
                         <div class="custom-file">
                             <input class="custom-file-label" type="file" name="img_sanpham" required>
-                            <label  for="exampleInputFile">Chọn file</label>
+                            <label for="exampleInputFile">Chọn file</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Mô tả sản phẩm</label>
-                    <input type="text" class="form-control" name="mota_sanpham" placeholder="nhập mô tả" required>
+                    <label for="">Mô tả sản phẩm</label> <br>
+                    <textarea type="text" class="form-control" name="mota_sanpham" cols="30" rows="10" require></textarea>
                 </div>
 
                 <div class="form-group">
@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="">Dung Lượng</label>
-                    <input type="text" class="form-control" name="dung_luong" placeholder="Nhập giá dung lượng" required>
+                    <input type="text" class="form-control" name="dung_luong" placeholder="Nhập giá dung lượng">
                 </div>
 
                 <div class="form-group">
@@ -52,12 +52,12 @@
 
                 <div class="form-group">
                     <label for="">Trạng thái</label>
-                    <input type="text" class="form-control" name="trang_thai" placeholder="Nhập giá trạng thái" required>
+                    <input type="text" class="form-control" name="trang_thai" placeholder="Nhập giá trạng thái">
                 </div>
 
                 <div class="form-group">
                     <label for="">Chiến dịch</label>
-                    <input type="text" class="form-control" name="chien_dich" placeholder="Nhập giá chiến dịch" required>
+                    <input type="text" class="form-control" name="chien_dich" placeholder="Nhập giá chiến dịch">
                 </div>
 
                 <div class="form-group">
@@ -76,16 +76,16 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                <input class="btn btn-primary" name="themmoi" type="submit" value="THÊM MỚI">
+                    <input class="btn btn-primary" name="themmoi" type="submit" value="THÊM MỚI">
                     <a href="AdminController.php?act=listsp"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>
 
                 <?php
-              if(isset($thongbao)&& ($thongbao!="")){
-                  echo $thongbao;
-              }
-              ?>
-                
+                if (isset($thongbao) && ($thongbao != "")) {
+                    echo $thongbao;
+                }
+                ?>
+
         </form>
     </div>
 </div>

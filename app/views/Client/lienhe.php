@@ -7,8 +7,8 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index.html">home</a></li>
-                            <li>about us</li>
+                            <li><a href="ClientController.php">Trang Chủ</a></li>
+                            <li>Liên hệ</li>
                         </ul>
                     </div>
                 </div>
@@ -31,14 +31,17 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="contact_message content">
-                        <h3>contact us</h3>
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
-                            est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum
-                            formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
+                        <h3>Liên Hệ</h3>
+                        <p>Cơ sở Hà Nội
+                        Cổng số 1, Tòa nhà FPT Polytechnic, 13 phố Trịnh Văn Bô, phường Phương Canh, quận Nam Từ Liêm, TP Hà Nội
+
+                        Km12 Cầu Diễn, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội
+                        (024) 8582 0808
+                    </p>
                         <ul>
-                            <li><i class="fa fa-fax"></i> Address : Your address goes here.</li>
-                            <li><i class="fa fa-envelope-o"> </i> Email: <a
-                                    href="mailto:demo@example.com">demo@example.com </a>
+                            <li><i class="fa fa-fax"></i> Địa Chỉ:  Cổng số 1, Tòa nhà FPT Polytechnic, 13 phố Trịnh Văn Bô, phường Phương Canh, quận Nam Từ Liêm, TP Hà Nội</li>
+                            <li><i class="fa fa-envelope-o"> </i> Email: vtcshop@gmail.com<a
+                                    href="mailto:demo@example.com">vtcshop@gmail.com </a>
                             </li>
                             <li><i class="fa fa-phone"></i> Phone:<a href="tel: 0123456789"> 0123456789 </a> </li>
                         </ul>>
@@ -49,22 +52,26 @@
                         <h3>Tell us your project</h3>
                         <form id="contact-form" method="POST" action="https://htmldemo.net/junko/junko/../views/Client/assets/mail.php">
                             <p>
-                                <label> Your Name (required)</label>
-                                <input name="name" placeholder="Name *" type="text">
+                                <label> Họ và tên (required)</label>
+                                <input name="hovaten" placeholder="họ và tên *" type="text">
                             </p>
                             <p>
-                                <label> Your Email (required)</label>
+                                <label> Email (required)</label>
                                 <input name="email" placeholder="Email *" type="email">
                             </p>
                             <p>
-                                <label> Subject</label>
-                                <input name="subject" placeholder="Subject *" type="text">
+                                <label> Số điện thoại</label>
+                                <input name="sdt" placeholder="số điện thoại *" type="number">
+                            </p>
+                            <p>
+                                <label> Địa chỉ</label>
+                                <input name="dia_chi_lienhe" placeholder="số điện thoại *" type="number">
                             </p>
                             <div class="contact_textarea">
-                                <label> Your Message</label>
-                                <textarea placeholder="Message *" name="message" class="form-control2"></textarea>
+                                <label> Nội dung của bạn</label>
+                                <textarea placeholder="nội dung *" name="noi_dung_lienhe" class="form-control2"></textarea>
                             </div>
-                            <button type="submit"> Send</button>
+                            <button type="submit"> Gửi</button>
                             <p class="form-messege"></p>
                         </form>
 
