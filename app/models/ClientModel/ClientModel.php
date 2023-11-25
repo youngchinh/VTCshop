@@ -8,6 +8,39 @@ function loadall_danhmuc()
     return $listdanhmuc;
 }
 
+// load sản phẩm trang 1
+function loadall_sanpham() {
+    $sql = "SELECT * FROM tb_sanpham LIMIT 12";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+// load sản phẩm trang 2
+function loadall_sanpham_2() {
+    $soLuongDaHienThi = 12;
+    $sql = "SELECT * FROM tb_sanpham LIMIT 12 OFFSET $soLuongDaHienThi";
+    $result = pdo_query($sql);
+    return $result;
+}
+// load sản phẩm trang 3
+function loadall_sanpham_3() {
+    $soLuongDaHienThi = 24;
+    $sql = "SELECT * FROM tb_sanpham LIMIT 12 OFFSET $soLuongDaHienThi";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+// load sản phẩm theo danh mục
+function load_sanpham_danhmuc($iddm, $limit) {
+    $sql = "SELECT * FROM tb_sanpham WHERE 1";
+    if ($iddm > 0) {
+        $sql .= " AND id_danhmuc=".$iddm;
+    }
+    $sql .= " ORDER BY id_sanpham DESC LIMIT ".$limit;
+    $result = pdo_query($sql);
+    return $result;
+
+}
 
 //load trang chủ
 function loadsanphamsale_top5()

@@ -14,7 +14,7 @@
                             <?php 
                                 foreach($loaddanhmuc as $danhmuc) {
                                     extract($danhmuc);
-                                    $linkdm = "ClientController.php?act=sanpham&iddm=" .$id_danhmuc;
+                                    $linkdm = "ClientController.php?act=danhmuc&iddm=" .$id_danhmuc;
                                 echo 
                                 '
                                 <li class="menu_item_children"><a href="'.$linkdm.'">'.$ten_danhmuc.'<i class="fa fa-angle-right"></i></a>
@@ -33,7 +33,7 @@
                                 <li><a href="ClientController.php">Trang Chủ</a>
 
                                 </li>
-                                <li class="mega_items"><a href="#">shop<i class="fa fa-angle-down"></i></a>
+                                <li class="mega_items"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <div class="mega_menu">
                                         <ul class="mega_menu_inner">
                                             <li><a href="ClientController.php?act=sp_hotdeal">Sản phẩm bán chạy</a></li>
@@ -43,7 +43,7 @@
                                     </div>
                                 </li>
                                 <li><a href="ClientController.php?act=baiviet">BÀI VIẾT</a></li>
-                                <li><a href="#">SẢN PHẨM </a></li>
+                                <li><a href="ClientController.php?act=sanpham">SẢN PHẨM </a></li>
 
                                 <li><a href="ClientController.php?act=thongtin">THÔNG TIN</a></li>
                                 <li><a href="ClientController.php?act=lienhe">LIÊN HỆ</a></li>

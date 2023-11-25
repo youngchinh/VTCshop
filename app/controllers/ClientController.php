@@ -6,13 +6,57 @@ include "../views/Client/header.php";
 $loaddanhmuc = loadall_danhmuc();
 $listsptop5 = loadsanphamsale_top5();
 $listsp_hot = loadsanphamhot_top10();
-// END funcion load trang chủ 
 
+// END funcion load trang chủ 
 include "../views/Client/menu.php";
+if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+    $iddm = $_GET['iddm'];
+    switch ($iddm) {
+        case '1':
+            $list_sp = load_sanpham_danhmuc(1, 9);
+            include "../views/Client/iphone.php";
+            break;
+        case '2':
+            $list_sp = load_sanpham_danhmuc(2, 9);
+            include "../views/Client/samsung.php";
+            break;
+        case '3':
+            $list_sp = load_sanpham_danhmuc(3, 9);
+            include "../views/Client/oppo.php";
+            break;
+        case '4':
+            $list_sp = load_sanpham_danhmuc(4, 9);
+            include "../views/Client/tainghe.php";
+            break;
+        case '5':
+            $list_sp = load_sanpham_danhmuc(5, 9);
+            include "../views/Client/xiaomi.php";
+            break;
+        case '6':
+            $list_sp = load_sanpham_danhmuc(6, 9);
+            include "../views/Client/nokia.php";
+            break;
+    }
+}
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
             //menu
+        case "sanpham";
+            $list_sp = loadall_sanpham();
+            include "../views/Client/sanpham.php";
+            break;
+
+        case "sanpham_2";
+            $list_sp = loadall_sanpham_2();
+            include "../views/Client/sanpham_2.php";
+            break;
+
+        case "sanpham_3";
+            $list_sp = loadall_sanpham_3();
+            include "../views/Client/sanpham_3.php";
+            break;
+
         case "baiviet";
             include "../views/Client/baiviet.php";
             break;
