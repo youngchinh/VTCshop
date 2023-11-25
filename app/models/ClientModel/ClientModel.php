@@ -8,6 +8,8 @@ function loadall_danhmuc()
     return $listdanhmuc;
 }
 
+
+//load trang chủ
 function loadsanphamsale_top5()
 {
     // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
@@ -16,9 +18,23 @@ function loadsanphamsale_top5()
     WHERE chien_dich = 'sale_top'
     ORDER BY chien_dich DESC
     LIMIT 5;";
-    $listsptop5 = pdo_query($sql);
-    return $listsptop5;
+    $result = pdo_query($sql);
+    return $result;
 }
+
+function loadsanphamhot_top10()
+{
+    // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
+    $sql = "SELECT * 
+    FROM tb_sanpham 
+    WHERE chien_dich = 'top_hot'
+    ORDER BY chien_dich DESC
+    LIMIT 10;";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+
 
 //sanpham hot_deal
 function sanpham_hotdeal()
@@ -31,6 +47,7 @@ function sanpham_hotdeal()
     $result = pdo_query($sql);
     return $result;
 }
+
 // Truy vấn SQL để đếm số lượng sản phẩm thuộc chien_dich 'hot_deal'
 function count_hotdeal()
 {
@@ -38,6 +55,7 @@ function count_hotdeal()
     $result = pdo_query($sql);
     return $result;
 }
+
 
 //sanpham sale
 function loadsanpham_sale()
@@ -51,6 +69,7 @@ function loadsanpham_sale()
     $result = pdo_query($sql);
     return $result;
 }
+
 
 //sanpham nổi bật
 function loadsanpham_noibat()

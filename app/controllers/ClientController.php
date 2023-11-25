@@ -1,10 +1,12 @@
 <?php
 include "../models/ClientModel/ClientModel.php";
-// include "../models/ClientModel/sanpham.php";
 include "../views/Client/header.php";
 
+// BEGIN funcion load trang chủ 
 $loaddanhmuc = loadall_danhmuc();
 $listsptop5 = loadsanphamsale_top5();
+$listsp_hot = loadsanphamhot_top10();
+// END funcion load trang chủ 
 
 include "../views/Client/menu.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {

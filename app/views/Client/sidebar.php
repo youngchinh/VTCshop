@@ -5,7 +5,6 @@
     include "../views/Client/banner_2.php";
     include "../views/Client/top_danhmuc.php";
     include "../views/Client/sp_noibat.php";
-    include "../views/Client/sp_new.php";
     include "../views/Client/banner_3.php";
     include "../views/Client/bv_noibat.php";
     include "../views/Client/hoptac.php";
