@@ -36,10 +36,10 @@
                                 <li class="mega_items"><a href="#">shop<i class="fa fa-angle-down"></i></a>
                                     <div class="mega_menu">
                                         <ul class="mega_menu_inner">
-                                            <li><a href="sanpham_hotdeal.php">Sản phẩm bán chạy</a></li>
-                                            <li><a href="sanpham_new.php">Sản phẩm mới</a></li>
-                                            <li><a href="sanpham_sale.php">Sale</a></li>
-                                            <li><a href="sanpham_noibat.php">Sản phẩm nổi bật</a></li>
+                                            <li><a href="ClientController.php?act=sp_hotdeal">Sản phẩm bán chạy</a></li>
+                                            <li><a href="ClientController.php?act=sp_new">Sản phẩm mới</a></li>
+                                            <li><a href="ClientController.php?act=sp_sale">Sale</a></li>
+                                            <li><a href="ClientController.php?act=sp_noibat">Sản phẩm nổi bật</a></li>
                                         </ul>
                                     </div>
                                 </li>

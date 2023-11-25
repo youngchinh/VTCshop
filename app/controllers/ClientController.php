@@ -10,6 +10,7 @@ include "../views/Client/menu.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
+        //menu
         case "baiviet";
             include "../views/Client/baiviet.php";
             break;
@@ -28,9 +29,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_dung_lienhe);
                 $thongbao = "Gửi thành công";
             }
-
             include "../views/Client/lienhe.php";
             break;
+        
     }
 } else {
     include "../views/Client/banner.php";

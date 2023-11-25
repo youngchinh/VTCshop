@@ -87,7 +87,7 @@
                             if (isset($thongbao) && ($thongbao != "")) {
                                 echo $thongbao;
                             }
-
+                            // tránh người dùng có thể spam form vào database
                             // Load lại trang sau 2 giây
                             if (isset($_POST['send']) && ($_POST['send'])) {
                                 echo '
