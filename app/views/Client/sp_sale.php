@@ -15,7 +15,7 @@
              <?php
                 foreach ($listsptop5 as $top5) {
                     extract($top5);
-                    $imgpath = "../upload/" . $img_sanpham;
+                    $imgpath = "../upload/sp_topsale/" . $img_sanpham;
                     echo
                     '
                         <article class="single_product">
