@@ -10,7 +10,7 @@ include "../views/Client/menu.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-        //menu
+            //menu
         case "baiviet";
             include "../views/Client/baiviet.php";
             break;
@@ -31,7 +31,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "../views/Client/lienhe.php";
             break;
-        
+        case "sp_hotdeal";
+            $count_hotdeal = count_hotdeal();
+            $sp_hotdeal = sanpham_hotdeal();
+            $loaddanhmuc = loadall_danhmuc();
+            include "../views/Client/sanpham_hotdeal.php";
+            break;
     }
 } else {
     include "../views/Client/banner.php";
