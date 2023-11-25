@@ -17,6 +17,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "../views/Client/thongtin.php";
             break;
         case "lienhe";
+            if (isset($_POST['send']) && ($_POST['send'])) {
+                $hovaten = $_POST['hovaten'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $dia_chi_lienhe = $_POST['dia_chi_lienhe'];
+                $_POST['ngay_gui'] = date("Y-m-d");
+                $ngay_gui = $_POST['ngay_gui'];
+                $noi_dung_lienhe = $_POST['noi_dung_lienhe'];
+                send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_dung_lienhe);
+                $thongbao = "Gửi thành công";
+            }
+
             include "../views/Client/lienhe.php";
             break;
     }
