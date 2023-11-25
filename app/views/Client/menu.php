@@ -37,8 +37,7 @@
                                     <div class="mega_menu">
                                         <ul class="mega_menu_inner">
                                             <li><a href="ClientController.php?act=sp_hotdeal">Sản phẩm bán chạy</a></li>
-                                            <li><a href="ClientController.php?act=sp_new">Sản phẩm mới</a></li>
-                                            <li><a href="ClientController.php?act=sp_sale">Sale</a></li>
+                                            <li><a href="ClientController.php?act=sp_sale">Sản phẩm sale</a></li>
                                             <li><a href="ClientController.php?act=sp_noibat">Sản phẩm nổi bật</a></li>
                                         </ul>
                                     </div>

@@ -13,7 +13,7 @@ function loadsanphamsale_top5()
     // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
     $sql = "SELECT * 
     FROM tb_sanpham 
-    WHERE chien_dich = 'sale'
+    WHERE chien_dich = 'sale_top'
     ORDER BY chien_dich DESC
     LIMIT 5;";
     $listsptop5 = pdo_query($sql);
@@ -28,8 +28,8 @@ function sanpham_hotdeal()
     WHERE chien_dich = 'hot_deal'
     ORDER BY chien_dich DESC
     LIMIT 10;";
-    $listsphotdel = pdo_query($sql);
-    return $listsphotdel;
+    $result = pdo_query($sql);
+    return $result;
 }
 // Truy vấn SQL để đếm số lượng sản phẩm thuộc chien_dich 'hot_deal'
 function count_hotdeal()
@@ -37,6 +37,19 @@ function count_hotdeal()
     $sql = "SELECT COUNT(*) as total FROM tb_sanpham WHERE chien_dich = 'hot_deal'";
     $result = pdo_query($sql);
     return $result;
+}
+
+//sanpham sale
+function loadsanpham_sale()
+{
+    // $sql = "SELECT * FROM tb_sanpham WHERE 1 ORDER BY chien_dich DESC LIMIT 0,5";
+    $sql = "SELECT * 
+    FROM tb_sanpham 
+    WHERE chien_dich = 'sale'
+    ORDER BY chien_dich DESC
+    LIMIT 10;";
+    $listsptop5 = pdo_query($sql);
+    return $listsptop5;
 }
 
 // liên hệ

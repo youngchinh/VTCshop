@@ -37,6 +37,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $loaddanhmuc = loadall_danhmuc();
             include "../views/Client/sanpham_hotdeal.php";
             break;
+        case "sp_sale";
+            $sp_sale = loadsanpham_sale();
+            $loaddanhmuc = loadall_danhmuc();
+            
+            include "../views/Client/sanpham_sale.php";
+            break;
     }
 } else {
     include "../views/Client/banner.php";
