@@ -10,7 +10,7 @@
                         </div>
                         <div class="shipping_content">
                             <h2>Free Shipping</h2>
-                            <p>Free shipping on all US order</p>
+                            <p>miễn phí ship nội thành Hà Nội</p>
                         </div>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                             <img src="../views/Client/assets/img/about/shipping2.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Support 24/7</h2>
-                            <p>Contact us 24 hours a day</p>
+                            <h2>Thanh toán an toàn</h2>
+                            <p>Chúng tôi đảm bảo thanh toán an toàn</p>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                             <img src="../views/Client/assets/img/about/shipping3.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>100% Money Back</h2>
-                            <p>You have 30 days to Return</p>
+                            <h2>Hoàn tiền 100%</h2>
+                            <p>Nếu bạn phát hiện sản phẩm kém chất lượng</p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                             <img src="../views/Client/assets/img/about/shipping4.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Payment Secure</h2>
-                            <p>We ensure secure payment</p>
+                            <h2>Hộ trọ 24/7</h2>
+                            <p>Hãy liên hệ với chúng tôi</p>
                         </div>
                     </div>
                 </div>
