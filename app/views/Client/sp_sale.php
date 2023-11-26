@@ -16,12 +16,13 @@
                 foreach ($listsptop5 as $top5) {
                     extract($top5);
                     $imgpath = "../upload/sp_topsale/" . $img_sanpham;
+                    $linkchitietsp = "ClientController.php?act=chitietsp&idsp=" .$id_sanpham;
                     echo
                     '
                         <article class="single_product">
                     <figure>
                         <div class="product_thumb">
-                            <a class="primary_img" href="chitietsanpham.php"><img
+                            <a class="primary_img" href="'.$linkchitietsp.'"><img
                                     src="'.$imgpath.'"></a>
                             <div class="label_product">
                                 <span class="label_sale">sale</span>
@@ -35,7 +36,7 @@
                                 <span class="old_price">' . $gia_ban_dau . 'đ</span>
                                 <span class="current_price">' . $gia_khuyen_mai . 'đ</span>
                             </div>
-                            <h3 class="product_name"><a href="chitietsanpham.php">'.$ten_sanpham.'</a></h3>
+                            <h3 class="product_name"><a href="'.$linkchitietsp.'">'.$ten_sanpham.'</a></h3>
                         </figcaption>
                     </figure>
                 </article>
