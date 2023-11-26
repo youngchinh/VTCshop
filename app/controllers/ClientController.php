@@ -46,6 +46,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
             $idsp = ($_GET['idsp']);
             $chitietsp = loadone_sanpham($idsp);
+            //load sản phẩm liên quan
+            $iddm = $chitietsp['id_danhmuc'];
+            $sp_lienquan = loadsp_lienquan($idsp, $iddm);
         }
             include "../views/Client/chitietsanpham.php";
             break;
