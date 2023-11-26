@@ -7,7 +7,7 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index.php">home</a></li>
+                        <li><a href="index.php">Trang Chủ</a></li>
                         <li>Tài khoản</li>
                     </ul>
                 </div>
@@ -27,7 +27,6 @@
                     <div class="dashboard_tab_button">
                         <ul role="tablist" class="nav flex-column dashboard-list">
                             <li><a href="#account-details" data-bs-toggle="tab" class="nav-link">Thông tin tài khoản</a></li>
-                            <li><a href="login.html" class="nav-link">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,17 +39,10 @@
                                 <div class="login_form_container">
                                     <div class="account_login_form">
                                         <form action="#">
-
-                                            <div class="input-radio">
-                                                <span class="custom-radio"><input type="radio" value="1" name="id_gender"> Mr.</span>
-                                                <span class="custom-radio"><input type="radio" value="1" name="id_gender"> Mrs.</span>
-                                            </div> <br>
                                             <h4 class="billing-address">Địa chỉ :</h4>
                                             
                                             <address>
-                                                Hà nội<br>
-                                                Trịnh Văn Bô<br>
-                                                Số 85 <br>
+                                            
                                             </address>
 
                                             <label>First Name</label>

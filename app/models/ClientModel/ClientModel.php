@@ -1,5 +1,13 @@
 <?php
 include "/xampp/htdocs/VTCshop/config.php";
+
+//login client
+function checkuser($tai_khoan, $mat_khau)
+{
+    $sql = "SELECT * FROM tb_taikhoan WHERE tai_khoan = '".$tai_khoan."' AND mat_khau = '".$mat_khau."' AND id_vaitro = 2";
+    $result = pdo_query_one($sql);
+    return $result;
+}
 // Danh Mục
 function loadall_danhmuc()
 {
