@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../models/ClientModel/ClientModel.php";
 include "../views/Client/header.php";
 
@@ -42,14 +43,33 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
             //menu
+        case "login";
+            if (isset($_POST['login'])) {
+                $tai_khoan = $_POST['taikhoan'];
+                $mat_khau = $_POST['matkhau'];
+                $checkuser = checkuser($tai_khoan, $mat_khau);
+                
+                if(is_array($checkuser)) {
+                    $_SESSION['login']  = $checkuser; 
+                    $_SESSION['tai_khoan']  = $tai_khoan; 
+                    echo "<script>location.href = '/../VTCshop/index.php';</script>";
+                }else {
+                    $thongbao = "tài khoản không tồn tại";
+                }
+            }
+            include "../views/Client/login.php";
+            break;
+        case "account";
+            include "../views/Client/account.php";
+            break;
         case "chitietsp";
-        if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
-            $idsp = ($_GET['idsp']);
-            $chitietsp = loadone_sanpham($idsp);
-            //load sản phẩm liên quan
-            $iddm = $chitietsp['id_danhmuc'];
-            $sp_lienquan = loadsp_lienquan($idsp, $iddm);
-        }
+            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+                $idsp = ($_GET['idsp']);
+                $chitietsp = loadone_sanpham($idsp);
+                //load sản phẩm liên quan
+                $iddm = $chitietsp['id_danhmuc'];
+                $sp_lienquan = loadsp_lienquan($idsp, $iddm);
+            }
             include "../views/Client/chitietsanpham.php";
             break;
 
