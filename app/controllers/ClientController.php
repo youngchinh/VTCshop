@@ -42,6 +42,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
             //menu
+        case "chitietsp";
+        if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+            $idsp = ($_GET['idsp']);
+            $chitietsp = loadone_sanpham($idsp);
+        }
+            include "../views/Client/chitietsanpham.php";
+            break;
+
         case "sanpham";
             $list_sp = loadall_sanpham();
             include "../views/Client/sanpham.php";

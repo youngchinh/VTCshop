@@ -7,6 +7,13 @@ function loadall_danhmuc()
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }
+//load san pham chi tiet
+function loadone_sanpham($idsp)
+{
+    $sql = "SELECT * FROM tb_sanpham WHERE id_sanpham = " . $idsp;
+    $result = pdo_query_one($sql);
+    return $result;
+}
 
 // load sản phẩm trang 1
 function loadall_sanpham() {
