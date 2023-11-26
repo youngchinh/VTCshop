@@ -15,22 +15,34 @@ function loadone_sanpham($idsp)
     return $result;
 }
 
+//load sản phẩm tương tự
+function loadsp_lienquan($idsp, $iddm)
+{
+    $sql = "SELECT * FROM tb_sanpham WHERE id_sanpham <> " . $idsp;
+    $sql .= " AND id_danhmuc =" . $iddm;
+    $result = pdo_query($sql);
+    return $result;
+}
+
 // load sản phẩm trang 1
-function loadall_sanpham() {
+function loadall_sanpham()
+{
     $sql = "SELECT * FROM tb_sanpham LIMIT 12";
     $result = pdo_query($sql);
     return $result;
 }
 
 // load sản phẩm trang 2
-function loadall_sanpham_2() {
+function loadall_sanpham_2()
+{
     $soLuongDaHienThi = 12;
     $sql = "SELECT * FROM tb_sanpham LIMIT 12 OFFSET $soLuongDaHienThi";
     $result = pdo_query($sql);
     return $result;
 }
 // load sản phẩm trang 3
-function loadall_sanpham_3() {
+function loadall_sanpham_3()
+{
     $soLuongDaHienThi = 24;
     $sql = "SELECT * FROM tb_sanpham LIMIT 12 OFFSET $soLuongDaHienThi";
     $result = pdo_query($sql);
@@ -38,15 +50,15 @@ function loadall_sanpham_3() {
 }
 
 // load sản phẩm theo danh mục
-function load_sanpham_danhmuc($iddm, $limit) {
+function load_sanpham_danhmuc($iddm, $limit)
+{
     $sql = "SELECT * FROM tb_sanpham WHERE 1";
     if ($iddm > 0) {
-        $sql .= " AND id_danhmuc=".$iddm;
+        $sql .= " AND id_danhmuc=" . $iddm;
     }
-    $sql .= " ORDER BY id_sanpham DESC LIMIT ".$limit;
+    $sql .= " ORDER BY id_sanpham DESC LIMIT " . $limit;
     $result = pdo_query($sql);
     return $result;
-
 }
 
 //load trang chủ
