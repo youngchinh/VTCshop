@@ -17,8 +17,7 @@
                                     $linkdm = "ClientController.php?act=danhmuc&iddm=" .$id_danhmuc;
                                 echo 
                                 '
-                                <li class="menu_item_children"><a href="'.$linkdm.'">'.$ten_danhmuc.'<i class="fa fa-angle-right"></i></a>
-                                </li>
+                                <li class="menu_item_children"><a href="'.$linkdm.'">'.$ten_danhmuc.'<i class="fa fa-angle-right"></i></a></li>
                                 ';
                                 }
                             ?>
