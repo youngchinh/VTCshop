@@ -28,7 +28,7 @@
                                 <span class="label_sale">sale</span>
                             </div>
                             <div class="add_to_cart">
-                                <a href="cart.php" title="add to cart">Thêm vào giỏ hàng</a>
+                                <a href="" title="add to cart">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                         <figcaption class="product_content">

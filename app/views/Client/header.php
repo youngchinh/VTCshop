@@ -90,10 +90,7 @@
 
                                             <div class="mini_cart_footer">
                                                 <div class="cart_button">
-                                                    <a href="cart.php">View cart</a>
-                                                </div>
-                                                <div class="cart_button">
-                                                    <a href="checkout.html">Checkout</a>
+                                                    <a href="ClientController.php?act=cart">View cart</a>
                                                 </div>
 
                                             </div>

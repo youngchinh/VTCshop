@@ -27,12 +27,12 @@
 
                 <div class="form-group">
                     <label for="">Sdt</label>
-                    <input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại" required>
+                    <input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại">
                 </div>
 
                 <div class="form-group">
                     <label for="">Địa chỉ </label>
-                    <input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ" required>
+                    <input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ">
                 </div>
 
 

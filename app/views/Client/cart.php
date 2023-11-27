@@ -1,7 +1,4 @@
-<?php 
-    include "../views/Client/header.php";
-    include "../views/Client/menu.php";
-?>
+
 <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">
@@ -9,7 +6,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index.php">home</a></li>
+                            <li><a href="ClientController.php">Trang Chủ</a></li>
                             <li>Giỏ Hàng</li>
                         </ul>
                     </div>
@@ -131,7 +128,3 @@
         </div>
     </div>
     <!--shopping cart area end -->
-
-   <?php 
-    include "../views/Clientfooter.php";
-   ?>

@@ -42,6 +42,10 @@ if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
+        //giỏ hàng
+        case "cart";
+            include "../views/Client/cart.php";
+            break;
             //menu
         case "login";
             if (isset($_POST['login'])) {

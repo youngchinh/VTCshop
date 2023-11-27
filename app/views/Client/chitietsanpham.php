@@ -117,58 +117,15 @@
                     <div class="product_info_button">
                         <ul class="nav" role="tablist">
                             <li>
-                                <a class="active" data-bs-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Mô tả sản phẩm</a>
-                            </li>
-
-                            <li>
                                 <a data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Đánh giá</a>
                             </li>
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane fade show active" id="info" role="tabpanel">
-                            <div class="product_info_content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec
-                                    est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare
-                                    lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus
-                                    eu, suscipit id nulla.</p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="sheet" role="tabpanel">
-                            <div class="product_d_table">
-                                <form action="#">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="first_child">Compositions</td>
-                                                <td>Polyester</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="first_child">Styles</td>
-                                                <td>Girly</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="first_child">Properties</td>
-                                                <td>Short Dress</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </form>
-                            </div>
-                            <div class="product_info_content">
-                                <p>Fashion has been creating well-designed collections since 2010. The brand offers
-                                    feminine designs delivering stylish separates and statement dresses which have
-                                    since evolved into a full ready-to-wear collection in which every item is a
-                                    vital part of a woman's wardrobe. The result? Cool, easy, chic looks with
-                                    youthful elegance and unmistakable signature style. All the beautiful pieces are
-                                    made in Italy and manufactured with the greatest attention. Now Fashion extends
-                                    to a range of accessories including shoes, hats, belts and more!</p>
-                            </div>
-                        </div>
-
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
                             <div class="reviews_wrapper">
-                                <h2>1 review for Donec eu furniture</h2>
+                                <!-- list bình luận -->
+                                <h2>1 bình luân về sản phẩm</h2>
                                 <div class="reviews_comment_box">
                                     <div class="comment_thmb">
                                         <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
@@ -185,17 +142,15 @@
                                                 </ul>
                                             </div>
                                             <p><strong>admin </strong>- September 12, 2022</p>
-                                            <span>roadthemes</span>
+                                            <span>Sản phẩm đẹp</span>
                                         </div>
                                     </div>
+                                </div>
+                                <!-- list bình luận -->
 
-                                </div>
-                                <div class="comment_title">
-                                    <h2>Add a review </h2>
-                                    <p>Your email address will not be published. Required fields are marked </p>
-                                </div>
+                                <!-- đánh giá sao -->
                                 <div class="product_ratting mb-10">
-                                    <h3>Your rating</h3>
+                                    <h3>Đánh giá</h3>
                                     <ul>
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -204,26 +159,25 @@
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                     </ul>
                                 </div>
+                                <!-- đánh giá sao -->
+
+                                <!-- Gửi bình luận -->
                                 <div class="product_review_form">
                                     <form action="#">
                                         <div class="row">
                                             <div class="col-12">
-                                                <label for="review_comment">Your review </label>
-                                                <textarea name="comment" id="review_comment"></textarea>
+                                                <label for="review_comment">Bình luận </label>
+                                                <textarea name="noi_dung"></textarea>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <label for="author">Name</label>
-                                                <input id="author" type="text">
-
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <label for="email">Email </label>
-                                                <input id="email" type="text">
+                                                <input name="hovaten" type="text">
                                             </div>
                                         </div>
-                                        <button type="submit">Submit</button>
+                                        <button name="send" type="submit">Gửi</button>
                                     </form>
                                 </div>
+                                <!-- Gửi bình luận -->
                             </div>
                         </div>
                     </div>
