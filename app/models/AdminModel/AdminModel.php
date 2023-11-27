@@ -184,10 +184,28 @@ function insert_hethong($img_logo, $ten_logo){
 }
 
 //Đơn hàng
-function uploadall_donhang(){
+function loadall_donhang(){
     $sql = "SELECT * FROM tb_donhang ORDER BY id_donhang DESC";
     $listdonhang = pdo_query($sql);
     return $listdonhang;
+}
+
+function loadall_trangthai_donhang(){
+    $sql = "SELECT * FROM tb_trangthai_donhang order by id_trangthai_dh  DESC";
+    $listtrangthaidh = pdo_query($sql);
+    return $listtrangthaidh;
+}
+
+function loadone_donhang($id)
+{
+    $sql = "SELECT * FROM tb_donhang WHERE id_donhang = " . $id;
+    $result = pdo_query_one($sql);
+    return $result;
+}
+
+function update_trangthai_donhang($id, $id_trangthai_dh) {
+    $sql =  $sql = "UPDATE `tb_donhang` SET `id_trangthai_dh` = '$id_trangthai_dh'  WHERE `tb_donhang`.`id_donhang` = $id;";
+    pdo_execute($sql);
 }
 
 //Bai viet

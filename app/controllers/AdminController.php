@@ -310,12 +310,37 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
 
-            case "listdh";
-            $listdonhang = uploadall_donhang();
+
+        // Đơn Hàng
+        case "listdh";
+            // if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
+            //     $keyword = $_POST['keyword'];
+            //     $id_trangthai = $_POST['id_trangthai'];
+            // } else {
+            //     $keyword = "";
+            //     $id_trangthai = 0;
+            // }
+            $listtrangthai = loadall_trangthai_donhang();
+            $listdonhang = loadall_donhang();
             include "../views/Admin/donhang/listdh.php";
             break;
+
+
+            case "listctdh";
+            // if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
+            //     $keyword = $_POST['keyword'];
+            //     $id_trangthai = $_POST['id_trangthai'];
+            // } else {
+            //     $keyword = "";
+            //     $id_trangthai = 0;
+            // }
+            $listtrangthai = loadall_trangthai_donhang();
+            $listdonhang = loadall_donhang();
+            include "../views/Admin/donhang/listctdh.php";
+            break;
+
             
-            case "xoadh";
+        case "xoadh";
             if (isset($_GET['iddh']) && ($_GET['iddh'] > 0)) {
                 $sql = "DELETE FROM tb_donhang WHERE id_donhang=" . $_GET['iddh'];
                 pdo_execute($sql);
@@ -325,6 +350,31 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include "../views/Admin/donhang/listdh.php";
             break;
+
+        case "suadh";
+            if (isset($_GET['iddh']) && ($_GET['iddh'] > 0)) {
+                $iddh = ($_GET['iddh']);
+                $donhang = loadone_donhang($iddh);
+            }
+            $listtrangthai = loadall_trangthai_donhang();
+            include "../views/Admin/donhang/update.php";
+            break;
+
+        case "updatedh";
+            if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                $id_trangthai_dh = $_POST['id_trangthai_dh'];
+                $id = $_POST['id_donhang'];
+                update_trangthai_donhang($id, $id_trangthai_dh);
+                $donhang = loadone_donhang($id);
+                $thongbao = "cập nhật thành công!";
+            }
+            $listtrangthai = loadall_trangthai_donhang();
+            $listdonhang = loadall_donhang();
+            include "../views/Admin/donhang/update.php";
+            break;
+
+
+
 
         // Hệ Thống
         case "listlogo";
