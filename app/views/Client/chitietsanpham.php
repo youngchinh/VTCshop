@@ -1,9 +1,3 @@
-<?php
-include "../views/Clientheader.php";
-include "../views/Clientmenu.php";
-?>
-
-
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area">
     <div class="container">
@@ -11,7 +5,7 @@ include "../views/Clientmenu.php";
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index.php">home</a></li>
+                        <li><a href="ClientController.php">Trang Chủ</a></li>
                         <li>Chi tiết sản phẩm</li>
                     </ul>
                 </div>
@@ -22,117 +16,96 @@ include "../views/Clientmenu.php";
 <!--breadcrumbs area end-->
 
 <!--product details start-->
-<div class="product_details mt-60 mb-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="product-details-tab">
-                    <div id="img-1" class="zoomWrapper single-zoom">
-                        <a href="#">
-                            <img id="zoom1" src="../views/Client/assets/img/product/productbig5.jpg" data-zoom-image="../views/Client/assets/img/product/productbig5.jpg" alt="big-1">
-                        </a>
+<?php
+    if (is_array($chitietsp)) {
+        extract($chitietsp);
+        $imgpath = "../upload/all_sp/" . $img_sanpham;
+    }
+    echo
+    '
+        <div class="product_details mt-60 mb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-details-tab">
+                            <div id="img-1" class="zoomWrapper single-zoom">
+                                <a href="#">
+                                    <img id="zoom1" src="'.$imgpath.'" data-zoom-image="'.$imgpath.'" alt="big-1">
+                                </a>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="single-zoom-thumb">
-                        <!-- ảnh chi tiết sp -->
-                        <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig.jpg" data-zoom-image="../views/Client/assets/img/product/productbig.jpg">
-                                    <img src="../views/Client/assets/img/product/productbig.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig1.jpg" data-zoom-image="../views/Client/assets/img/product/productbig1.jpg">
-                                    <img src="../views/Client/assets/img/product/productbig1.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig2.jpg" data-zoom-image="../views/Client/assets/img/product/productbig2.jpg">
-                                    <img src="../views/Client/assets/img/product/productbig2.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="../views/Client/assets/img/product/productbig3.jpg" data-zoom-image="../views/Client/assets/img/product/productbig3.jpg">
-                                    <img src="../views/Client/assets/img/product/productbig3.jpg" alt="zo-th-1" />
-                                </a>
-
-                            </li>
-                        </ul>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product_d_right">
+                            <form action="#">
+        
+                                <h1>'.$ten_sanpham.'</h1>
+                                <div class="product_nav">
+                                </div>
+                                <div class=" product_ratting">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="review"><a href="#"> (Đánh giá của khách hàng ) </a></li>
+                                    </ul>
+        
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">'.$gia_khuyen_mai.'</span>
+                                    <span class="old_price">'.$gia_ban_dau.'</span>
+        
+                                </div>
+                                <div class="product_desc">
+                                    <p>'.$mota_sanpham.'</p>
+                                    <span> Màu: <a style="color: blue;">'.$mau_sanpham.'</a></span> <br>
+                                    <span> Dung lượng: <a style="color: blue;">'.$dung_luong.'</a></span> <br>
+                                    <span> Số lượng: <a style="color: blue;">'.$so_luong.'</a></span>
+                                </div>
+                                <div class="product_timing">
+                                    <div data-countdown="2023/12/15"></div>
+                                </div>
+        
+                                <div class="product_variant quantity">
+                                    <label>Số Lượng</label>
+                                    <input min="1" max="'.$so_luong.'" value="1" type="number">
+                                    <button class="button" type="submit">Thêm vào giỏ hàng</button>
+                                </div>';
+                                $sql = "SELECT * FROM tb_danhmuc WHERE id_danhmuc=" . $id_danhmuc;
+                                $danhmuc = pdo_query($sql);
+                                foreach ($danhmuc as $value) {
+                                    extract($value);
+                                    echo '
+                                <div class="product_meta">
+                                    <span>Danh Mục: <a href="ClientController.php?act=danhmuc&iddm='.$id_danhmuc.'">'.$ten_danhmuc.'</a></span>
+                                </div>
+                            </form>
+                            <div class="priduct_social">
+                                <ul>
+                                    <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i>
+                                            Like</a></li>
+                                    <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a>
+                                    </li>
+                                    <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i>
+                                            save</a></li>
+                                    <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i>
+                                            share</a></li>
+                                    <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i>
+                                            linked</a></li>
+                                </ul>
+                            </div>
+        
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="product_d_right">
-                    <form action="#">
-
-                        <h1>Iphone 7 - Đỏ</h1>
-                        <div class="product_nav">
-                        </div>
-                        <div class=" product_ratting">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="review"><a href="#"> (Đánh giá của khách hàng ) </a></li>
-                            </ul>
-
-                        </div>
-                        <div class="price_box">
-                            <span class="current_price">$70.00</span>
-                            <span class="old_price">$80.00</span>
-
-                        </div>
-                        <div class="product_desc">
-                            <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus
-                                eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non
-                                neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et
-                                placerat vestibulum, metus nisi posuere nisl, in </p>
-                        </div>
-                        <div class="product_timing">
-                            <div data-countdown="2023/12/15"></div>
-                        </div>
-
-                        <div class="product_variant quantity">
-                            <label>Số Lượng</label>
-                            <input min="1" max="100" value="1" type="number">
-                            <button class="button" type="submit">Thêm vào giỏ hàng</button>
-
-                        </div>
-                        <div class=" product_d_action">
-                            <ul>
-                                <li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
-                                <li><a href="#" title="Add to wishlist">+ Compare</a></li>
-                            </ul>
-                        </div>
-                        <div class="product_meta">
-                            <span>Danh Mục: <a href="#">Iphone</a></span>
-                        </div>
-
-                    </form>
-                    <div class="priduct_social">
-                        <ul>
-                            <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i>
-                                    Like</a></li>
-                            <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a>
-                            </li>
-                            <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i>
-                                    save</a></li>
-                            <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i>
-                                    share</a></li>
-                            <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i>
-                                    linked</a></li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        ';
+                                }
+?>
 <!--product details end-->
 
 <!--product info start-->
@@ -272,21 +245,19 @@ include "../views/Clientmenu.php";
             </div>
         </div>
         <div class="product_carousel product_column5 owl-carousel">
+        <?php 
+            foreach ($sp_lienquan as $sp) {
+                extract($sp);
+                $linkchitietsp = "ClientController.php?act=chitietsp&idsp=" .$id_sanpham;
+                $imgpath = "../upload/all_sp/" . $img_sanpham;
+                echo 
+            '
             <article class="single_product">
                 <figure>
                     <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product1.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product2.jpg" alt=""></a>
+                        <a class="primary_img" href="'.$linkchitietsp.'"><img src="'.$imgpath.'" alt=""></a>
                         <div class="label_product">
                             <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
                         </div>
                         <div class="add_to_cart">
                             <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
@@ -294,199 +265,19 @@ include "../views/Clientmenu.php";
                     </div>
                     <figcaption class="product_content">
                         <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
+                            <span class="old_price">'.$gia_ban_dau.'</span>
+                            <span class="current_price">'.$gia_khuyen_mai.'</span>
                         </div>
-                        <h3 class="product_name"><a href="product-details.html">Natus erro at congue massa commodo
-                                sit</a></h3>
+                        <h3 class="product_name"><a href="'.$linkchitietsp.'">'.$ten_sanpham.'</a></h3>
                     </figcaption>
                 </figure>
             </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product3.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product4.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Itaque earum velit elementum</a>
-                        </h3>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product5.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product6.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Mauris tincidunt eros posuere
-                                placerat</a></h3>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product7.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product8.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Morbi ornare vestibulum massa</a>
-                        </h3>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product9.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product10.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Porro quisquam eget feugiat
-                                pretium</a></h3>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product11.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product12.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Laudantium enim fringilla dignissim
-                                ipsum primis</a></h3>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="single_product">
-                <figure>
-                    <div class="product_thumb">
-                        <a class="primary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product4.jpg" alt=""></a>
-                        <a class="secondary_img" href="product-details.html"><img src="../views/Client/assets/img/product/product5.jpg" alt=""></a>
-                        <div class="label_product">
-                            <span class="label_sale">sale</span>
-                        </div>
-                        <div class="action_links">
-                            <ul>
-                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                <li class="compare"><a href="#" title="compare"><span class="ion-levels"></span></a>
-                                </li>
-                                <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="ion-ios-search-strong"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="add_to_cart">
-                            <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <figcaption class="product_content">
-                        <div class="price_box">
-                            <span class="old_price">$86.00</span>
-                            <span class="current_price">$79.00</span>
-                        </div>
-                        <h3 class="product_name"><a href="product-details.html">Natus erro at congue massa commodo
-                                sit</a></h3>
-                    </figcaption>
-                </figure>
-            </article>
+        
+            ';
+            }
+            
+        ?>
         </div>
     </div>
 </section>
 <!--product area end-->
-
-<?php
-include "../views/Clientfooter.php";
-?>

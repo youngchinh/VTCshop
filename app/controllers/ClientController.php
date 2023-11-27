@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../models/ClientModel/ClientModel.php";
 include "../views/Client/header.php";
 
@@ -42,6 +43,51 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
             //menu
+        case "login";
+            if (isset($_POST['login'])) {
+                $tai_khoan = $_POST['taikhoan'];
+                $mat_khau = $_POST['matkhau'];
+                $checkuser = checkuser($tai_khoan, $mat_khau);
+                
+                if(is_array($checkuser)) {
+                    $_SESSION['login']  = $checkuser; 
+                    $_SESSION['tai_khoan']  = $tai_khoan; 
+                    echo "<script>location.href = '/../VTCshop/index.php';</script>";
+                }else {
+                    $thongbao = "tài khoản không tồn tại";
+                }
+            }
+            include "../views/Client/login.php";
+            break;
+        case "account";
+            include "../views/Client/account.php";
+            break;
+        case "edit-account";
+            if (isset($_POST['save'])) {
+                $hovaten = $_POST['hovaten'];
+                $email = $_POST['email'];
+                $tai_khoan = $_POST['tai_khoan'];
+                $mat_khau = $_POST['mat_khau'];
+                $sdt = $_POST['sdt'];
+                $dia_chi = $_POST['dia_chi'];
+                $id_taikhoan = $_POST['id_taikhoan'];
+                edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_taikhoan);
+                $_SESSION['login']  = checkuser($tai_khoan, $mat_khau); 
+                $thongbao = "Lưu thành công!";
+            }
+            include "../views/Client/edit_account.php";
+            break;
+        case "chitietsp";
+            if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
+                $idsp = ($_GET['idsp']);
+                $chitietsp = loadone_sanpham($idsp);
+                //load sản phẩm liên quan
+                $iddm = $chitietsp['id_danhmuc'];
+                $sp_lienquan = loadsp_lienquan($idsp, $iddm);
+            }
+            include "../views/Client/chitietsanpham.php";
+            break;
+
         case "sanpham";
             $list_sp = loadall_sanpham();
             include "../views/Client/sanpham.php";

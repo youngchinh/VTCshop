@@ -95,14 +95,14 @@
                     foreach ($sp_sale as $sp) {
                         extract($sp);
                         $imgpath = "../upload/sp_sale/" . $img_sanpham;
-
+                        $linkchitietsp = "ClientController.php?act=chitietsp&idsp=" . $id_sanpham;
                         echo
                         '
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <article class="single_product">
                                     <figure>
                                         <div class="product_thumb">
-                                            <a class="primary_img" href="product-details.html"><img src="' . $imgpath . '"></a>
+                                            <a class="primary_img" href="'.$linkchitietsp.'"><img src="' . $imgpath . '"></a>
                                             <div class="label_product">
                                                 <span class="label_sale">sale</span>
                                             </div>
@@ -124,7 +124,7 @@
                                                     <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <h3 class="product_name grid_name"><a href="product-details.html">' . $ten_sanpham . '</a></h3>
+                                            <h3 class="product_name grid_name"><a href="'.$linkchitietsp.'">' . $ten_sanpham . '</a></h3>
                                         </div>
                                     </figure>
                                 </article>

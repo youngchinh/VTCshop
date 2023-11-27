@@ -25,10 +25,10 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="main_header">
-              <!--header middel start-->
-              <div class="header_middle">
+            <!--header middel start-->
+            <div class="header_middle">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
@@ -47,10 +47,9 @@
                                     </form>
                                 </div>
                                 <div class="middel_right_info">
-                                    
+
                                     <div class="mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><i class="fa fa-shopping-bag"
-                                                aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
+                                        <a href="javascript:void(0)"><i class="fa fa-shopping-bag" aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
                                         <span class="cart_quantity">2</span>
                                         <!--mini cart-->
                                         <div class="mini_cart">
@@ -120,10 +119,32 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-end">
-                                <ul>
-                                    <li><a href="account.php"> Tài Khoản </a></li>
-                                    <li><a href="login.php"> Đăng xuất </a></li>
-                                </ul>
+                                <?php
+                                if (isset($_SESSION['tai_khoan'])) {
+                                    // echo
+                                    // '
+                                    //     <script>
+                                    //         alert("Đăng nhập thành công");
+                                    //     </script>
+                                    // ';
+                                    echo
+                                    '
+                                        <ul>
+                                            <li><a href="ClientController.php?act=account">Tài khoản</a></li>
+                                            <li><a href="../views/Client/logout.php">Đăng xuất</a></li>
+                                        </ul>
+                                        ';
+                                    //session_destroy();
+                                } else {
+                                    echo
+                                    '
+                                        <ul>
+                                            <li><a href="ClientController.php?act=login">Đăng nhập</a></li>
+                                        </ul>
+                                        ';
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>
