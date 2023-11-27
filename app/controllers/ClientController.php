@@ -52,16 +52,29 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $tai_khoan = $_POST['taikhoan'];
                 $mat_khau = $_POST['matkhau'];
                 $checkuser = checkuser($tai_khoan, $mat_khau);
-                
-                if(is_array($checkuser)) {
-                    $_SESSION['login']  = $checkuser; 
-                    $_SESSION['tai_khoan']  = $tai_khoan; 
+
+                if (is_array($checkuser)) {
+                    $_SESSION['login']  = $checkuser;
+                    $_SESSION['tai_khoan']  = $tai_khoan;
                     echo "<script>location.href = '/../VTCshop/index.php';</script>";
-                }else {
+                } else {
                     $thongbao = "tài khoản không tồn tại";
                 }
             }
             include "../views/Client/login.php";
+            break;
+        case "dangky";
+            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+                $tai_khoan = $_POST['tai_khoan'];
+                $email = $_POST['email'];
+                $mat_khau = $_POST['mat_khau'];
+                $sdt = $_POST['sdt'];
+                $dia_chi = $_POST['dia_chi'];
+                $hovaten = $_POST['hovaten'];
+                insert_taikhoan( $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi);
+                $thongbao = "Đã đăng ký thành công";
+            }
+            include "../views/Client/register.php";
             break;
         case "account";
             include "../views/Client/account.php";
@@ -76,7 +89,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $dia_chi = $_POST['dia_chi'];
                 $id_taikhoan = $_POST['id_taikhoan'];
                 edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_taikhoan);
-                $_SESSION['login']  = checkuser($tai_khoan, $mat_khau); 
+                $_SESSION['login']  = checkuser($tai_khoan, $mat_khau);
                 $thongbao = "Lưu thành công!";
             }
             include "../views/Client/edit_account.php";

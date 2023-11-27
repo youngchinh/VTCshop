@@ -185,9 +185,10 @@
                          <li class="nav-item">
                              <a href="AdminController.php?act=listdh" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Danh sách</p>
+                                 <p>Danh sách đơn hàng</p>
                              </a>
                          </li>
+
                      </ul>
                  </li>
                  <!-- hệ thống -->
