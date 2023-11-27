@@ -6,7 +6,7 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
-                        <li>Tài khoản</li>
+                        <li>Đăng Nhập</li>
                     </ul>
                 </div>
             </div>
@@ -46,27 +46,6 @@
                 </div>
             </div>
             <!--login area start-->
-
-            <!--register area start-->
-            <div class="col-lg-6 col-md-6">
-                <div class="account_form register">
-                    <h2>Đăng Ký</h2>
-                    <form action="#">
-                        <p>
-                            <label>Địa chỉ email <span>*</span></label>
-                            <input type="text">
-                        </p>
-                        <p>
-                            <label>Mật Khẩu <span>*</span></label>
-                            <input type="password">
-                        </p>
-                        <div class="login_submit">
-                            <button type="submit">Đăng Ký</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!--register area end-->
         </div>
     </div>
 </div>
