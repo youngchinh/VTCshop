@@ -140,6 +140,7 @@
                                     '
                                         <ul>
                                             <li><a href="ClientController.php?act=login">Đăng nhập</a></li>
+                                            <li><a href="ClientController.php?act=dangky">Đăng ký</a></li>
                                         </ul>
                                         ';
                                 }
