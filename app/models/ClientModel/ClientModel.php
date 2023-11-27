@@ -8,6 +8,11 @@ function checkuser($tai_khoan, $mat_khau)
     $result = pdo_query_one($sql);
     return $result;
 }
+//edit account
+function edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_taikhoan) {
+    $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten', `tai_khoan` = '$tai_khoan',  `mat_khau` = '$mat_khau', `email` = '$email', `sdt` = '$sdt', `dia_chi` = '$dia_chi' WHERE `tb_taikhoan`.`id_taikhoan` = $id_taikhoan;";
+    pdo_execute($sql);
+}
 // Danh Mục
 function loadall_danhmuc()
 {

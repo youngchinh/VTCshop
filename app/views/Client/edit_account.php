@@ -8,7 +8,7 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
-                        <li>Thông tin tài khoản</li>
+                        <li>Sửa thông tin</li>
                     </ul>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <!-- Nav tabs -->
                     <div class="dashboard_tab_button">
                         <ul role="tablist" class="nav flex-column dashboard-list">
-                            <li><a href="ClientController.php?act=account" class="nav-link">Thông tin tài khoản</a></li>
+                            <li><a href="ClientController.php?act=account"  class="nav-link">Thông tin tài khoản</a></li>
                             <li><a href="ClientController.php?act=edit-account"  class="nav-link">Sửa thông tin</a></li>
                         </ul>
                     </div>
@@ -35,7 +35,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="account-details">
-                            <h3>Thông tin tài khoản</h3>
+                            <h3>Sửa thông tin</h3>
                             <div class="login">
                                 <div class="login_form_container">
                                     <div class="account_login_form">
@@ -44,20 +44,32 @@
                                                 extract($_SESSION['login']);
                                             }
                                         ?>
-                                        <form>
+                                        <form action="ClientController.php?act=edit-account" method="POST">
                                             <label>Họ và tên</label>
-                                            <input disabled type="text" name="hovaten" value="<?=$hovaten?>">
-                                            <label>Email</label>
-                                            <input disabled type="password" name="email" value="<?=$email?>">
-                                            <label>Tài khoản</label>
-                                            <input disabled type="text" name="tai_khoan" value="<?=$tai_khoan?>">
-                                            <label>Password</label>
-                                            <input disabled type="password" name="mat_khau" value="<?=$mat_khau?>">
-                                            <label>Số điện thoại</label>
-                                            <input disabled type="text" placeholder="MM/DD/YYYY" name="sdt" value="<?=$sdt?>">
-                                            <label>Địa Chỉ</label>
-                                            <input disabled type="text" placeholder="Địa chỉ" name="dia_chi" value="<?=$dia_chi?>">
+                                            <input type="text" name="hovaten" value="<?=$hovaten?>">
 
+                                            <label>Email</label>
+                                            <input type="text" name="email" value="<?=$email?>">
+
+                                            <label>Tài khoản</label>
+                                            <input type="text" name="tai_khoan" value="<?=$tai_khoan?>">
+
+                                            <label>Password</label>
+                                            <input type="text" name="mat_khau" value="<?=$mat_khau?>">
+
+                                            <label>Số điện thoại</label>
+                                            <input type="text" placeholder="MM/DD/YYYY" name="sdt" value="<?=$sdt?>">
+
+                                            <label>Địa Chỉ</label>
+                                            <input type="text" placeholder="Địa chỉ" name="dia_chi" value="<?=$dia_chi?>">
+
+                                            <input type="hidden" name="id_taikhoan" value="<?=$id_taikhoan?>">
+                                            <button style="background-color: green; border: none; height: 40px; color: #fff;" name="save" type="submit">Lưu thông tin</button>
+                                            <?php
+                                                if (isset($thongbao) && ($thongbao != "")) {
+                                                    echo $thongbao;
+                                                }
+                                            ?>
                                         </form>
                                     </div>
                                 </div>

@@ -120,30 +120,34 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-end">
                                 <?php
-                                    if (isset($_SESSION['tai_khoan'])) {
-                                        echo 
-                                        '
+                                if (isset($_SESSION['tai_khoan'])) {
+                                    // echo
+                                    // '
+                                    //     <script>
+                                    //         alert("Đăng nhập thành công");
+                                    //     </script>
+                                    // ';
+                                    echo
+                                    '
                                         <ul>
                                             <li><a href="ClientController.php?act=account">Tài khoản</a></li>
                                             <li><a href="../views/Client/logout.php">Đăng xuất</a></li>
                                         </ul>
                                         ';
-                                        //session_destroy();
-                                    }
-                                    else{
-                                        echo 
-                                        '
+                                    //session_destroy();
+                                } else {
+                                    echo
+                                    '
                                         <ul>
                                             <li><a href="ClientController.php?act=login">Đăng nhập</a></li>
                                         </ul>
                                         ';
-                                    }
-                                ?>     
-                                
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!--header top start-->
-            
