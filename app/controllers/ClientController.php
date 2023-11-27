@@ -62,6 +62,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "account";
             include "../views/Client/account.php";
             break;
+        case "edit-account";
+            if (isset($_POST['save'])) {
+                $hovaten = $_POST['hovaten'];
+                $email = $_POST['email'];
+                $tai_khoan = $_POST['tai_khoan'];
+                $mat_khau = $_POST['mat_khau'];
+                $sdt = $_POST['sdt'];
+                $dia_chi = $_POST['dia_chi'];
+                $id_taikhoan = $_POST['id_taikhoan'];
+                edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $id_taikhoan);
+                $_SESSION['login']  = checkuser($tai_khoan, $mat_khau); 
+                $thongbao = "Lưu thành công!";
+            }
+            include "../views/Client/edit_account.php";
+            break;
         case "chitietsp";
             if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $idsp = ($_GET['idsp']);
