@@ -108,7 +108,7 @@
                                                 <span class="label_sale">sale</span>
                                             </div>
                                             <div class="add_to_cart">
-                                                <a href="cart.html" title="add to cart">Thêm vào giỏ hàng</a>
+                                            <a data-id="'.$id_sanpham.'" onclick="addToCart('.$id_sanpham.', '.$ten_sanpham.', '.$gia_khuyen_mai.')">Thêm vào giỏ hàng</a>
                                             </div>
                                         </div>
                                         <div class="product_content grid_content">
@@ -151,3 +151,28 @@
     </div>
 </div>
 <!--shop  area end-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <script>
+     let totalProduct = document.getElementById('totalProduct');
+     function addToCart(productId, productName, productPrice) {
+        //  console.log(productId, productName, productPrice);
+         // Sử dụng jQuery
+         $.ajax({
+             type: 'POST',
+             // Đường dẫ tới tệp PHP xử lý dữ liệu
+             url: './Client/addToCart.php',
+             data: {
+                 id: productId,
+                 name: productName,
+                 price: productPrice
+             },
+             success: function(response) {
+                 totalProduct.innerText = response;
+                 alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+             },
+             error: function(error) {
+                 console.log(error);
+             }
+         });
+     }
+ </script>

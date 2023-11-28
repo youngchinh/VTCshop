@@ -38,7 +38,7 @@
                     </p>
                     <ul>
                         <li><i class="fa fa-fax"></i> Địa Chỉ: Cổng số 1, Tòa nhà FPT Polytechnic, 13 phố Trịnh Văn Bô, phường Phương Canh, quận Nam Từ Liêm, TP Hà Nội</li>
-                        <li><i class="fa fa-envelope-o"> </i> Email: vtcshop@gmail.com<a href="mailto:demo@example.com">vtcshop@gmail.com </a>
+                        <li><i class="fa fa-envelope-o"> </i> Email: <a href="mailto:demo@example.com">vtcshop@gmail.com </a>
                         </li>
                         <li><i class="fa fa-phone"></i> Phone:<a href="tel: 0123456789"> 0123456789 </a> </li>
                     </ul>>

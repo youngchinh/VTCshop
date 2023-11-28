@@ -46,18 +46,12 @@
                                             }
                                         ?>
                                         <form>
-                                            <label>Họ và tên</label>
-                                            <input disabled type="text" name="hovaten" value="<?=$hovaten?>">
-                                            <label>Email</label>
-                                            <input disabled type="password" name="email" value="<?=$email?>">
-                                            <label>Tài khoản</label>
-                                            <input disabled type="text" name="tai_khoan" value="<?=$tai_khoan?>">
-                                            <label>Password</label>
-                                            <input disabled type="password" name="mat_khau" value="<?=$mat_khau?>">
-                                            <label>Số điện thoại</label>
-                                            <input disabled type="text" placeholder="MM/DD/YYYY" name="sdt" value="<?=$sdt?>">
-                                            <label>Địa Chỉ</label>
-                                            <input disabled type="text" placeholder="Địa chỉ" name="dia_chi" value="<?=$dia_chi?>">
+                                            <h4> Họ và tên :<a><?=$hovaten?></a></h4>  <br>
+                                            <h4> Email : <a><?=$email?></a></h4>  <br>
+                                            <h4> Tài khoản: <a><?=$tai_khoan?></a></h4>  <br>
+                                            <h4> Password: <a>******</a></h4>  <br>
+                                            <h4> Số điện thoại: <a>+84<?=$sdt?></a></h4>  <br>
+                                            <h4> Địa Chỉ: <a><?=$dia_chi?></a></h4>  <br>
 
                                         </form>
                                     </div>

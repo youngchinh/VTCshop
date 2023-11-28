@@ -90,14 +90,14 @@
                 <div class="coupon_area">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
-                            <div class="coupon_code left">
+                            <!-- <div class="coupon_code left">
                                 <h3>Mã giảm giá</h3>
                                 <div class="coupon_inner">
                                     <p>Nhập mã giảm giá của bạn</p>
                                     <input placeholder="Nhập mã" type="text">
                                     <button type="submit">Áp Dụng</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="coupon_code right">

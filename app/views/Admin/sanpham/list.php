@@ -23,10 +23,9 @@
                         <table class="table">
                             <tdead class="thead-drank">
                                 <tr>
-                                    <th>id</th>
                                     <th>Tên Sản phẩm </th>
                                     <th>Ảnh sản phẩm</th>
-                                    <th>Mô tả</th>
+                                    <!-- <th>Mô tả</th> -->
                                     <th>Màu sản phẩm</th>
                                     <th>Giá ban đầu</th>
                                     <th>Giá Khuyến mãi</th>
@@ -53,10 +52,8 @@
                                     echo
                                     '
                             <tr>
-                                <td>' . $id_sanpham . '</td>
                                 <td>' . $ten_sanpham . '</td>
                                 <td>' . $imgpath . '</td>
-                                <td>' . $mota_sanpham . '</td>
                                 <td>' . $mau_sanpham . '</td>
                                 <td>' . $gia_ban_dau . '</td>
                                 <td>' . $gia_khuyen_mai . '</td>

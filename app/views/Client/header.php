@@ -41,7 +41,7 @@
                                 <div class="search_container">
                                     <form action="#">
                                         <div class="search_box">
-                                            <input placeholder="Search product..." type="text">
+                                            <input placeholder="Tìm kiếm sản phẩm..." type="text">
                                             <button type="submit">Tìm Kiếm</button>
                                         </div>
                                     </form>
@@ -49,10 +49,10 @@
                                 <div class="middel_right_info">
 
                                     <div class="mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><i class="fa fa-shopping-bag" aria-hidden="true"></i>$147.00 <i class="fa fa-angle-down"></i></a>
-                                        <span class="cart_quantity">2</span>
+                                        <a href="ClientController.php?act=cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                                        <span class="cart_quantity" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         <!--mini cart-->
-                                        <div class="mini_cart">
+                                        <!-- <div class="mini_cart">
                                             <div class="cart_item">
                                                 <div class="cart_img">
                                                     <a href="#"><img src="../views/Client/assets/img/s-product/product.jpg" alt=""></a>
@@ -95,7 +95,7 @@
 
                                             </div>
 
-                                        </div>
+                                        </div> -->
                                         <!--mini cart end-->
                                     </div>
                                 </div>
