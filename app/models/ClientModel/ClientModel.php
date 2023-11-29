@@ -184,3 +184,15 @@ function send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_d
     VALUES ('$hovaten', '$sdt', '$email', '$dia_chi_lienhe', '$ngay_gui', '$noi_dung_lienhe')";
     pdo_execute($sql);
 }
+
+//Bình luận
+function insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanpham, $id_taikhoan){
+    $sql = "INSERT INTO `tb_binhluan`(`hovaten`, `noi_dung_binhluan`, `ngay_binh_luan`, `id_sanpham`, `id_taikhoan`) 
+    VALUES ('$hovaten', '$noi_dung_binhluan', '$ngay_binh_luan', '$id_sanpham', '$id_taikhoan')";
+    pdo_execute($sql);
+}
+
+function loadall_binhluan(){
+    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan DESC";
+    return pdo_query($sql);
+}
