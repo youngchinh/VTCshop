@@ -77,7 +77,7 @@
                                         <?php
                                             $sum_total += (int)$product['gia_ban_dau'] * (int)$quantityInCart;
                                             $sum_total_ship = $sum_total + $ship;
-                                            $_SESSION['resultTotal'] = $sum_total;
+                                            $_SESSION['resultTotal'] = $sum_total_ship;
                                         endforeach;
                                         ?>
                                     </tbody>
@@ -89,36 +89,7 @@
                                 <div class="coupon_area">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
-                                            <div class="coupon_code left">
-                                                <h3>Thông tin giao hàng</h3>
-                                                <div class="coupon_inner">
-                                                    <?php
-                                                    if (isset($_SESSION['login']) && (is_array($_SESSION['login']))) {
-                                                        extract($_SESSION['login']);
-                                                    }
-                                                    ?>
-                                                    <form action="ClientController.php?act=oder" method="POST">
-                                                        <label>Tên người nhận</label>
-                                                        <input type="text" name="hovaten" value="<?= $hovaten ?>"> <br>
-
-                                                        <label>Số điện thoại</label>
-                                                        <input type="number"  name="sdt" value="<?= $sdt ?>"> <br>
-
-                                                        <label>Địa chỉ nhận hàng</label>
-                                                        <input type="text" placeholder="Địa chỉ" name="dia_chi" value="<?= $dia_chi ?>"> <br>
-
-                                                        <label>Phương thức thanh toán</label>
-                                                        <p><input type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                                        <p><input type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
-                                                        <button style="background-color: green; border: none; height: 40px; color: #fff;" name="order" type="submit">Đặt hàng</button>
-                                                        <?php
-                                                        if (isset($thongbao) && ($thongbao != "")) {
-                                                            echo $thongbao;
-                                                        }
-                                                        ?>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="coupon_code right">
@@ -138,6 +109,9 @@
                                                         <p class="cart_amount"><?= number_format((int)$sum_total_ship, 0, ",", ".") ?><u>đ</u></p>
                                                     </div>
                                                     <div class="checkout_btn">
+                                                    <div class="cart_submit">
+                                                        <a href="ClientController.php?act=order " class="button">Xác nhận</a>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>

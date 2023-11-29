@@ -375,6 +375,57 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
 
 
+        //Vai tro
+        case "listvt";
+            $listvaitro = loadall_role();
+            include "../views/Admin/vaitro/list.php";
+            break;
+
+        case "addvt";
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $ten_vaitro = $_POST['ten_vaitro'];
+                $mota_vaitro = $_POST['mota_vaitro'];
+                insert_role($ten_vaitro, $mota_vaitro);
+                $thongbao = "thêm thành công";
+            }
+            include "../views/Admin/vaitro/add.php";
+            break;
+  
+        case "xoavt";
+            if (isset($_GET['idvt']) && ($_GET['idvt'] > 0)) {
+                $idvt = ($_GET['idvt']);
+                $sql = "DELETE FROM tb_role WHERE id_vaitro=" .$idvt;
+                pdo_execute($sql);
+            }
+            $listvaitro = loadall_role();
+            include "../views/Admin/vaitro/list.php";
+            break;
+
+        case "suavt";
+            if (isset($_GET['idvt']) && ($_GET['idvt'] > 0)) {
+                $idvt = ($_GET['idvt']);
+                $sql = "SELECT * FROM tb_role WHERE id_vaitro=" . $idvt;
+                $vaitro = pdo_query_one($sql);
+            }
+            include "../views/Admin/vaitro/update.php";
+            break;
+
+      
+
+        case 'updatevt';
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $ten_vaitro = $_POST['ten_vaitro'];
+                $mota_vaitro = $_POST['mota_vaitro'];
+                $id = $_POST['id_vaitro'];
+                $sql = "UPDATE `tb_role` SET `ten_vaitro` = '$ten_vaitro', `mota_vaitro` = '$mota_vaitro' WHERE `tb_role`.`id_vaitro` = $id;";
+                pdo_execute($sql);
+                $thongbao = "cập nhật thành công!";
+            }
+            $listvaitro = loadall_role();
+            include "../views/Admin/vaitro/list.php";
+            break;
+        
+
 
         // Hệ Thống
         case "listlogo";

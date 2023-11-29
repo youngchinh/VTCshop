@@ -56,7 +56,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $sdt = $_POST['sdt'];
                     $dia_chi = $_POST['dia_chi'];
                     $id_taikhoan = $_POST['id_taikhoan'];
-                    shipping($hovaten, $sdt, $dia_chi, $id_taikhoan);
                     $_SESSION['login']  = checkuser($tai_khoan, $mat_khau);
                     $thongbao = "Lưu thành công!";
                 }
@@ -68,10 +67,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_SESSION['cart'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart);
-                if (isset($_POST['order'])) {
-                    $thoten = $_POST['hovaten'];
-                    $ttel = $_POST['sdt'];
-                    $taddress = $_POST['diachi'];
+                if (isset($_POST['order_confirm'])) {
+                    $hovaten = $_POST['hovaten'];
+                    $sdt = $_POST['sdt'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $email = $_POST['email'];
                     $pttt = $_POST['pttt'];
                     // date_default_timezone_set('Asia/Ho_Chi_Minh');
                     // $currentDateTime = date('Y-m-d H:i:s');
@@ -80,27 +80,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     } else {
                         $id_user = 0;
                     }
-                    $idBill = addOrder($id_user, $thoten, $ttel, $taddress, $_SESSION['result_Total_ship'], $pttt);
+                    $idBill = add_DonHang($id_user, $hovaten, $sdt, $dia_chi, $email, $_SESSION['resultTotal'], $pttt);
                     foreach ($cart as $item) {
-                        addOrderDetail($idBill, $item['id_sanpham'], $item['gia_khuyen_mai'] * $item['so_luong']);
+                        add_DonHangDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
                     }
-                    unset($_SESSION['cart']);
-                    $_SESSION['success'] = $idBill;
-                    header("Location: ClientController.php?act=success");
+                    $_SESSION['cart'] = [];
+                    echo "<script>alert('Đặt hàng thành công!')</script>";
+                    echo "<script>location.href = '/../VTCshop/app/controllers/ClientController.php';</script>";
+
                 }
-                include "../views/Client/cart.php";
-            } else {
-                header("Location: ClientController?act=cart");
-            }
+                include "../views/Client/order.php";
+            } 
             break;
-            case "success";
-                if (isset($_SESSION['success'])) {
-                    include "../views/Client/success.php";
-                } else {
-                    header("Location: ClientController.php");
-                }
-                break;
-            //menu
         case "login";
             if (isset($_POST['login'])) {
                 $tai_khoan = $_POST['taikhoan'];
@@ -214,6 +205,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $sp_noibat = loadsanpham_noibat();
             $loaddanhmuc = loadall_danhmuc();
             include "../views/Client/sanpham_noibat.php";
+            break;
+
+        case "donhang";
+            $loaddonhang = loadall_donhang();
+           
+            include "../views/Client/donhang.php";
+            break;
+        case "chitietdh";
+            include "../views/Client/chitietdonhang.php";
             break;
     }
 } else {

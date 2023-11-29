@@ -18,20 +18,17 @@ function edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $
     pdo_execute($sql);
 }
 
-function shipping($hovaten, $sdt, $dia_chi, $id_taikhoan) {
-    $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten',`sdt` = '$sdt', `dia_chi` = '$dia_chi' WHERE `tb_taikhoan`.`id_taikhoan` = $id_taikhoan;";
-    pdo_execute($sql);
-}
-
-function addOrder($id_user, $thoten, $ttel, $taddress, $thanh_tien, $pttt){
-    $sql="INSERT INTO tb_chitietdonhang (id_taikhoan, hovaten, sdt, dia_chi, thanh_tien, pttt) VALUES ($id_user, '$thoten', '$ttel', '$taddress', $thanh_tien, $pttt);";
-    $id= pdo_execute($sql);
+//add dơn hàng
+function add_DonHang($id_user, $hovaten, $sdt, $dia_chi, $email, $tongtien, $pttt){
+    $sql = "INSERT INTO tb_donhang (id_taikhoan, hovaten, dia_chi, sdt, email, tongtien, pttt) VALUES ($id_user, '$hovaten', '$dia_chi', '$sdt', '$email', $tongtien, $pttt);";
+    $id = pdo_executeid($sql);
     return $id;
 }
 
-function addOrderDetail($id_order, $id_pro,  $thanhtien){
-    $sql="INSERT INTO tb_donhang (id_donhang, id_sanpham, don_gia) VALUES ($id_order, $id_pro, $thanhtien );";
-    pdo_execute($sql);
+function add_DonHangDetail($id_order, $id_pro, $name, $so_luong, $thanhtien){
+    $sql="INSERT INTO tb_chitietdonhang (id_donhang, id_sanpham, ten_sanpham, so_luong, thanh_tien) VALUES ($id_order, $id_pro, '$name', $so_luong, $thanhtien);";
+    $id = pdo_executeid($sql);
+    return $id;
 }
 // Danh Mục
 function loadall_danhmuc()
@@ -185,6 +182,7 @@ function send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_d
     pdo_execute($sql);
 }
 
+
 //Bình luận
 function insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanpham, $id_taikhoan){
     $sql = "INSERT INTO `tb_binhluan`(`hovaten`, `noi_dung_binhluan`, `ngay_binh_luan`, `id_sanpham`, `id_taikhoan`) 
@@ -196,3 +194,18 @@ function loadall_binhluan(){
     $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan DESC";
     return pdo_query($sql);
 }
+
+// Đơn hàng
+function loadall_donhang(){
+    $sql = "SELECT * FROM tb_donhang ORDER BY id_donhang DESC";
+    $listdonhang = pdo_query($sql);
+    return $listdonhang;
+}
+
+// Tài khoản
+function loadall_taikhoan(){
+    $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}
+
