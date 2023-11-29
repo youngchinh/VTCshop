@@ -32,7 +32,6 @@
                             <th>Họ và tên </th>
                             <th>Địa chỉ</th>
                             <th>Đơn giá</th>
-                            <th>Số Lượng</th>
                             <th>Thành Tiền </th>
                             <th>Trạng Thái</th>
                             <th></th>

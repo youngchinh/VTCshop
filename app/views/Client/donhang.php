@@ -29,7 +29,6 @@
                                         <th class="product_thumb">STT</th>
                                         <th class="product_thumb">Ảnh Sản Phẩm</th>
                                         <th class="product_name">Sản Phẩm</th>
-                                        <th class="product-price">Giá</th>
                                         <th class="product_quantity">Số Lượng</th>
                                         <th class="product_total">Tổng Tiền</th>
                                        
@@ -61,9 +60,8 @@
                                                 <td class="product_name"><a href="#">'.$stt.'</a></td>
                                                 <td class="product_thumb"><a href="#"><img width=100px height=100px src="../upload/all_sp/'.$img_sanpham.'" alt=""></a></td>
                                                 <td class="product_name"><a href="#">'.$ten_sanpham.'</a></td>
-                                                <td id="dongia" class="product-price">'.$don_gia.'</td>
                                                 <td id="dongia" class="product-price">'.$so_luong.'</td>
-                                                <td id="dongia" class="product-price">'.$don_gia.'</td>
+                                                <td id="dongia" class="product-price">'.$tongtien.'</td>
                                                
                                             </tr>
                                         </tbody>
