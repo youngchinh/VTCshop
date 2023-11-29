@@ -7107,7 +7107,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     text-align: center;
   }
 }
-.cart_submit button {
+.cart_submit .button {
   background: #242424;
   border: 0;
   color: #ffffff;
@@ -7123,7 +7123,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   transition: 0.3s;
   border-radius: 3px;
 }
-.cart_submit button:hover {
+.cart_submit .button:hover {
   background: #0063d1;
 }
 

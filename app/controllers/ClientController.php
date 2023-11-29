@@ -42,10 +42,64 @@ if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-        //giỏ hàng
+            //giỏ hàng
         case "cart";
+            if (!empty($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+
+                $productId = array_column($cart, 'id');
+                $idList = implode(',', $productId);
+                //Lấy sản phẩm trong bảng sản phẩm theo id
+                $dataDb =  loadone_productCart($idList);
+                if (isset($_POST['save'])) {
+                    $hovaten = $_POST['hovaten'];
+                    $sdt = $_POST['sdt'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $id_taikhoan = $_POST['id_taikhoan'];
+                    shipping($hovaten, $sdt, $dia_chi, $id_taikhoan);
+                    $_SESSION['login']  = checkuser($tai_khoan, $mat_khau);
+                    $thongbao = "Lưu thành công!";
+                }
+            }
+
             include "../views/Client/cart.php";
             break;
+        case "order";
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+                // print_r($cart);
+                if (isset($_POST['order'])) {
+                    $thoten = $_POST['hovaten'];
+                    $ttel = $_POST['sdt'];
+                    $taddress = $_POST['diachi'];
+                    $pttt = $_POST['pttt'];
+                    // date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    // $currentDateTime = date('Y-m-d H:i:s');
+                    if (isset($_SESSION['login'])) {
+                        $id_user = $_SESSION['login']['id_taikhoan'];
+                    } else {
+                        $id_user = 0;
+                    }
+                    $idBill = addOrder($id_user, $thoten, $ttel, $taddress, $_SESSION['result_Total_ship'], $pttt);
+                    foreach ($cart as $item) {
+                        addOrderDetail($idBill, $item['id_sanpham'], $item['gia_khuyen_mai'] * $item['so_luong']);
+                    }
+                    unset($_SESSION['cart']);
+                    $_SESSION['success'] = $idBill;
+                    header("Location: ClientController.php?act=success");
+                }
+                include "../views/Client/cart.php";
+            } else {
+                header("Location: ClientController?act=cart");
+            }
+            break;
+            case "success";
+                if (isset($_SESSION['success'])) {
+                    include "../views/Client/success.php";
+                } else {
+                    header("Location: ClientController.php");
+                }
+                break;
             //menu
         case "login";
             if (isset($_POST['login'])) {
@@ -55,7 +109,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
                 if (is_array($checkuser)) {
                     $_SESSION['login']  = $checkuser;
-                    $_SESSION['tai_khoan']  = $tai_khoan;
+                    // $_SESSION['tai_khoan']  = $tai_khoan;
                     echo "<script>location.href = '/../VTCshop/index.php';</script>";
                 } else {
                     $thongbao = "tài khoản không tồn tại";
@@ -71,7 +125,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $sdt = $_POST['sdt'];
                 $dia_chi = $_POST['dia_chi'];
                 $hovaten = $_POST['hovaten'];
-                insert_taikhoan( $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi);
+                insert_taikhoan($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi);
                 $thongbao = "Đã đăng ký thành công";
             }
             include "../views/Client/register.php";

@@ -7,9 +7,9 @@ if ((isset($_POST['dangnhap']))) {
     // $thongbao = "Đăng nhập thành công";
 
     $taikhoan = get_taikhoan_tk_mk($tai_khoan, $mat_khau);
-        extract($taikhoan);
-        if($id_vaitro == 1) {
-            $_SESSION['admin'] = 1;
+        // extract($taikhoan);
+        if(is_array($taikhoan)) {
+            $_SESSION['admin'] = $taikhoan;
             $_SESSION['tai_khoan'] = $tai_khoan;
             $_SESSION['mat_khau'] = $mat_khau;
             header('Location: /../VTCshop/app/controllers/AdminController.php');
@@ -19,7 +19,7 @@ if ((isset($_POST['dangnhap']))) {
 }
 ?>
 
-<link rel="stylesheet" href="./assets/css/login.css">;
+<link rel="stylesheet" href="./assets/css/login.css">
 <div class="boxcenter">
     <h2 style="text-align: center;">Login ADMIN</h2>
 

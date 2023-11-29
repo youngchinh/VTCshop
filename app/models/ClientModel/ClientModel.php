@@ -17,6 +17,22 @@ function edit_account($hovaten, $tai_khoan, $mat_khau, $email, $sdt, $dia_chi, $
     $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten', `tai_khoan` = '$tai_khoan',  `mat_khau` = '$mat_khau', `email` = '$email', `sdt` = '$sdt', `dia_chi` = '$dia_chi' WHERE `tb_taikhoan`.`id_taikhoan` = $id_taikhoan;";
     pdo_execute($sql);
 }
+
+function shipping($hovaten, $sdt, $dia_chi, $id_taikhoan) {
+    $sql = "UPDATE `tb_taikhoan` SET `hovaten` = '$hovaten',`sdt` = '$sdt', `dia_chi` = '$dia_chi' WHERE `tb_taikhoan`.`id_taikhoan` = $id_taikhoan;";
+    pdo_execute($sql);
+}
+
+function addOrder($id_user, $thoten, $ttel, $taddress, $thanh_tien, $pttt){
+    $sql="INSERT INTO tb_chitietdonhang (id_taikhoan, hovaten, sdt, dia_chi, thanh_tien, pttt) VALUES ($id_user, '$thoten', '$ttel', '$taddress', $thanh_tien, $pttt);";
+    $id= pdo_execute($sql);
+    return $id;
+}
+
+function addOrderDetail($id_order, $id_pro,  $thanhtien){
+    $sql="INSERT INTO tb_donhang (id_donhang, id_sanpham, don_gia) VALUES ($id_order, $id_pro, $thanhtien );";
+    pdo_execute($sql);
+}
 // Danh Mục
 function loadall_danhmuc()
 {
@@ -24,6 +40,13 @@ function loadall_danhmuc()
     $listdanhmuc = pdo_query($sql);
     return $listdanhmuc;
 }
+
+function loadone_productCart($idList) {
+    $sql = 'SELECT * FROM tb_sanpham WHERE id_sanpham IN ('.$idList.')';
+    $result = pdo_query($sql);
+    return $result;
+}
+
 //load san pham chi tiet
 function loadone_sanpham($idsp)
 {

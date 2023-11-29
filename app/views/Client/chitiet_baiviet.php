@@ -1,7 +1,3 @@
-<?php 
-    include "../views/Client/header.php";
-    include "../views/Client/menu.php";
-?>
 
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
@@ -215,7 +211,3 @@
         </div>
     </div>
     <!--blog section area end-->
-
-<?php 
-    include "../views/Clientfooter.php";
-?>
