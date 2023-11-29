@@ -215,6 +215,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $loaddanhmuc = loadall_danhmuc();
             include "../views/Client/sanpham_noibat.php";
             break;
+
+        case "donhang";
+            $loaddonhang = loadall_donhang();
+           
+            include "../views/Client/donhang.php";
+            break;
+        case "chitietdh";
+            include "../views/Client/chitietdonhang.php";
+            break;
     }
 } else {
     include "../views/Client/banner.php";

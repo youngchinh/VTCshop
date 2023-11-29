@@ -184,3 +184,17 @@ function send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_d
     VALUES ('$hovaten', '$sdt', '$email', '$dia_chi_lienhe', '$ngay_gui', '$noi_dung_lienhe')";
     pdo_execute($sql);
 }
+
+// Đơn hàng
+function loadall_donhang(){
+    $sql = "SELECT * FROM tb_donhang ORDER BY id_donhang DESC";
+    $listdonhang = pdo_query($sql);
+    return $listdonhang;
+}
+
+// Tài khoản
+function loadall_taikhoan(){
+    $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}

@@ -43,7 +43,7 @@
                                 <tbody>
                                 <tr>
                                     <td>' . $id_donhang . '</td>
-                                    <td>' . $don_gia . '</td>
+                                    <td>' . $tongtien . '</td>
                                                                ';
                             $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh =" . $id_trangthai_dh ;
                             $trangthai = pdo_query($sql);

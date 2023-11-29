@@ -28,7 +28,7 @@
                         <ul role="tablist" class="nav flex-column dashboard-list">
                             <li><a href="ClientController.php?act=account"  class="nav-link">Thông tin tài khoản</a></li>
                             <li><a href="ClientController.php?act=edit-account"  class="nav-link">Sửa thông tin</a></li>
-                            <li><a href="ClientController.php?act=edit-account"  class="nav-link">Đơn hàng</a></li>
+                            <li><a href="ClientController.php?act=donhang"  class="nav-link">Đơn hàng</a></li>
                         </ul>
                     </div>
                 </div>

@@ -32,7 +32,7 @@
                             <th>Họ và tên </th>
                             <th>Địa chỉ</th>
                             <th>Đơn giá</th>
-                            <th>Phí vận chuyển</th>
+                            <th>Số Lượng</th>
                             <th>Thành Tiền </th>
                             <th>Trạng Thái</th>
                             <th></th>
@@ -61,7 +61,7 @@
                                         <td>' . $hovaten. '</td>
                                         <td>' . $dia_chi. '</td>
                                         <td>' . $don_gia . '</td>
-                                        <td>' . $phi_van_chuyen . '</td>
+                                        <td>' . $so_luong . '</td>
                                         <td>' . $thanh_tien . '</td>
                                         
                                     ';

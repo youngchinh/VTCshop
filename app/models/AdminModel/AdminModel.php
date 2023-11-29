@@ -127,12 +127,7 @@ function loadall_taikhoan_list($keyword= "" , $id_vaitro = 0){
     return $listtaikhoan;
 }
 
-function loadall_role (){
-    $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
-    $listrole = pdo_query($sql);
-    return $listrole;
 
-}
 
 
 
@@ -182,6 +177,25 @@ function insert_hethong($img_logo, $ten_logo){
     $sql = "INSERT INTO tb_hethong(img_logo, ten_logo) VALUES ('$img_logo', '$ten_logo');";
     pdo_execute($sql);
 }
+
+
+
+//Vai trò 
+function loadall_role (){
+    $sql = "SELECT * FROM tb_role ORDER BY id_vaitro DESC";
+    $listrole = pdo_query($sql);
+    return $listrole;
+
+}
+
+function insert_role($ten_vaitro, $mota_vaitro)
+{
+    $sql = "INSERT INTO `tb_role`(`ten_vaitro`, `mota_vaitro`) VALUES('$ten_vaitro', '$mota_vaitro');";
+    pdo_execute($sql);
+}
+
+
+
 
 //Đơn hàng
 function loadall_donhang(){

@@ -191,6 +191,37 @@
 
                      </ul>
                  </li>
+
+                 <!-- Vai tro -->
+                 <!-- hệ thống -->
+                 <li class="nav-item has-treeview">
+                     <a href="#" class="nav-link">
+                         <i class="nav-icon fas fa-cog"></i>
+                         <p>
+                             Quản trị vai trò
+                             <i class="fas fa-angle-left right"></i>
+                         </p>
+                     </a>
+
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="AdminController.php?act=listvt" class="nav-link">
+                                 <i class="far fa-image nav-icon"></i>
+                                 <p>Danh Sách </p>
+                             </a>
+                         </li>
+
+                         <li class="nav-item">
+                             <a href="AdminController.php?act=addvt" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                                 <p>Thêm Mới</p>
+                             </a>
+                         </li>
+                     </ul>
+                 </li>
+
+
+
                  <!-- hệ thống -->
                  <li class="nav-item has-treeview">
                      <a href="#" class="nav-link">
