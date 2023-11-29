@@ -84,21 +84,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     foreach ($cart as $item) {
                         add_DonHangDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
                     }
-                    $_SESSION['cart']=[];
-                    $_SESSION['success'] = $idBill;
-                    echo "<script>location.href = '/../VTCshop/app/controllers/ClientController.php?act=success';</script>";
+                    $_SESSION['cart'] = [];
+                    echo "<script>alert('Đặt hàng thành công!')</script>";
+                    echo "<script>location.href = '/../VTCshop/app/controllers/ClientController.php';</script>";
+
                 }
                 include "../views/Client/order.php";
             } 
             break;
-            case "success";
-                if (isset($_SESSION['success'])) {
-                    include "../views/Client/success.php";
-                } else {
-                    echo "<script>location.href = '/../VTCshop/index.php';</script>";
-                }
-                break;
-            //menu
         case "login";
             if (isset($_POST['login'])) {
                 $tai_khoan = $_POST['taikhoan'];
