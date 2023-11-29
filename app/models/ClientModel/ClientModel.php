@@ -182,6 +182,19 @@ function send_contact($hovaten, $sdt, $email, $dia_chi_lienhe, $ngay_gui, $noi_d
     pdo_execute($sql);
 }
 
+
+//Bình luận
+function insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanpham, $id_taikhoan){
+    $sql = "INSERT INTO `tb_binhluan`(`hovaten`, `noi_dung_binhluan`, `ngay_binh_luan`, `id_sanpham`, `id_taikhoan`) 
+    VALUES ('$hovaten', '$noi_dung_binhluan', '$ngay_binh_luan', '$id_sanpham', '$id_taikhoan')";
+    pdo_execute($sql);
+}
+
+function loadall_binhluan(){
+    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan DESC";
+    return pdo_query($sql);
+}
+
 // Đơn hàng
 function loadall_donhang(){
     $sql = "SELECT * FROM tb_donhang ORDER BY id_donhang DESC";
@@ -195,3 +208,4 @@ function loadall_taikhoan(){
     $listtaikhoan = pdo_query($sql);
     return $listtaikhoan;
 }
+

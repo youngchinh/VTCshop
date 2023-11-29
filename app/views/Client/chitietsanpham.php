@@ -125,60 +125,30 @@ if (is_array($chitietsp)) {
                                             <div class="tab-content">
                                                 <div class="tab-pane fade" id="reviews" role="tabpanel">
                                                     <div class="reviews_wrapper">
-                                                        <!-- list bình luận -->
-                                                        <h2>1 bình luân về sản phẩm</h2>
-                                                        <div class="reviews_comment_box">
-                                                            <div class="comment_thmb">
-                                                                <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
-                                                            </div>
-                                                            <div class="comment_text">
-                                                                <div class="reviews_meta">
-                                                                    <div class="star_rating">
-                                                                        <ul>
-                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <p><strong>admin </strong>- September 12, 2022</p>
-                                                                    <span>Sản phẩm đẹp</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- list bình luận -->
+                                                    <div class="reviews_comment_box">
+                                    <div class="comment_thmb">
+                                        <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
+                                    </div>
+                                    <div class="comment_text">
+                                        <div class="reviews_meta">
+                                            <div class="star_rating">
+                                                <ul>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <p><strong>admin </strong>- September 12, 2022</p>
+                                            <span>Sản phẩm đẹp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                                        <!-- iframe binhluan -->
+                                                        <hr>
+                                                        <iframe src="../views/Client/binhluan.php?idsp=<?= $id_sanpham ?>" width="100%" height="500px" frameborder="0"></iframe>
 
-                                                        <!-- đánh giá sao -->
-                                                        <div class="product_ratting mb-10">
-                                                            <h3>Đánh giá</h3>
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <!-- đánh giá sao -->
-
-                                                        <!-- Gửi bình luận -->
-                                                        <div class="product_review_form">
-                                                            <form action="#">
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <label for="review_comment">Bình luận </label>
-                                                                        <textarea name="noi_dung"></textarea>
-                                                                    </div>
-                                                                    <div class="col-lg-6 col-md-6">
-                                                                        <label for="author">Name</label>
-                                                                        <input name="hovaten" type="text">
-                                                                    </div>
-                                                                </div>
-                                                                <button name="send" type="submit">Gửi</button>
-                                                            </form>
-                                                        </div>
-                                                        <!-- Gửi bình luận -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,26 +176,26 @@ if (is_array($chitietsp)) {
                                         $linkchitietsp = "ClientController.php?act=chitietsp&idsp=" . $id_sanpham;
                                         $imgpath = "../upload/all_sp/" . $img_sanpham;
                                     ?>
-                                            <article class="single_product">
-                                                <figure>
-                                                    <div class="product_thumb">
-                                                        <a class="primary_img" href="<?= $linkchitietsp ?>"><img src="<?= $imgpath ?>"></a>
-                                                        <div class="label_product">
-                                                            <span class="label_sale">sale</span>
-                                                        </div>
-                                                        <div class="add_to_cart">
-                                                            <a data-id="<?= $id_sanpham ?>" onclick="addToCart(<?= $id_sanpham ?>, '<?= $ten_sanpham ?>', '<?= $gia_khuyen_mai ?>')">Thêm vào giỏ hàng</a>
-                                                        </div>
+                                        <article class="single_product">
+                                            <figure>
+                                                <div class="product_thumb">
+                                                    <a class="primary_img" href="<?= $linkchitietsp ?>"><img src="<?= $imgpath ?>"></a>
+                                                    <div class="label_product">
+                                                        <span class="label_sale">sale</span>
                                                     </div>
-                                                    <figcaption class="product_content">
-                                                        <div class="price_box">
-                                                            <span class="old_price"><?= number_format((int)$gia_ban_dau, 0, ",", ".") ?><u>đ</u></span>
-                                                            <span class="current_price"><?= number_format((int)$gia_khuyen_mai, 0, ",", ".") ?><u>đ</u></span>
-                                                        </div>
-                                                        <h3 class="product_name"><a href="<?= $linkchitietsp ?>"><?= $ten_sanpham ?></a></h3>
-                                                    </figcaption>
-                                                </figure>
-                                            </article>
+                                                    <div class="add_to_cart">
+                                                        <a data-id="<?= $id_sanpham ?>" onclick="addToCart(<?= $id_sanpham ?>, '<?= $ten_sanpham ?>', '<?= $gia_khuyen_mai ?>')">Thêm vào giỏ hàng</a>
+                                                    </div>
+                                                </div>
+                                                <figcaption class="product_content">
+                                                    <div class="price_box">
+                                                        <span class="old_price"><?= number_format((int)$gia_ban_dau, 0, ",", ".") ?><u>đ</u></span>
+                                                        <span class="current_price"><?= number_format((int)$gia_khuyen_mai, 0, ",", ".") ?><u>đ</u></span>
+                                                    </div>
+                                                    <h3 class="product_name"><a href="<?= $linkchitietsp ?>"><?= $ten_sanpham ?></a></h3>
+                                                </figcaption>
+                                            </figure>
+                                        </article>
                                     <?php endforeach;
 
 
@@ -236,10 +206,10 @@ if (is_array($chitietsp)) {
                         <!--product area end-->
 
                         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
- <?php 
-    if (isset($_SESSION['login'])) { 
-        
-        echo "
+                        <?php
+                        if (isset($_SESSION['login'])) {
+
+                            echo "
         <script>
             let totalProduct = document.getElementById('totalProduct');
             function addToCart(productId, productName, productPrice) {
@@ -264,15 +234,14 @@ if (is_array($chitietsp)) {
                 });
             }
         </script>";
-    }
-    else { 
-        echo 
-        '
+                        } else {
+                            echo
+                            '
             <script>
                 function addToCart(productId, productName, productPrice) {
                     alert("Bạn cần đăng nhập!")
                     }
             </script>
         ';
-    }
- ?>
+                        }
+                        ?>
