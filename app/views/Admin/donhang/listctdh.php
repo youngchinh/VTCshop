@@ -42,8 +42,9 @@
                     <tbody>
                         <?php
                             $sql = "SELECT *
-                            FROM tb_chitietdonhang
-                            INNER JOIN tb_donhang ON tb_chitietdonhang.id_donhang  = tb_donhang.id_donhang ;";
+                            FROM tb_donhang
+                            INNER JOIN tb_chitietdonhang ON tb_donhang.id_donhang  = tb_chitietdonhang.id_donhang 
+                            JOIN tb_sanpham ON tb_chitietdonhang.id_sanpham =  tb_sanpham.id_sanpham;";
     
                             $chitietdonhang =pdo_query($sql);
                             foreach ($chitietdonhang as $value){
