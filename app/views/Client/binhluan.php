@@ -44,12 +44,13 @@ foreach ($dsbl as $bl) {
         <form action="#" method="POST">
             <div class="row">
                 <div class="col-12">
+                    <input type="hidden" name="idsp" value="<?= $idsp ?>">
                     <label for="review_comment">Bình luận </label>
                     <textarea name="noi_dung"></textarea>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <label for="author">Name</label>
-                    <input name="hovaten" type="text">
+                    <input name="hoten" type="text">
                 </div>
             </div>
             <button name="guibinhluan" type="submit">Gửi</button>
