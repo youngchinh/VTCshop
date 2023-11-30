@@ -6,6 +6,7 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
+                        <li>Tài khoản</li>
                         <li>Đơn Hàng</li>
                     </ul>
                 </div>
@@ -30,6 +31,7 @@
                                         <th class="product_thumb">Ảnh Sản Phẩm</th>
                                         <th class="product_name">Sản Phẩm</th>
                                         <th class="product_quantity">Số Lượng</th>
+                                        <th class="product_quantity">Trạng Thái</th>
                                         <th class="product_total">Tổng Tiền</th>
                                         <th></th>
                                     </tr>
