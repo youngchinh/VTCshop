@@ -22,6 +22,7 @@
                     <tdead class="thead-drank">
                         <tr>
                             <th>id đơn hàng</th>
+                            <th>id tài khoản</th>
                             <th>Đơn giá </th>
                             <th>Trạng Thái </th>
                             <th>Chọn</th>
@@ -43,6 +44,7 @@
                                 <tbody>
                                 <tr>
                                     <td>' . $id_donhang . '</td>
+                                    <td>' . $id_taikhoan . '</td>
                                     <td>' . $tongtien . '</td>
                                                                ';
                             $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh =" . $id_trangthai_dh ;
