@@ -31,7 +31,8 @@
                             <th>Ảnh sản phẩm</th>
                             <th>Họ và tên </th>
                             <th>Địa chỉ</th>
-                            <th>Đơn giá</th>
+                            <th>Số Lượng</th>
+
                             <th>Thành Tiền </th>
                             <th>Trạng Thái</th>
                             <th></th>
@@ -59,7 +60,6 @@
                                         <td><img width="100px" height="100px" src="../upload/all_sp/'.$img_sanpham .'" alt=""></td>
                                         <td>' . $hovaten. '</td>
                                         <td>' . $dia_chi. '</td>
-                                        <td>' . $don_gia . '</td>
                                         <td>' . $so_luong . '</td>
                                         <td>' . $thanh_tien . '</td>
                                         
