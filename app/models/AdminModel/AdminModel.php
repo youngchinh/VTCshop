@@ -148,7 +148,7 @@ function update_taikhoan($idtk, $hovaten, $tai_khoan, $mat_khau, $email, $sdt, $
 
 //Bình Luận
 function loadall_binhluan(){
-    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan";
+    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan DESC";
     $listbinhluan = pdo_query($sql);
     return $listbinhluan;
 }

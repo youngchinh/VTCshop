@@ -41,11 +41,14 @@
                                     <label for="payment" data-bs-toggle="collapse" data-bs-target="#method" aria-controls="method">Thanh toán khi nhận hàng</label>                  
                                 </div>
                                 <div class="panel-default">
-                                    <input id="payment_defult" name="pttt" id="" value="1" type="radio">
+                                    <input id="payment_defult" name="pttt" id="" value="2" onclick="showMessageAndSelect()" type="radio">
                                     <label for="payment_defult" data-bs-toggle="collapse" data-bs-target="#collapsedefult" aria-controls="collapsedefult">Thanh toán chuyển khoản <img src="../views/Client/assets/img/icon/papyel.png" alt=""></label>
                                 </div>
                                 <div class="order_button">
-                                    <button name="order_confirm" type="submit">Đặt hàng</button>
+                                    <?php 
+                                        extract($cart);
+                                    ?>
+                                    <button name="order_confirm" onclick="checkQuantyti(<?$cart['id']?>, <?$cart['quantity']?>)" type="submit">Đặt hàng</button>
                                 </div>
                             </div>
                             </div>
@@ -166,3 +169,11 @@
         </div>
     </div>
 </div> -->
+<script>
+    function showMessageAndSelect() {
+        alert("Xin lỗi vì bận tiện này:(( Bạn chỉ có thể chọn thanh toán khi nhận hàng!");
+        
+        // Tự động chọn thanh toán khi nhận hàng
+        document.querySelector('input[value="1"]').checked = true;
+    }
+</script>
