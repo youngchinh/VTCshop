@@ -5,35 +5,20 @@
                 <h2>Chi tiết đơn hàng</h2>
             </div>
             <div class="card-body">
-                <form action="AdminController.php?act=listctdh" method="POST">
-                    <input type="text" name="keyword">
-                    <select name="id_trangthai" id="">
-                        <option value="0" selected>Tất cả</option>
-                        <?php
-                        foreach ($listtrangthai as $trangthai) {
-                            extract($trangthai);
-                            echo '<option value="' . $id_trangthai_dh  . '">' . $ten_trangthai . '</option>';
-                        }
-                        ?>
-                    </select>
-                    <input class="btn btn-primary" type="submit" name="clickgo" value="GO">
-                    <th>
-                        <a href="AdminController.php?act=listdh"><input style="color: #fff; margin-left: 20px; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Danh sách đơn hàng"> </a>
-                    </th>
-                </form>
                 <table class="table">
+                    <h4>Đơn Hàng: <?=$iddh?></h4>   
                     <tdead class="thead-drank">
                         <tr>
-                            <th>id chi tiết dh</th>
-                            <th>id đơn hàng</th>
-                            <th>Ngày đặt hàng</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Ảnh sản phẩm</th>
+                            <th>STT</th>
                             <th>Họ và tên </th>
-                            <th>Địa chỉ</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Màu sản phẩm</th>
+                            <th>Dung Lượng</th>
                             <th>Số Lượng</th>
-
-                            <th>Thành Tiền </th>
+                            <th>Địa chỉ</th>
+                            <th>Tổng tiền </th>
                             <th>Trạng Thái</th>
                             <th></th>
                             <img src="" alt="">
@@ -45,7 +30,7 @@
                             FROM tb_donhang
                             INNER JOIN tb_chitietdonhang ON tb_donhang.id_donhang  = tb_chitietdonhang.id_donhang 
                             JOIN tb_sanpham ON tb_chitietdonhang.id_sanpham =  tb_sanpham.id_sanpham;";
-    
+                            $i = 1;
                             $chitietdonhang =pdo_query($sql);
                             foreach ($chitietdonhang as $value){
                                 extract($value);
@@ -54,14 +39,15 @@
                                     '
                                     <tbody>
                                     <tr>
-                                        <td>' . $id_chitietdonhang. '</td>
-                                        <td>' . $id_donhang . '</td>
-                                        <td>' . $ngay_dat_hang. '</td>
-                                        <td>' . $ten_sanpham . '</td>
-                                        <td><img width="100px" height="100px" src="../upload/all_sp/'.$img_sanpham .'" alt=""></td>
+                                        <td>' . $i++ . '</td>
                                         <td>' . $hovaten. '</td>
+                                        <td>' . $ten_sanpham . '</td>
+                                        <td>' . $ngay_dat_hang. '</td>
+                                        <td><img width="100px" height="100px" src="../upload/all_sp/'.$img_sanpham .'" alt=""></td>
+                                        <td>'.$mau_sanpham.'</td>
+                                        <td>'.$dung_luong.'</td>
+                                        <td>' . $soluong . '</td>
                                         <td>' . $dia_chi. '</td>
-                                        <td>' . $so_luong . '</td>
                                         <td>' . $thanh_tien . '</td>
                                         
                                     ';
@@ -86,8 +72,10 @@
                 </table>
             </div>
             <div class="card-footer text-muted">
+            <a href="AdminController.php?act=listdh"><input class="btn btn-primary" type="button" value="DANH SÁCH ĐƠN HÀNG"></a>
             </div>
         </div>
+        
     </div>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">

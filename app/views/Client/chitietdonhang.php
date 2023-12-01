@@ -104,7 +104,7 @@
 
                                                 <div class="d-flex justify-content-between mb-5">
                                                     <!-- <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p> -->
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Phí Vận Vhuyển</span> 30.000</p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Phí Vận Chuyển</span> 30.000</p>
                                                 </div>
                                             </div>
                                             <div class="card-footer border-0 px-4 py-5" style="background-color: #078fe0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
