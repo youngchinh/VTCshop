@@ -334,6 +334,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             //     $keyword = "";
             //     $id_trangthai = 0;
             // }
+            if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
+                $iddh = ($_GET['iddh']);
+            }
             $listtrangthai = loadall_trangthai_donhang();
             $listdonhang = loadall_donhang();
             include "../views/Admin/donhang/listctdh.php";

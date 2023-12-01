@@ -23,10 +23,8 @@
                         <tr>
                             <th>id đơn hàng</th>
                             <th>Người nhận hàng</th>
-                            <th>Địa chỉ</th>
-                            <th>Số điện thoại</th>
                             <th>Ngày đặt hàng</th>
-                            <th>Tổng tiền </th>
+                            <th>Thành tiền </th>
                             <th>Trạng Thái </th>
                             <th>Chọn</th>
                           
@@ -47,8 +45,6 @@
                                 <tr>
                                     <td>' . $id_donhang . '</td>
                                     <td>' . $hovaten . '</td>
-                                    <td>' . $dia_chi . '</td>
-                                    <td>' . $sdt . '</td>
                                     <td>' . $ngay_dat_hang . '</td>
                                     <td>' . $tongtien . '</td>
                                                                ';

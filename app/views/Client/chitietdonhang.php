@@ -6,9 +6,9 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
-                        <li ><a href="ClientController.php?act=account">Tài khoản</li>
-                        <li><a href="ClientController.php?act=donhang">Đơn Hàng</li>
-                        <li> Chi Tiết Đơn Hàng</li>
+                        <li><a href="ClientController.php?act=account">Tài khoản</a></li>
+                        <li><a href="ClientController.php?act=donhang">Đơn hàng</a></li>
+                        <li><a href="ClientController.php?act=chitietdh">Chi tiết đơn hàng</a></li>
                     </ul>
                 </div>
             </div>
@@ -17,80 +17,110 @@
 </div>
 <!--breadcrumbs area end-->
 
-<!--shopping cart area start -->
-<div class="shopping_cart_area mt-60">
+<!-- my account start  -->
+<section class="main_content_area">
     <div class="container">
-        <form action="#">
+        <div class="account_dashboard">
             <div class="row">
-                <div class="col-12">
-                    <div class="table_desc">
-                        <div class="cart_page table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="product_thumb">STT</th>
-                                        <th class="product_thumb">Người Nhận</th>
-                                        <th class="product_thumb">Địa Chỉ</th>
-                                        <th class="product_thumb">Số điện thoại</th>
-                                        <th class="product_name">Email</th> 
-                                        <th class="product_name">Sản Phẩm</th>
-                                        <th class="product_name">Tên Sản Phẩm</th>
-                                        <th class="product_name">Ngày đặt hàng</th> 
-                                        <th class="product_quantity">Số Lượng</th>
-                                        <th class="product_total">Tổng Tiền</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <?php
-                                if (isset($_SESSION['login']) && (is_array($_SESSION['login']))) {
-                                    extract($_SESSION['login']);
-                                    // $taikhoan = $tai_khoan;
-                                    // $matkhau = $mat_khau;
-                              
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <!-- Nav tabs -->
+                    <div class="dashboard_tab_button">
+                        <ul role="tablist" class="nav flex-column dashboard-list">
+                            <li><a href="ClientController.php?act=account" class="nav-link">Thông tin tài khoản</a></li>
+                            <li><a href="ClientController.php?act=edit-account" class="nav-link">Sửa thông tin</a></li>
+                            <li><a href="ClientController.php?act=donhang" class="nav-link">Đơn hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-9 col-lg-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="account-details">
+                            <div class="account_login_form">
+
+                                <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col-lg-10 col-xl-8">
+                                        <div class="card" style="border-radius: 10px;">
+                                            <?php
+                                            $id_user = $_SESSION['login']['hovaten'];
+                                            ?>
+
+                                            <div class="card-header px-4 py-5">
+                                                <h5 class="text-muted mb-0">Cảm ơn bạn đã tin tưởng VTC-shop, <span style="color: #078fe0;"><?= $id_user ?></span>!</h5>
+                                            </div>
+                                            <div class="card-body p-4">
+                                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                                    <p class="lead fw-normal mb-0" style="color: #078fe0;">Chi tiết đơn hàng</p>
+                                                </div>
+                                                <?php
+                                                    $sql = "SELECT *
+                                                    FROM tb_chitietdonhang
+                                                    JOIN tb_sanpham ON tb_chitietdonhang.id_sanpham = tb_sanpham.id_sanpham
+                                                    JOIN tb_donhang ON tb_chitietdonhang.id_donhang = tb_donhang.id_donhang
+                                                    WHERE tb_chitietdonhang.id_donhang = " .$iddh;               
+                                                    $list = pdo_query($sql);
+
+                                                ?>
+                                                <div class="card shadow-0 border mb-4">
+                                                    <?php
+                                                    foreach ($list as $ctdh) :
+                                                        extract($ctdh);
+                                                    ?>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <img src="../upload/all_sp/<?= $img_sanpham ?>" class="img-fluid" alt="Phone">
+                                                                </div>
+                                                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text-muted mb-0"><?= $ten_sanpham ?></p>
+                                                                </div>
+                                                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text-muted mb-0 small"><?= $mau_sanpham ?></p>
+                                                                </div>
+                                                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text-muted mb-0 small">Dung lượng: <?= $dung_luong ?></p>
+                                                                </div>
+                                                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text-muted mb-0 small">SL: <?= $soluong ?></p>
+                                                                </div>
+                                                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text-muted mb-0 small"><?= number_format($thanh_tien, 0, ",", ".") ?></p>
+                                                                </div>
+                                                            </div>
+                                                            <hr class="mb-4" style="background-color: #078fe0; opacity: 1;">
+                                                        </div>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                </div>
 
 
-                                    $id_user = $_SESSION['login']['id_taikhoan'];
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <p class="fw-bold mb-0">Order Details</p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($_SESSION['sumTotal'], 0, ",", ".")?></p>
+                                                </div>
 
-                                    $sql = "SELECT *
-                                    FROM tb_donhang
-                                    INNER JOIN tb_chitietdonhang ON tb_donhang.id_donhang  = tb_chitietdonhang.id_donhang 
-                                    JOIN tb_sanpham ON tb_chitietdonhang.id_sanpham =  tb_sanpham.id_sanpham
-                                    WHERE tb_donhang.id_taikhoan= " . $id_user;
-                                    $list = pdo_query($sql);
-                                }
+                                                
 
+                                                <div class="d-flex justify-content-between mb-5">
+                                                    <!-- <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p> -->
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Phí Vận Chuyển</span> 30.000</p>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer border-0 px-4 py-5" style="background-color: #078fe0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                                                <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Thành tiền: 
+                                                    <span class="h2 mb-0 ms-2"><?= number_format($_SESSION['resultTotal'], 0, ",", ".")?></span></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                
-                                $stt = 1;
-
-                                foreach ($list as $value) {
-                                    extract($value);
-                                    echo
-                                    '
-                                        <tbody>
-                                            <tr>
-                                                <td class="product_name"><a href="#">' . $stt . '</a></td>
-                                                <td id="dongia" class="product-price">' . $hovaten . '</td>
-                                                <td id="dongia" class="product-price">' . $dia_chi . '</td>
-                                                <td id="dongia" class="product-price">' . $sdt . '</td>
-                                                <td id="dongia" class="product-price">' . $email . '</td>
-                                                <td class="product_thumb"><a href="#"><img width=100px height=100px src="../upload/all_sp/' . $img_sanpham . '" alt=""></a></td>
-                                                <td class="product_name"><a href="#">' . $ten_sanpham . '</a></td>
-                                                <td class="product_name"><a href="#">' . $ngay_dat_hang . '</a></td>
-                                                <td id="dongia" class="product-price">' . $so_luong . '</td>
-                                                <td id="dongia" class="product-price">' . $tongtien . '</td>
-                                            </tr>
-                                        </tbody>
-                                   
-                                    ';
-                                    $stt += 1;
-                                }
-                                ?>
-                               
-                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!--shopping cart area end -->
+        </div>
+    </div>
+</section>
+<!-- my account end   -->
