@@ -66,16 +66,17 @@
                                                         <img src="<?= $imgpath ?>" alt=""></a>
                                                 </td>
                                                 <td class="product_name"><?= $product['ten_sanpham'] ?></td>
-                                                <td class="product-price"><?= number_format((int)$product['gia_ban_dau'], 0, ",", ".") ?><u>đ</u></td>
+                                                <td class="product-price"><?= number_format((int)$product['gia_khuyen_mai'], 0, ",", ".") ?><u>đ</u></td>
                                                 <td class="product_quantity">
                                                     <label>Số Lượng</label>
                                                     <input id="quantity_<?= $product['id_sanpham'] ?>" min="1" type="number" value="<?= (int)$quantityInCart ?>" oninput="updateQuantity(<?= $product['id_sanpham'] ?>, <?= $key ?> );">
                                                 </td>
-                                                <td class="product_total"><?= number_format((int)$product['gia_ban_dau'] * (int)$quantityInCart, 0, ",", ".") ?><u>đ</u></td>
+                                                <td class="product_total"><?= number_format((int)$product['gia_khuyen_mai'] * (int)$quantityInCart, 0, ",", ".") ?><u>đ</u></td>
                                             </tr>
 
                                         <?php
-                                            $sum_total += (int)$product['gia_ban_dau'] * (int)$quantityInCart;
+                                            $sum_total += (int)$product['gia_khuyen_mai'] * (int)$quantityInCart;
+                                            $_SESSION['sumTotal'] = $sum_total;
                                             $sum_total_ship = $sum_total + $ship;
                                             $_SESSION['resultTotal'] = $sum_total_ship;
                                         endforeach;

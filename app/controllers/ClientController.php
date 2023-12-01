@@ -213,6 +213,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "../views/Client/donhang.php";
             break;
         case "chitietdh";
+            if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
+                $iddh = ($_GET['iddh']);
+            }
             include "../views/Client/chitietdonhang.php";
             break;
     }

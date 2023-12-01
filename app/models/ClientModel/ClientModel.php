@@ -26,7 +26,7 @@ function add_DonHang($id_user, $hovaten, $sdt, $dia_chi, $email, $tongtien, $ptt
 }
 
 function add_DonHangDetail($id_order, $id_pro, $name, $so_luong, $thanhtien){
-    $sql="INSERT INTO tb_chitietdonhang (id_donhang, id_sanpham, ten_sanpham, so_luong, thanh_tien) VALUES ($id_order, $id_pro, '$name', $so_luong, $thanhtien);";
+    $sql="INSERT INTO tb_chitietdonhang (id_donhang, id_sanpham, ten_sanpham, soluong, thanh_tien) VALUES ($id_order, $id_pro, '$name', $so_luong, $thanhtien);";
     $id = pdo_executeid($sql);
     return $id;
 }

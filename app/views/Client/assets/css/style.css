@@ -10382,3 +10382,35 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .compare-table .table tbody tr td.pro-ratting a:hover {
   color: #0063d1;
 }
+
+.hiXKxx {
+  margin: 12px 0;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+  border-radius: 0.125rem;
+}
+
+.x0QT2k:first-child {
+  padding-top: 24px;
+}
+.x0QT2k {
+  padding: 12px 24px;
+  background: #fff;
+}
+
+.KrPQEI {
+  padding: 0 0 12px;
+  justify-content: space-between;
+}
+
+._0RxYUS, .KrPQEI {
+  display: flex;
+  align-items: center;
+}
+.KrPQEI {
+  padding: 0 0 12px;
+  justify-content: space-between;
+}
+._0RxYUS, .KrPQEI {
+  display: flex;
+  align-items: center;
+}
