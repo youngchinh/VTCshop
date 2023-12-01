@@ -209,3 +209,8 @@ function loadall_taikhoan(){
     return $listtaikhoan;
 }
 
+//Bài viết
+function loadall_baiviet(){
+
+}
+

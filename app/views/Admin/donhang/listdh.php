@@ -44,7 +44,6 @@
                             $xem ="AdminController.php?act=listctdh&iddh=" . $id_donhang ;
                             echo
                             '
-                                <tbody>
                                 <tr>
                                     <td>' . $id_donhang . '</td>
                                     <td>' . $hovaten . '</td>

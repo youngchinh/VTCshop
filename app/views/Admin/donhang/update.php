@@ -34,6 +34,7 @@ if (is_array($donhang)) {
 
                 <div class="card-footer">
                 <input type="hidden" name="id_donhang" value="<?=$id_donhang?>">
+
                     <input class="btn btn-primary" name="capnhap" type="submit" value="Cập Nhập">
                     <a href="AdminController.php?act=listdh"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
                 </div>

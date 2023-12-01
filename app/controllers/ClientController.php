@@ -215,6 +215,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "chitietdh";
             include "../views/Client/chitietdonhang.php";
             break;
+
     }
 } else {
     include "../views/Client/banner.php";
