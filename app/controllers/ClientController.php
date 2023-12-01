@@ -219,6 +219,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "../views/Client/chitietdonhang.php";
             break;
+
     }
 } else {
     include "../views/Client/banner.php";

@@ -372,7 +372,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $thongbao = "cập nhật thành công!";
             }
             $listtrangthai = loadall_trangthai_donhang();
-            $listdonhang = loadall_donhang();
             include "../views/Admin/donhang/update.php";
             break;
 
