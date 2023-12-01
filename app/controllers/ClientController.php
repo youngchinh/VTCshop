@@ -83,6 +83,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $idBill = add_DonHang($id_user, $hovaten, $sdt, $dia_chi, $email, $_SESSION['resultTotal'], $pttt);
                     foreach ($cart as $item) {
                         add_DonHangDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
+                        reupSanPham($item['id'], $item['quantity']);
                     }
                     $_SESSION['cart'] = [];
                     echo "<script>alert('Đặt hàng thành công!')</script>";

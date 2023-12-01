@@ -125,26 +125,26 @@ if (is_array($chitietsp)) {
                                             <div class="tab-content">
                                                 <div class="tab-pane fade" id="reviews" role="tabpanel">
                                                     <div class="reviews_wrapper">
-                                                    <div class="reviews_comment_box">
-                                    <div class="comment_thmb">
-                                        <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
-                                    </div>
-                                    <div class="comment_text">
-                                        <div class="reviews_meta">
-                                            <div class="star_rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <p><strong>admin </strong>- September 12, 2022</p>
-                                            <span>Sản phẩm đẹp</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                                        <div class="reviews_comment_box">
+                                                            <div class="comment_thmb">
+                                                                <img src="../views/Client/assets/img/blog/comment2.jpg" alt="">
+                                                            </div>
+                                                            <div class="comment_text">
+                                                                <div class="reviews_meta">
+                                                                    <div class="star_rating">
+                                                                        <ul>
+                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                                            <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <p><strong>admin </strong>- September 12, 2022</p>
+                                                                    <span>Sản phẩm đẹp</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <!-- iframe binhluan -->
                                                         <hr>
                                                         <iframe src="../views/Client/binhluan.php?idsp=<?= $id_sanpham ?>" width="100%" height="500px" frameborder="0"></iframe>
@@ -205,11 +205,11 @@ if (is_array($chitietsp)) {
                         </section>
                         <!--product area end-->
 
-                        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-                        <?php
-                        if (isset($_SESSION['login'])) {
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <?php
+    if (isset($_SESSION['login'])) {
 
-                            echo "
+    echo "
         <script>
             let totalProduct = document.getElementById('totalProduct');
             function addToCart(productId, productName, productPrice) {

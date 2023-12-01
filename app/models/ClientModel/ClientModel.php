@@ -30,6 +30,13 @@ function add_DonHangDetail($id_order, $id_pro, $name, $so_luong, $thanhtien){
     $id = pdo_executeid($sql);
     return $id;
 }
+
+function reupSanPham($id, $so_luong) {
+    $id_sanpham = $id;
+    $so_luong_da_dat = $so_luong;
+    $sql_update = "UPDATE tb_sanpham SET so_luong = so_luong - $so_luong_da_dat WHERE id_sanpham = $id_sanpham";
+    pdo_execute($sql_update);
+}
 // Danh Mục
 function loadall_danhmuc()
 {
@@ -190,8 +197,9 @@ function insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanp
     pdo_execute($sql);
 }
 
-function loadall_binhluan(){
-    $sql = "SELECT * FROM tb_binhluan ORDER BY id_binhluan DESC";
+function loadall_binhluan($idsp){
+    
+    $sql = "SELECT * FROM tb_binhluan WHERE id_sanpham='".$idsp."'";
     return pdo_query($sql);
 }
 
