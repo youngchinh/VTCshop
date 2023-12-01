@@ -211,6 +211,15 @@ function loadall_taikhoan(){
 
 //Bài viết
 function loadall_baiviet(){
+    $sql = "SELECT * FROM tb_baiviet ORDER BY id_baiviet DESC";
+    $listbaiviet = pdo_query($sql);
+    return $listbaiviet;
+}
 
+function loadone_baiviet($idbv)
+{
+    $sql = "SELECT * FROM tb_baiviet WHERE id_baiviet =".$idbv;
+    $result = pdo_query_one($sql);
+    return $result;
 }
 

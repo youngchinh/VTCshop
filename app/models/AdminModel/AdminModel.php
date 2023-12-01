@@ -229,17 +229,17 @@ function loadall_baiviet(){
     return $listbaiviet;
 }
 
-function insert_baiviet($tenbaiviet,$filename,$noidungbaiviet){
-    $sql = "INSERT INTO `tb_baiviet` (`tieu_de`,`img_baiviet`,`noi_dung`) VALUES ('$tenbaiviet','$filename','$noidungbaiviet')";
+function insert_baiviet($tenbaiviet,$filename,$noidungbaiviet, $chitiet, $ngay){
+    $sql = "INSERT INTO `tb_baiviet` (`tieu_de`,`img_baiviet`,`noi_dung`, `chitiet`, `ngay`) VALUES ('$tenbaiviet','$filename','$noidungbaiviet', '$chitiet', '$ngay')";
     pdo_execute($sql);
 }
 
-function update_baiviet($id_baiviet,$tenbaiviet,$filename,$noidungbaiviet){
+function update_baiviet($id_baiviet,$tenbaiviet,$filename,$noidungbaiviet, $chitiet, $ngay){
     if($filename != ""){
 
-        $sql = "UPDATE `tb_baiviet` SET `tieu_de` = '$tenbaiviet', `img_baiviet` = '$filename',  `noi_dung` = '$noidungbaiviet' WHERE `tb_baiviet`.`id_baiviet` = $id_baiviet;";
+        $sql = "UPDATE `tb_baiviet` SET `tieu_de` = '$tenbaiviet', `img_baiviet` = '$filename',  `noi_dung` = '$noidungbaiviet',  `chitiet` = '$chitiet',  `ngay` = '$ngay' WHERE `tb_baiviet`.`id_baiviet` = $id_baiviet;";
     } else{
-        $sql = "UPDATE `tb_baiviet` SET `tieu_de` = '$tenbaiviet', `noi_dung` = '$noidungbaiviet' WHERE `tb_baiviet`.`id_baiviet` = $id_baiviet;";
+        $sql = "UPDATE `tb_baiviet` SET `tieu_de` = '$tenbaiviet', `noi_dung` = '$noidungbaiviet', `chitiet` = '$chitiet', `ngay` = '$ngay' WHERE `tb_baiviet`.`id_baiviet` = $id_baiviet;";
     }
     pdo_execute($sql);
 }

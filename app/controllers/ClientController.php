@@ -166,7 +166,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case "baiviet";
+            $listbaiviet = loadall_baiviet();
             include "../views/Client/baiviet.php";
+            break;
+
+        case "chitietbaiviet";
+            if(isset($_GET['idbv'])  && $_GET['idbv'] > 0){
+                $idbv = $_GET['idbv'];
+                $listbaiviet = loadone_baiviet($idbv);
+            }
+            include "../views/Client/chitiet_baiviet.php";
             break;
 
         case "thongtin";

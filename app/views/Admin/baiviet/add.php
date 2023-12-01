@@ -25,17 +25,27 @@
                 <div class="form-group">
                     <label for="">Nội dung</label>
                     <input type="text" class="form-control" name="noidungbaiviet" placeholder="Nhập nội dung">
-            </div>
-            <!-- /.card-body -->
+                </div>
 
-            <div class="card-footer">
-                <input type="submit" name="themmoi" value="Thêm Mới">
-                <a href="AdminController.php?act=listbv"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
-            </div>
-            <?php
-                if(isset($thongbao)&&($thongbao!=""))
-                echo $thongbao;
-            ?>
+                <div class="form-group">
+                    <label for="">Ngày Đăng</label>
+                    <input type="text" class="form-control" name="ngay" >
+                </div>
+
+                <div class="form-group">
+                    <label for="">Nội dung chi tiết</label>
+                    <input type="text" class="form-control" name="noidung_chitiet" placeholder="Nhập nội dung chi tiết">
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <input type="submit" name="themmoi" value="Thêm Mới">
+                    <a href="AdminController.php?act=listbv"><input class="btn btn-primary" type="button" value="DANH SÁCH"></a>
+                </div>
+                <?php
+                if (isset($thongbao) && ($thongbao != ""))
+                    echo $thongbao;
+                ?>
         </form>
     </div>
 </div>

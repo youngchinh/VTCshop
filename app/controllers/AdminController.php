@@ -186,13 +186,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
                 $tenbaiviet = $_POST['tenbaiviet'];
                 $noidungbaiviet = $_POST['noidungbaiviet'];
+                $ngay = $_POST['ngay'];
+                $chitiet = $_POST['noidung_chitiet'];
                 $filename = $_FILES['filename']['name'];
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["filename"]["name"]);
                 if (move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file)) {
                 } else {
                 }
-                insert_baiviet($tenbaiviet, $filename, $noidungbaiviet);
+                insert_baiviet($tenbaiviet, $filename, $noidungbaiviet,$chitiet, $ngay);
                 $thongbao = "Thêm Thành Công ";
             }
             $listbaiviet = loadall_baiviet();
@@ -212,13 +214,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id_baiviet = $_POST['id_baiviet'];
                 $tenbaiviet = $_POST['tenbaiviet'];
                 $noidungbaiviet = $_POST['noidungbaiviet'];
+                $chitiet = $_POST['noidung_chitiet'];
+                $ngay = $_POST['ngay'];
                 $filename = $_FILES['img_baiviet']['name'];
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["img_baiviet"]["name"]);
                 if (move_uploaded_file($_FILES["img_baiviet"]["tmp_name"], $target_file)) {
                 } else {
                 }
-                update_baiviet($id_baiviet, $tenbaiviet, $filename, $noidungbaiviet);
+                update_baiviet($id_baiviet, $tenbaiviet, $filename, $noidungbaiviet, $chitiet, $ngay);
             }
             $sql = "SELECT * FROM tb_baiviet WHERE id_baiviet=" . $id_baiviet;
             $bv = pdo_query_one($sql);
@@ -313,13 +317,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         // Đơn Hàng
         case "listdh";
-            // if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
-            //     $keyword = $_POST['keyword'];
-            //     $id_trangthai = $_POST['id_trangthai'];
-            // } else {
-            //     $keyword = "";
-            //     $id_trangthai = 0;
-            // }
             $listtrangthai = loadall_trangthai_donhang();
             $listdonhang = loadall_donhang();
             include "../views/Admin/donhang/listdh.php";
@@ -327,13 +324,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
 
             case "listctdh";
-            // if (isset($_POST['clickgo']) && ($_POST['clickgo'])) {
-            //     $keyword = $_POST['keyword'];
-            //     $id_trangthai = $_POST['id_trangthai'];
-            // } else {
-            //     $keyword = "";
-            //     $id_trangthai = 0;
-            // }
             if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
                 $iddh = ($_GET['iddh']);
             }

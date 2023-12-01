@@ -15,8 +15,10 @@
                         <tr>
                             <th>id</th>
                             <th>Tiêu đề</th>
+                            <th>Ngày đăng</th>
                             <th>Ảnh</th>
                             <th>Nội dung</th>
+                            <th>Nội dung chi tiết</th>
                             <th><a href="AdminController.php?act=addbv"><input class="btn btn-primary" type="button" value="Thêm Mới"> </a></th>
                         </tr>
                     </thead>
@@ -35,8 +37,12 @@
                             echo ' <tr>
                                 <td> '.$id_baiviet.' </td>
                                 <td> '.$tieu_de.' </td>
+                                <td> '.$ngay.' </td>
+
                                 <td><img height=100px with=100px src="../upload/'.$img_baiviet.'" alt=""></td>
                                 <td> '.$noi_dung.' </td>
+                                <td> '.$chitiet.' </td>
+
                                 <td>
                                     <a href="' . $suabv . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
                                     <a href="' . $xoabv . '"><input style="color: #fff; background-color: #bd2130; border-color: #bd2130; border: 0;" type ="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa\')"></a>
