@@ -11,7 +11,7 @@ if (isset($_GET['idsp'])) {
     $html_bl = "";
 }
 if (isset($_POST['guibinhluan'])) {
-    $id_sanpham1 = $_POST['idsp'];
+    $id_sanpham = $_POST['idsp'];
     $hovaten = $_POST['hoten'];
     $noi_dung_binhluan = $_POST['noi_dung'];
     $ngay_binh_luan = date("Y-m-d");
@@ -22,7 +22,7 @@ if (isset($_POST['guibinhluan'])) {
 foreach ($dsbl as $bl) {
     extract($bl);
     //echo "\$a = $hovaten; \$b = $hovaten; \$c = $hovaten";
-    $html_bl .= '<p> <h4>' . $hovaten . ' - ' . $hovaten . '</h4>' . $hovaten . '</p> <hr>';
+    $html_bl .= '<p> <h4>' . $hovaten . ' - ' . $ngay_binh_luan . '</h4>' . $noi_dung_binhluan . '</p> <hr>';
 }
 ?>
 <!-- list bình luận -->
@@ -57,6 +57,7 @@ foreach ($dsbl as $bl) {
                     <input name="hoten" type="text">
                 </div>
             </div>
+            <input type="hidden" name="idsp" value="<?= $idsp ?>">
             <button name="guibinhluan" type="submit">Gửi</button>
         </form>
     <?php
