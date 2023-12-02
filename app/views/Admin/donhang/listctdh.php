@@ -18,6 +18,7 @@
                             <th>Dung Lượng</th>
                             <th>Số Lượng</th>
                             <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
                             <th>Tổng tiền </th>
                             <th>Trạng Thái</th>
                             <th></th>
@@ -48,6 +49,7 @@
                                         <td>'.$dung_luong.'</td>
                                         <td>' . $soluong . '</td>
                                         <td>' . $dia_chi. '</td>
+                                        <td>' . $sdt. '</td>
                                         <td>' . $thanh_tien . '</td>
                                         
                                     ';

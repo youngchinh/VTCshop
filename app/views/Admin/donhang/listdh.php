@@ -24,6 +24,8 @@
                             <th>id đơn hàng</th>
                             <th>Người nhận hàng</th>
                             <th>Ngày đặt hàng</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
                             <th>Thành tiền </th>
                             <th>Trạng Thái </th>
                             <th>Chọn</th>
@@ -46,6 +48,8 @@
                                     <td>' . $id_donhang . '</td>
                                     <td>' . $hovaten . '</td>
                                     <td>' . $ngay_dat_hang . '</td>
+                                    <td>' . $dia_chi . '</td>
+                                    <td>' . $sdt . '</td>
                                     <td>' . $tongtien . '</td>
                                                                ';
                             $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh =" . $id_trangthai_dh ;

@@ -231,3 +231,19 @@ function loadone_baiviet($idbv)
     return $result;
 }
 
+function loadtop3_baiviet(){
+    $sql = "SELECT * FROM tb_baiviet 
+    ORDER BY id_baiviet DESC
+    LIMIT 3";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+function loadtop4_baiviet(){
+    $sql = "SELECT * FROM tb_baiviet 
+    ORDER BY id_baiviet DESC
+    LIMIT 4";
+    $result = pdo_query($sql);
+    return $result;
+}
+

@@ -69,7 +69,7 @@
                         <h3>Search</h3>
                         <form action="#">
                             <input placeholder="Search..." type="text">
-                            <button type="submit">search</button>
+                            <button type="submit">Tìm kiếm</button>
                         </form>
                     </div>
                     <div class="widget_list comments">
@@ -77,9 +77,9 @@
                     </div>
                     <div class="widget_list widget_post">
 
-                        <h3>Recent Posts</h3>
+                        <h3>Bài đăng gần đây</h3>
                         <?php
-                        foreach ($listbaiviet as $baiviet) {
+                        foreach ($top4baiviet as $baiviet) {
                             extract($baiviet);
                             $ctbv = "ClientController.php?act=chitietbaiviet&idbv=".$id_baiviet ;
                             $imgpath = "../upload/all_sp/" . $img_baiviet;

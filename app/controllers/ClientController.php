@@ -168,6 +168,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         case "baiviet";
             $listbaiviet = loadall_baiviet();
+            $top4baiviet = loadtop4_baiviet();
             include "../views/Client/baiviet.php";
             break;
 
@@ -176,6 +177,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $idbv = $_GET['idbv'];
                 $listbaiviet = loadone_baiviet($idbv);
             }
+            $baiviet = loadall_baiviet();
+            $top3baiviet = loadtop3_baiviet();
+            $top4baiviet = loadtop4_baiviet();
             include "../views/Client/chitiet_baiviet.php";
             break;
 
