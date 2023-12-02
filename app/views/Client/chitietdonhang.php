@@ -97,7 +97,7 @@
 
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <p class="fw-bold mb-0">Order Details</p>
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($thanh_tien, 0, ",", ".")?></p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($tongtien - 30000, 0, ",", ".")?></p>
                                                 </div>
 
                                                 

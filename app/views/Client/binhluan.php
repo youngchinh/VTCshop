@@ -5,10 +5,6 @@ include "/xampp/htdocs/VTCshop/app/models/ClientModel/ClientModel.php";
 if (isset($_GET['idsp'])) {
     // echo $_GET['idsp'];
     $idsp = $_GET['idsp'];
-    
-    $dsbl = loadall_binhluan($idsp);
-
-    $html_bl = "";
 }
 if (isset($_POST['guibinhluan'])) {
     $id_sanpham = $_POST['idsp'];
@@ -18,6 +14,10 @@ if (isset($_POST['guibinhluan'])) {
     $id_taikhoan = $_SESSION['login']['id_taikhoan'];
     insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanpham, $id_taikhoan);
 }
+
+$dsbl = loadall_binhluan($idsp);
+
+$html_bl = "";
 
 foreach ($dsbl as $bl) {
     extract($bl);
