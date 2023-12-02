@@ -74,6 +74,7 @@
                                             <td> <?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?></td>
                                         </tr>
                                     <?php 
+                                        // $sumTotal = $item['quantity'] * $item['price'];
                                             }
                                     ?>
                                     </tbody>

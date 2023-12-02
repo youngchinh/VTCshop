@@ -84,7 +84,7 @@
                                                                     <p class="text-muted mb-0 small">SL: <?= $soluong ?></p>
                                                                 </div>
                                                                 <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                                                    <p class="text-muted mb-0 small"><?= number_format($thanh_tien, 0, ",", ".") ?></p>
+                                                                    <p class="text-muted mb-0 small"><?= number_format($gia_khuyen_mai, 0, ",", ".") ?></p>
                                                                 </div>
                                                             </div>
                                                             <hr class="mb-4" style="background-color: #078fe0; opacity: 1;">
@@ -97,7 +97,7 @@
 
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <p class="fw-bold mb-0">Order Details</p>
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($_SESSION['sumTotal'], 0, ",", ".")?></p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($thanh_tien, 0, ",", ".")?></p>
                                                 </div>
 
                                                 
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="card-footer border-0 px-4 py-5" style="background-color: #078fe0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                                                 <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Thành tiền: 
-                                                    <span class="h2 mb-0 ms-2"><?= number_format($_SESSION['resultTotal'], 0, ",", ".")?></span></h5>
+                                                    <span class="h2 mb-0 ms-2"><?= number_format($tongtien, 0, ",", ".")?></span></h5>
                                             </div>
                                         </div>
                                     </div>

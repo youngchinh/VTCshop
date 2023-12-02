@@ -50,15 +50,14 @@
                                                 </tr>
                                             </thead>
                                                 <?php
-                                                    if (isset($_SESSION['login']) && (is_array($_SESSION['login']))) {
-                                                        extract($_SESSION['login']);
-                                                        $id_user = $_SESSION['login']['id_taikhoan'];
+                                            
+                                                    $id_user = $_SESSION['login']['id_taikhoan'];
                                                     $sql = "SELECT *
                                                     FROM tb_donhang
                                                     JOIN tb_trangthai_donhang ON tb_donhang.id_trangthai_dh = tb_trangthai_donhang.id_trangthai_dh
                                                     WHERE tb_donhang.id_taikhoan= " . $id_user;
                                                     $list = pdo_query($sql);
-                                                    }
+                                                    
                                                 ?>
                                             <tbody>
                                                 <?php 
