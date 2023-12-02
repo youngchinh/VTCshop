@@ -81,16 +81,17 @@
                         <?php
                         foreach ($listbaiviet as $baiviet) {
                             extract($baiviet);
+                            $ctbv = "ClientController.php?act=chitietbaiviet&idbv=".$id_baiviet ;
                             $imgpath = "../upload/all_sp/" . $img_baiviet;
 
                             echo
                             '
                             <div class="post_wrapper">
                                 <div class="post_thumb">
-                                    <a href="chitiet_baiviet.php"><img src="' . $imgpath . '" alt=""></a>
+                                    <a href="'.$ctbv.'"><img src="' . $imgpath . '" alt=""></a>
                                 </div>
                                 <div class="post_info">
-                                    <h3><a href="chitiet_baiviet.php">' . $tieu_de . '</a></h3>
+                                    <h3><a href="'.$ctbv.'">' . $tieu_de . '</a></h3>
                                     <span>Hà Nội   ' . $ngay . '</span>
                                 </div>
                             </div>
