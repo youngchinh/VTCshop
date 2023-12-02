@@ -53,12 +53,12 @@
                                                     <p class="lead fw-normal mb-0" style="color: #078fe0;">Chi tiết đơn hàng</p>
                                                 </div>
                                                 <?php
-                                                    $sql = "SELECT *
+                                                $sql = "SELECT *
                                                     FROM tb_chitietdonhang
                                                     JOIN tb_sanpham ON tb_chitietdonhang.id_sanpham = tb_sanpham.id_sanpham
                                                     JOIN tb_donhang ON tb_chitietdonhang.id_donhang = tb_donhang.id_donhang
-                                                    WHERE tb_chitietdonhang.id_donhang = " .$iddh;               
-                                                    $list = pdo_query($sql);
+                                                    WHERE tb_chitietdonhang.id_donhang = " . $iddh;
+                                                $list = pdo_query($sql);
 
                                                 ?>
                                                 <div class="card shadow-0 border mb-4">
@@ -84,7 +84,7 @@
                                                                     <p class="text-muted mb-0 small">SL: <?= $soluong ?></p>
                                                                 </div>
                                                                 <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                                                    <p class="text-muted mb-0 small"><?= number_format($gia_khuyen_mai, 0, ",", ".") ?></p>
+                                                                    <p class="text-muted mb-0 small"><?= number_format($thanh_tien, 0, ",", ".") ?></p>
                                                                 </div>
                                                             </div>
                                                             <hr class="mb-4" style="background-color: #078fe0; opacity: 1;">
@@ -96,20 +96,27 @@
 
 
                                                 <div class="d-flex justify-content-between pt-2">
-                                                    <p class="fw-bold mb-0">Order Details</p>
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Tổng tiền</span><?= number_format($tongtien - 30000, 0, ",", ".")?></p>
+                                                    <p class="fw-bold mb-0" style="color: #078fe0;">Order Details</p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4" style="color: #078fe0;">Tổng tiền</span><?= number_format($tongtien - 30000, 0, ",", ".") ?></p>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4" style="color: #078fe0;">Tên người nhận:</span> <?= $hovaten?></p>
+                                                    <p class="text-muted mb-0"><span class="fw-bold me-4" style="color: #078fe0;">Phí Vận Chuyển</span> 30.000</p>
                                                 </div>
 
-                                                
-
-                                                <div class="d-flex justify-content-between mb-5">
-                                                    <!-- <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p> -->
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Phí Vận Chuyển</span> 30.000</p>
+                                                <div class="d-flex justify-content-between">
+                                                <p class="text-muted mb-0"><span class="fw-bold me-4" style="color: #078fe0;">Địa chỉ nhận hàng:</span> <?= $dia_chi?></p>
+                                                    <!-- <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p> -->
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                <p class="text-muted mb-0"><span class="fw-bold me-4" style="color: #078fe0;">Số điện thoại:</span> <?= $sdt?></p>
+                                                    <!-- <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p> -->
                                                 </div>
                                             </div>
                                             <div class="card-footer border-0 px-4 py-5" style="background-color: #078fe0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-                                                <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Thành tiền: 
-                                                    <span class="h2 mb-0 ms-2"><?= number_format($tongtien, 0, ",", ".")?></span></h5>
+                                                <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Thành tiền:
+                                                    <span class="h2 mb-0 ms-2"><?= number_format($tongtien, 0, ",", ".") ?></span>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
