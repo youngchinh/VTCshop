@@ -221,6 +221,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $loaddanhmuc = loadall_danhmuc();
             include "../views/Client/sanpham_noibat.php";
             break;
+    
+        case "bv_noibat";
+            $bv_noibat = loadtop4_baiviet();
+            include "../views/Client/bv_noibat.php";
+            break;
 
         case "donhang";
             $loaddonhang = loadall_donhang();
