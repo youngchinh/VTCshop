@@ -8,7 +8,8 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="ClientController.php">Trang Chủ</a></li>
-                        <li>Thông tin tài khoản</li>
+                        <li><a href="ClientController.php?act=account">Tài khoản</a></li>
+                        <li><a href="ClientController.php?act=account">Thông tin tài khoản</a></li>
                     </ul>
                 </div>
             </div>

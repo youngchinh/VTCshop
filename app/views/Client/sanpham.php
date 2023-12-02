@@ -47,8 +47,7 @@
                             <form action="#">
                                 <div id="slider-range"></div>
                                 <button type="submit">Filter</button>
-                                <input type="text" name="text" id="amount" />
-
+                                <input type="text" name="text" id="amount">
                             </form>
                         </div>
 

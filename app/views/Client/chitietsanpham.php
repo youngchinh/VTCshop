@@ -69,8 +69,6 @@ if (is_array($chitietsp)) {
                         </div>
 
                         <div class="product_variant quantity">
-                            <label>Số Lượng</label>
-                            <input min="1" max="<?= $so_luong ?>" value="1" type="number">
                             <button style="color: #fff;" data-id="<?= $id_sanpham ?>" onclick="addToCart(<?= $id_sanpham ?>, '<?= $ten_sanpham ?>', '<?= $gia_khuyen_mai ?>')">Thêm vào giỏ hàng</button>
                         </div>
 
