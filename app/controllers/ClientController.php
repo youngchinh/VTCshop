@@ -95,6 +95,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case "login";
             if (isset($_POST['login'])) {
+                if (isset($_SESSION['cart']))
                 $tai_khoan = $_POST['taikhoan'];
                 $mat_khau = $_POST['matkhau'];
                 $checkuser = checkuser($tai_khoan, $mat_khau);

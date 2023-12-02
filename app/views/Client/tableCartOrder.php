@@ -37,7 +37,7 @@ if (!empty($_SESSION['cart'])) {
                 <label>Số Lượng</label>
                 <input id="quantity_<?= $product['id_sanpham'] ?>" min="1" type="number" value="<?= (int)$quantityInCart ?>" oninput="updateQuantity(<?= $product['id_sanpham'] ?>, <?= $key ?> );">
             </td>
-            <td class="product_total"><?= number_format((int)$product['gia_ban_dau'] * (int)$quantityInCart, 0, ",", ".") ?><u>đ</u></td>
+            <td class="product_total"><?= number_format((int)$product['gia_khuyen_mai'] * (int)$quantityInCart, 0, ",", ".") ?><u>đ</u></td>
         </tr>
 
     <?php
