@@ -39,10 +39,10 @@
                             <article class="single_blog mb-60">
                                 <figure>
                                     <div class="blog_thumb">
-                                        <a href="chitiet_baiviet.php"><img src="<?= $imgpath ?>" alt=""></a>
+                                        <a href="#"><img src="<?= $imgpath ?>" alt=""></a>
                                     </div>
                                     <figcaption class="blog_content">
-                                        <h4><a href="chitiet_baiviet.php"><?= $tieu_de ?></a></h4>
+                                        <h4><a href="#"><?= $tieu_de ?></a></h4>
                                         <div class="blog_meta">
                                             <span class="author">Đăng bởi : <a href="#">admin</a> / </span>
                                             <span class="post_date">On : <a href="#">Hà Nội <?= $ngay ?></a></span>
