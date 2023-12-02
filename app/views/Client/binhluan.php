@@ -5,13 +5,9 @@ include "/xampp/htdocs/VTCshop/app/models/ClientModel/ClientModel.php";
 if (isset($_GET['idsp'])) {
     // echo $_GET['idsp'];
     $idsp = $_GET['idsp'];
-    
-    $dsbl = loadall_binhluan($idsp);
-
-    $html_bl = "";
 }
 if (isset($_POST['guibinhluan'])) {
-    $id_sanpham1 = $_POST['idsp'];
+    $id_sanpham = $_POST['idsp'];
     $hovaten = $_POST['hoten'];
     $noi_dung_binhluan = $_POST['noi_dung'];
     $ngay_binh_luan = date("Y-m-d");
@@ -19,10 +15,14 @@ if (isset($_POST['guibinhluan'])) {
     insert_binhluan($hovaten, $noi_dung_binhluan, $ngay_binh_luan, $id_sanpham, $id_taikhoan);
 }
 
+$dsbl = loadall_binhluan($idsp);
+
+$html_bl = "";
+
 foreach ($dsbl as $bl) {
     extract($bl);
     //echo "\$a = $hovaten; \$b = $hovaten; \$c = $hovaten";
-    $html_bl .= '<p> <h4>' . $hovaten . ' - ' . $hovaten . '</h4>' . $hovaten . '</p> <hr>';
+    $html_bl .= '<p> <h4>' . $hovaten . ' - ' . $ngay_binh_luan . '</h4>' . $noi_dung_binhluan . '</p> <hr>';
 }
 ?>
 <!-- list bình luận -->
