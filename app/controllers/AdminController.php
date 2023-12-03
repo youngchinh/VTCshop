@@ -260,7 +260,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_POST['themmoi']) && $_POST['themmoi']) {
                 $hovaten = $_POST['hovaten'];
                 $tai_khoan = $_POST['tai_khoan'];
-                $mat_khau = $_POST['mat_khau'];
+                $mat_khau = md5($_POST['mat_khau']);
                 $email = $_POST['email'];
                 $sdt = $_POST['sdt'];
                 $dia_chi = $_POST['dia_chi'];

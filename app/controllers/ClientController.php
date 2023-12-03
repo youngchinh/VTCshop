@@ -97,12 +97,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_POST['login'])) {
                 // if (isset($_SESSION['cart']))
                 $tai_khoan = $_POST['taikhoan'];
-                $mat_khau = $_POST['matkhau'];
+                $mat_khau = md5($_POST['matkhau']);
                 $checkuser = checkuser($tai_khoan, $mat_khau);
 
                 if (is_array($checkuser)) {
                     $_SESSION['login']  = $checkuser;
                     // $_SESSION['tai_khoan']  = $tai_khoan;
+                    echo "<script>alert('Bạn đã đăng nhập thành công!')</script>";
                     echo "<script>location.href = '/../VTCshop/index.php';</script>";
                 } else {
                     $thongbao = "tài khoản không tồn tại";
@@ -114,7 +115,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
                 $tai_khoan = $_POST['tai_khoan'];
                 $email = $_POST['email'];
-                $mat_khau = $_POST['mat_khau'];
+                $mat_khau = md5($_POST['mat_khau']);
                 $sdt = $_POST['sdt'];
                 $dia_chi = $_POST['dia_chi'];
                 $hovaten = $_POST['hovaten'];
