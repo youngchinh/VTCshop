@@ -233,6 +233,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
            
             include "../views/Client/donhang.php";
             break;
+        case "huydh";
+            if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
+                $iddh = ($_GET['iddh']);
+                cancel_oder($iddh);
+                echo "<script>location.href = '/../VTCshop/app/controllers/ClientController.php?act=donhang';</script>";
+            }
+            break;
         case "chitietdh";
             if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
                 $iddh = ($_GET['iddh']);

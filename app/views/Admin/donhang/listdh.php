@@ -56,16 +56,38 @@
                             $trangthai = pdo_query($sql);
                             foreach ($trangthai as $value) {
                                 extract($value);
-                                echo
-                                '
-                                    <td>' . $ten_trangthai . '</td>
-                                    <td>
-                                         <a href="' . $suatrangthai . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
-                                         <a href="' . $xem . '"><input style="color: #fff; background-color: #17ccb8; border-color: #17a2b8; border: 0;" type="button" value="Xem"> </a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                                ';
+                                if ($id_trangthai_dh === 0) {
+                                    echo
+                                    '
+                                        <td style="color: red;">' . $ten_trangthai . '</td>
+                                        <td>
+                                            <a href="' . $xem . '"><input style="color: #fff; background-color: #17ccb8; border-color: #17a2b8; border: 0;" type="button" value="Xem"> </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    ';
+                                } else if($id_trangthai_dh === 4) {
+                                    echo
+                                    '
+                                        <td>' . $ten_trangthai . '</td>
+                                        <td>
+                                            <a href="' . $xem . '"><input style="color: #fff; background-color: #17ccb8; border-color: #17a2b8; border: 0;" type="button" value="Xem"> </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    ';
+                                } else {
+                                    echo
+                                    '
+                                        <td>' . $ten_trangthai . '</td>
+                                        <td>
+                                            <a href="' . $suatrangthai . '"><input style="color: #fff; background-color: #17a2b8; border-color: #17a2b8; border: 0;" type="button" value="Sửa"> </a>
+                                            <a href="' . $xem . '"><input style="color: #fff; background-color: #17ccb8; border-color: #17a2b8; border: 0;" type="button" value="Xem"> </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    ';
+                                }
                             }
                         }
 

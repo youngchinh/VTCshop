@@ -57,7 +57,7 @@
                                             <input type="text" name="tai_khoan" value="<?=$tai_khoan?>">
 
                                             <label>Password</label>
-                                            <input type="text" name="mat_khau" value="<?=$mat_khau?>">
+                                            <input type="password" name="mat_khau" value="<?=$mat_khau?>">
 
                                             <label>Số điện thoại</label>
                                             <input type="text" placeholder="MM/DD/YYYY" name="sdt" value="<?=$sdt?>">

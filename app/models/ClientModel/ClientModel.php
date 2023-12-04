@@ -210,6 +210,11 @@ function loadall_donhang(){
     return $listdonhang;
 }
 
+function cancel_oder($iddh) {
+    $sql = "UPDATE tb_donhang SET id_trangthai_dh = 0 WHERE id_donhang =" .$iddh;
+    pdo_execute($sql);
+}
+
 // Tài khoản
 function loadall_taikhoan(){
     $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";
