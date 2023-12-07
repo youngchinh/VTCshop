@@ -215,6 +215,11 @@ function cancel_oder($iddh) {
     pdo_execute($sql);
 }
 
+function update_order($iddh) {
+    $sql = "UPDATE tb_donhang SET id_trangthai_dh = 4 WHERE id_donhang =" .$iddh;
+    pdo_execute($sql);
+}
+
 // Tài khoản
 function loadall_taikhoan(){
     $sql ="SELECT * FROM tb_taikhoan ORDER BY hovaten";

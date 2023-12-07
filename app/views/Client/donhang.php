@@ -56,6 +56,7 @@
                                                     FROM tb_donhang
                                                     JOIN tb_trangthai_donhang ON tb_donhang.id_trangthai_dh = tb_trangthai_donhang.id_trangthai_dh
                                                     WHERE tb_donhang.id_taikhoan= " . $id_user;
+                                                    $sql .= " ORDER BY id_donhang DESC";
                                                     $list = pdo_query($sql);
                                                     
                                                 ?>
@@ -70,7 +71,7 @@
                                                     <td><?= $hovaten ?></td>
                                                     <td><?= $ngay_dat_hang?> </td>
                                                     <?php 
-                                                        if ($id_trangthai_dh === 0) { 
+                                                        if ($id_trangthai_dh == 0) { 
                                                     ?>
                                                     <td style="color: red;"><a href="#"><?= $ten_trangthai?></a></td>
                                                     <?php 
@@ -81,16 +82,16 @@
                                                     <td><?= $tongtien?></td>
                                                     <td style="color: blue;"><a href="ClientController.php?act=chitietdh&iddh=<?=$id_donhang?>">Chi tiết</a></td>
                                                     <?php 
-                                                        if ($id_trangthai_dh === 1) { 
+                                                        if ($id_trangthai_dh == 1) { 
                                                     ?>
                                                     <td style="color: red;">
                                                     <a onclick="cancel_confirm(); " href="ClientController.php?act=huydh&iddh=<?=$id_donhang?>">Xác nhận hủy</a>
                                                     </td>
                                                     <?php 
-                                                        } else if ($id_trangthai_dh === 4) { 
+                                                        } else if ($id_trangthai_dh == 3) { 
                                                     ?>
                                                         <td>
-                                                        <button id="myButton" class="btn btn-primary" onclick="success(); ">Đã nhận hàng</3</a>
+                                                        <a href="ClientController.php?act=success&&iddh=<?=$id_donhang?>"><button id="myButton" class="btn btn-primary" onclick="success(); ">Đã nhận hàng<//3 </button></a>
                                                         </td>
                                                     <?php 
                                                         }
@@ -124,7 +125,6 @@
 
     function success() {
         var myButton = document.getElementById("myButton");
-
             // Disable button
         myButton.disabled = true;
         alert("Cảm ơn bạn đã ủng hộ chúng tôi</3")

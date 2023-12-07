@@ -88,6 +88,29 @@
                                                                 </div>
                                                             </div>
                                                             <hr class="mb-4" style="background-color: #078fe0; opacity: 1;">
+                                                            <?php 
+                                                                 $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh =" . $id_trangthai_dh ;
+                                                                 $trangthai = pdo_query($sql);
+                                                                 foreach ($trangthai as $value) :
+                                                                     extract($value);
+                                                                     if ($id_trangthai_dh == 4) {
+                                                            ?>
+                                                                <h5 style="color: #28a745">Trạng Thái: <?= $ten_trangthai?></h5>
+                                                            <?php 
+                                                                     } elseif ($id_trangthai_dh == 0) {
+                                                            ?>
+                                                                <h5 style="color: red">Trạng Thái: <?= $ten_trangthai?></h5>
+
+                                                            <?php
+                                                                     } else {
+                                                            ?>
+                                                                <h5 style="color:  blue">Trạng Thái: <?= $ten_trangthai?></h5>
+                                                            <?php 
+                                                                     }
+                                                            ?>
+                                                            <?php 
+                                                                endforeach;
+                                                            ?>
                                                         </div>
                                                     <?php
                                                     endforeach;

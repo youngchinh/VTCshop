@@ -205,7 +205,7 @@ function loadall_donhang(){
 }
 
 function loadall_trangthai_donhang(){
-    $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh != 0";
+    $sql = "SELECT * FROM tb_trangthai_donhang WHERE id_trangthai_dh != 0 AND id_trangthai_dh != 1 AND id_trangthai_dh != 4";
     $listtrangthaidh = pdo_query($sql);
     return $listtrangthaidh;
 }

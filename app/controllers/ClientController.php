@@ -230,9 +230,17 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
         case "donhang";
             $loaddonhang = loadall_donhang();
-           
             include "../views/Client/donhang.php";
             break;
+
+        case "success";
+            if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
+                $iddh = ($_GET['iddh']);
+                update_order($iddh);
+                echo "<script>location.href = '/../VTCshop/app/controllers/ClientController.php?act=donhang';</script>";
+            }
+            break;
+            
         case "huydh";
             if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
                 $iddh = ($_GET['iddh']);

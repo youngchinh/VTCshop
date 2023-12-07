@@ -3,7 +3,7 @@ session_start();
 include "/xampp/htdocs/VTCshop/app/models/AdminModel/AdminLoginModel.php";
 if ((isset($_POST['dangnhap']))) {
     $tai_khoan = $_POST['tai_khoan'];
-    $mat_khau = $_POST['mat_khau'];
+    $mat_khau = md5($_POST['mat_khau']);
     // $thongbao = "Đăng nhập thành công";
 
     $taikhoan = get_taikhoan_tk_mk($tai_khoan, $mat_khau);
