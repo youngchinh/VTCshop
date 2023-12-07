@@ -70,31 +70,31 @@
                                                     <td><?= $hovaten ?></td>
                                                     <td><?= $ngay_dat_hang?> </td>
                                                     <?php 
-                                                    if ($id_trangthai_dh === 0) { 
+                                                        if ($id_trangthai_dh === 0) { 
                                                     ?>
                                                     <td style="color: red;"><a href="#"><?= $ten_trangthai?></a></td>
                                                     <?php 
-                                                    } else {
+                                                        } else {
                                                     ?>
                                                     <td style="color: green;"><a href="#"><?= $ten_trangthai?></a></td>
                                                     <?php } ?>
                                                     <td><?= $tongtien?></td>
                                                     <td style="color: blue;"><a href="ClientController.php?act=chitietdh&iddh=<?=$id_donhang?>">Chi tiết</a></td>
-                                                <?php 
-                                                    if ($id_trangthai_dh === 1) { 
-                                                ?>
+                                                    <?php 
+                                                        if ($id_trangthai_dh === 1) { 
+                                                    ?>
                                                     <td style="color: red;">
                                                     <a onclick="cancel_confirm(); " href="ClientController.php?act=huydh&iddh=<?=$id_donhang?>">Xác nhận hủy</a>
                                                     </td>
-                                                <?php 
-                                                } else if ($id_trangthai_dh === 4) { 
+                                                    <?php 
+                                                        } else if ($id_trangthai_dh === 4) { 
                                                     ?>
                                                         <td>
                                                         <button id="myButton" class="btn btn-primary" onclick="success(); ">Đã nhận hàng</3</a>
                                                         </td>
-                                                <?php 
-                                                }
-                                                ?>
+                                                    <?php 
+                                                        }
+                                                    ?>
                                                 </tr>
                                                 <?php 
                                                     endforeach;
