@@ -94,12 +94,6 @@
                                                         <a href="ClientController.php?act=success&&iddh=<?=$id_donhang?>"><button id="myButton" class="btn btn-primary" onclick="success(); ">Đã nhận hàng</button></a>
                                                         </td>
                                                     <?php 
-                                                        } elseif ($id_trangthai_dh == 4) {
-                                                    ?>
-                                                        <td>
-                                                        <a href="ClientController.php?act=success&&iddh=<?=$id_donhang?>"><button id="myButton" class="btn btn-primary">Đánh giá</button></a>
-                                                        </td>
-                                                    <?php 
                                                         }
                                                     ?>
                                                 </tr>

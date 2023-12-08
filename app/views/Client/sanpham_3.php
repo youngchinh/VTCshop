@@ -42,15 +42,7 @@
                                 ?>
                             </ul>
                         </div>
-                        <div class="widget_list widget_filter">
-                            <h2>Lọc giá</h2>
-                            <form action="#">
-                                <div id="slider-range"></div>
-                                <button type="submit">Filter</button>
-                                <input type="text" name="text" id="amount" />
-
-                            </form>
-                        </div>
+                        
 
                     </div>
                 </aside>
@@ -70,22 +62,7 @@
                         <button data-role="grid_list" type="button" class="btn-list" data-bs-toggle="tooltip" title="List"></button>
                     </div>
                     <!-- xắp xếp giá -->
-                    <div class=" niceselect_option">
-                        <form class="select_option" action="#">
-                            <select name="orderby" id="short">
-                                <option selected value="1">Sắp xếp theo đánh giá</option>
-                                <option value="2">Sắp xếp theo Tên</option>
-                                <option value="3">Sắp xếp theo giá giảm dần</option>
-                                <option value="4">Sắp xếp theo giá tăng dần</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="page_amount">
-                        <?php
-                        
-                        ?>
-
-                    </div>
+                    
                 </div>
                 <!--tìm kiếm theo tên end-->
 

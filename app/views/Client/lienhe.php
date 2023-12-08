@@ -41,7 +41,7 @@
                         <li><i class="fa fa-envelope-o"> </i> Email: <a href="mailto:demo@example.com">vtcshop@gmail.com </a>
                         </li>
                         <li><i class="fa fa-phone"></i> Phone:<a href="tel: 0123456789"> 0123456789 </a> </li>
-                    </ul>>
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">

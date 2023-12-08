@@ -5,10 +5,9 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="ClientController.php">home</a></li>
-                        <li><a href="ClientController.php?act=baiviet">Bài Viết</a></li>
-                        <li><a href="#">Chi tiết bài viết</li>
-
+                        <li><a href="ClientController.php">Trang chủ</a></li>
+                        <li><a href="ClientController.php?act=baiviet">Bài viết</a></li>
+                        <li><a href="#">Chi tiết bài viết</a></li>
                     </ul>
                 </div>
             </div>
@@ -24,7 +23,6 @@
     <div class="container">
         <div class="row">
             <div class="blog_header">
-                <h1>Bài viết chi tiết</h1>
             </div>
             <?php
             if (is_array($listbaiviet)) {

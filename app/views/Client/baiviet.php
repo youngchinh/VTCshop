@@ -5,9 +5,8 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="ClientController.php">home</a></li>
-                         <li><a href="ClientController.php?"></a>Home</a></li>
-                        <li><a href="ClientController.php?act=baiviet">Bài Viết</a></li>
+                        <li><a href="ClientController.php">Trang chủ</a></li>
+                        <li><a href="ClientController.php?act=baiviet">Bài viết</a></li>
                     </ul>
                 </div>
             </div>
@@ -23,7 +22,6 @@
             <div class="col-lg-9">
                 <div class="blog_wrapper">
                     <div class="blog_header">
-                        <h1>Bài viết</h1>
                     </div>
                     <div class="row">
                         <?php
