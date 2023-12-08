@@ -65,11 +65,15 @@
                                                     <?php
                                                     foreach ($list as $ctdh) :
                                                         extract($ctdh);
+                                                        $linkchitietsp = "ClientController.php?act=chitietsp&idsp=" . $id_sanpham;
+
                                                     ?>
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <div class="col-md-2">
+                                                                    <a href="<?= $linkchitietsp ?>">
                                                                     <img src="../upload/all_sp/<?= $img_sanpham ?>" class="img-fluid" alt="Phone">
+                                                                    </a>
                                                                 </div>
                                                                 <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                                                                     <p class="text-muted mb-0"><?= $ten_sanpham ?></p>
